@@ -1,0 +1,304 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400000}
+  - 114: {fileID: 11408712}
+  - 114: {fileID: 11430078}
+  m_Layer: 0
+  m_Name: DataLogic
+  m_TagString: DataLogic
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400000
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11408712
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffa94eb19b4744d40b1087dc4965a59a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  riffle: {fileID: 8300000, guid: 8a03ba9e9e10d20478aa45da76412a8d, type: 3}
+  gun: {fileID: 8300000, guid: e6c6c8ae1950ae147b9c0717c2519d3e, type: 3}
+  gunClock: {fileID: 8300000, guid: 62a9a36f7cbfe904f8dcb2082b8d1131, type: 3}
+  shootGun: {fileID: 8300000, guid: 9acbcc58258d45045be0459df2f80f9b, type: 3}
+  shootGunClock: {fileID: 8300000, guid: 2d8e32a54e86bb143808ddae1e05a1d0, type: 3}
+  music: {fileID: 8300000, guid: d704310fd3b78ae42b1f8217516d284a, type: 3}
+  musicBrutal: {fileID: 8300000, guid: 5d794df163cc2ba469ee1d5dd5d82285, type: 3}
+  chainsaw: {fileID: 8300000, guid: 1bb64d76c0c9f3e4a8ba45b8ab8f7d31, type: 3}
+  health: {fileID: 8300000, guid: 48885edad9fcd7549a31828f52a67a6d, type: 3}
+  ammo: {fileID: 8300000, guid: 2298a838092ee7f4e9c5edf3dfc7982e, type: 3}
+  can: {fileID: 8300000, guid: 200c0e1150cfba247b878199be17f209, type: 3}
+  glass: {fileID: 8300000, guid: 777ed0143df467f4381af3ddf9563742, type: 3}
+  door: {fileID: 8300000, guid: f64e8e7d444b8574287d1c59345ced4c, type: 3}
+  hit: {fileID: 8300000, guid: 5c39dce5c09aabe4fb80518c16b011a8, type: 3}
+  bossMusic: {fileID: 8300000, guid: d704310fd3b78ae42b1f8217516d284a, type: 3}
+  heart: {fileID: 8300000, guid: 48d097c212cf6de4aa76a9c90be4dd35, type: 3}
+  death: {fileID: 8300000, guid: 1839ed54de3185b4b8e2c986aedcfaa9, type: 3}
+  thunder: {fileID: 8300000, guid: 47afffcee522e774b995665c69810515, type: 3}
+  volumFx: 1
+  volumMusic: 1
+  on: 1
+--- !u!114 &11430078
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d088eb3d85b90a44e8608971c6e9c20e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Achievements:
+  - Name: Messi
+    Description: Hit 10 cans
+    IconIncomplete: {fileID: 2800000, guid: 37a2453ba897ef147bcbe8d5bafa6601, type: 3}
+    IconComplete: {fileID: 2800000, guid: 0dfc8e61dfc91f14195727b4e99430a8, type: 3}
+    RewardPoints: 0
+    TargetProgress: 10
+    Secret: 0
+    Earned: 0
+    showPop: 0
+    currentTime: 2
+    currentTime2: 0
+    timeDelay: 3
+    maxTime: 5
+    posX: 0
+  - Name: x20
+    Description: Get a x20 combo
+    IconIncomplete: {fileID: 2800000, guid: 37a2453ba897ef147bcbe8d5bafa6601, type: 3}
+    IconComplete: {fileID: 2800000, guid: 0dfc8e61dfc91f14195727b4e99430a8, type: 3}
+    RewardPoints: 0
+    TargetProgress: 20
+    Secret: 0
+    Earned: 0
+    showPop: 0
+    currentTime: 2
+    currentTime2: 0
+    timeDelay: 3
+    maxTime: 5
+    posX: 0
+  - Name: Riffle
+    Description: Unlock the Riffle
+    IconIncomplete: {fileID: 2800000, guid: 37a2453ba897ef147bcbe8d5bafa6601, type: 3}
+    IconComplete: {fileID: 2800000, guid: 0dfc8e61dfc91f14195727b4e99430a8, type: 3}
+    RewardPoints: 0
+    TargetProgress: 1
+    Secret: 0
+    Earned: 0
+    showPop: 0
+    currentTime: 2
+    currentTime2: 0
+    timeDelay: 3
+    maxTime: 5
+    posX: 0
+  - Name: Rage Againts the Machine
+    Description: Destroy 50electronic devices
+    IconIncomplete: {fileID: 2800000, guid: 37a2453ba897ef147bcbe8d5bafa6601, type: 3}
+    IconComplete: {fileID: 2800000, guid: 0dfc8e61dfc91f14195727b4e99430a8, type: 3}
+    RewardPoints: 0
+    TargetProgress: 50
+    Secret: 0
+    Earned: 0
+    showPop: 0
+    currentTime: 2
+    currentTime2: 0
+    timeDelay: 3
+    maxTime: 5
+    posX: 0
+  - Name: Carnage
+    Description: Kill 500 enemies
+    IconIncomplete: {fileID: 2800000, guid: 37a2453ba897ef147bcbe8d5bafa6601, type: 3}
+    IconComplete: {fileID: 2800000, guid: 0dfc8e61dfc91f14195727b4e99430a8, type: 3}
+    RewardPoints: 0
+    TargetProgress: 500
+    Secret: 0
+    Earned: 0
+    showPop: 0
+    currentTime: 2
+    currentTime2: 0
+    timeDelay: 3
+    maxTime: 5
+    posX: 0
+  - Name: Strike
+    Description: Kill 5 enemies with one grenade
+    IconIncomplete: {fileID: 2800000, guid: 37a2453ba897ef147bcbe8d5bafa6601, type: 3}
+    IconComplete: {fileID: 2800000, guid: 0dfc8e61dfc91f14195727b4e99430a8, type: 3}
+    RewardPoints: 0
+    TargetProgress: 5
+    Secret: 0
+    Earned: 0
+    showPop: 0
+    currentTime: 2
+    currentTime2: 0
+    timeDelay: 3
+    maxTime: 5
+    posX: 0
+  - Name: Blooshed!
+    Description: Complete Bloodshed
+    IconIncomplete: {fileID: 2800000, guid: 37a2453ba897ef147bcbe8d5bafa6601, type: 3}
+    IconComplete: {fileID: 2800000, guid: 0dfc8e61dfc91f14195727b4e99430a8, type: 3}
+    RewardPoints: 0
+    TargetProgress: 1
+    Secret: 0
+    Earned: 0
+    showPop: 0
+    currentTime: 2
+    currentTime2: 0
+    timeDelay: 3
+    maxTime: 5
+    posX: 0
+  EarnedSound: {fileID: 8300000, guid: ba46af9178a1b9948a04548232c17990, type: 3}
+  GUIStyleAchievementEarned:
+    m_Name: 
+    m_Normal:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 1, g: 1, b: 1, a: 1}
+    m_Hover:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Active:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Focused:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnNormal:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: .435294151, g: .435294151, b: .435294151, a: 1}
+    m_OnHover:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnActive:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnFocused:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Border:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Margin:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Padding:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Overflow:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 0
+    m_FontStyle: 0
+    m_Alignment: 0
+    m_WordWrap: 0
+    m_RichText: 1
+    m_TextClipping: 0
+    m_ImagePosition: 0
+    m_ContentOffset: {x: 0, y: 0}
+    m_FixedWidth: 0
+    m_FixedHeight: 0
+    m_StretchWidth: 1
+    m_StretchHeight: 0
+  GUIStyleAchievementNotEarned:
+    m_Name: 
+    m_Normal:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 1, g: 1, b: 1, a: 1}
+    m_Hover:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Active:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Focused:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnNormal:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: .433823526, g: .433823526, b: .433823526, a: 1}
+    m_OnHover:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnActive:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnFocused:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Border:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Margin:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Padding:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Overflow:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 0
+    m_FontStyle: 0
+    m_Alignment: 0
+    m_WordWrap: 0
+    m_RichText: 1
+    m_TextClipping: 0
+    m_ImagePosition: 0
+    m_ContentOffset: {x: 0, y: 0}
+    m_FixedWidth: 0
+    m_FixedHeight: 0
+    m_StretchWidth: 1
+    m_StretchHeight: 0
+  onMenu: 0
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 100000}
+  m_IsPrefabParent: 1

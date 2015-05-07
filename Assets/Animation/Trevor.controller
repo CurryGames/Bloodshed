@@ -1,0 +1,149 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!91 &9100000
+AnimatorController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Trevor
+  serializedVersion: 2
+  m_AnimatorParameters: []
+  m_AnimatorLayers:
+  - serializedVersion: 3
+    m_Name: Base Layer
+    m_StateMachine: {fileID: 110700000}
+    m_Mask: {fileID: 0}
+    m_BlendingMode: 0
+    m_SyncedLayerIndex: -1
+    m_StateMachineMotionSetIndex: 0
+    m_DefaultWeight: 0
+    m_IKPass: 0
+    m_SyncedLayerAffectsTiming: 0
+    m_Controller: {fileID: 9100000}
+--- !u!1102 &110200000
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Riffle
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: 0d5cb0973642bbe439d2801851a907e1, type: 2}
+  m_ParentStateMachine: {fileID: 110700000}
+  m_Position: {x: 200, y: 0, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
+--- !u!1102 &110205923
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Riffle
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: 72db18e966c8e5040aab173436063c06, type: 2}
+  m_ParentStateMachine: {fileID: 110700000}
+  m_Position: {x: 85, y: 115, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
+--- !u!1102 &110239821
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Chainsaw
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: c77839bc75913e24b958c1e48747f95d, type: 2}
+  m_ParentStateMachine: {fileID: 110700000}
+  m_Position: {x: 155, y: 245, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
+--- !u!1102 &110249198
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Gun
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: f76549c8c2f9e924baa9cffa6e19261c, type: 2}
+  m_ParentStateMachine: {fileID: 110700000}
+  m_Position: {x: 305, y: 195, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
+--- !u!1102 &110250035
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Shootgun
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: b1ffe50509e778e4fa145bd85172d400, type: 2}
+  m_ParentStateMachine: {fileID: 110700000}
+  m_Position: {x: 120, y: 180, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
+--- !u!1102 &110257086
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Chainsaw
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: 8f79f5a76f0ca334f9dbde22140971af, type: 2}
+  m_ParentStateMachine: {fileID: 110700000}
+  m_Position: {x: 270, y: 130, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
+--- !u!1102 &110289311
+State:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Shootgun
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Motions:
+  - {fileID: 7400000, guid: 127cecbc730e704488ec01f76bb59e06, type: 2}
+  m_ParentStateMachine: {fileID: 110700000}
+  m_Position: {x: 235, y: 65, z: 0}
+  m_IKOnFeet: 0
+  m_Mirror: 0
+  m_Tag: 
+--- !u!1107 &110700000
+StateMachine:
+  serializedVersion: 2
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Base Layer
+  m_DefaultState: {fileID: 110200000}
+  m_States:
+  - {fileID: 110200000}
+  - {fileID: 110289311}
+  - {fileID: 110257086}
+  - {fileID: 110249198}
+  m_ChildStateMachine: []
+  m_ChildStateMachinePosition: []
+  m_OrderedTransitions:
+    data:
+      first: {fileID: 0}
+      second: []
+  m_MotionSetCount: 1
+  m_AnyStatePosition: {x: 50, y: 20, z: 0}
+  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
