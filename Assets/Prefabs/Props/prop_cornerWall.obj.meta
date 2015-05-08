@@ -1,9 +1,7 @@
 fileFormatVersion: 2
-guid: da3f4b0a69e772546979969c044cf9c7
-timeCreated: 1431025831
-licenseType: Free
+guid: 17b50a740c1298c4fa8c0f07841dcfcf
 ModelImporter:
-  serializedVersion: 18
+  serializedVersion: 16
   fileIDToRecycleName:
     100000: Box002
     100002: //RootNode
@@ -12,6 +10,7 @@ ModelImporter:
     2300000: Box002
     3300000: Box002
     4300000: Box002
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -39,13 +38,11 @@ ModelImporter:
     generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
-    keepQuads: 0
     weldVertices: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     splitTangentsAcrossUV: 1
@@ -65,8 +62,6 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   additionalBone: 0
   userData: 
-  assetBundleName: 
-  assetBundleVariant: 
