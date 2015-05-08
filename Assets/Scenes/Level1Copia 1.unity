@@ -86,7 +86,7 @@ NavMeshSettings:
     minRegionArea: 2
     cellSize: .0799999982
     manualCellSize: 0
-  m_NavMeshData: {fileID: 23800000, guid: 1b566e812e25ef9429edc421915b4d5d, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: e91fc1a8ce8f5ba489abf47a69d75ed8, type: 2}
 --- !u!1 &518593
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,9 +912,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdf9be34b851d41418670258141e9725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorTexture: {fileID: 2800000, guid: 0074316edbcc5ff4cb1069fa3faa5cfc, type: 3}
-  cursorMode: 1
-  hotSpot: {x: 0, y: 0}
 --- !u!1 &33240865
 GameObject:
   m_ObjectHideFlags: 0
@@ -2389,7 +2386,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &133174592
 Transform:
   m_ObjectHideFlags: 0
@@ -5786,7 +5783,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 351614824}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdcd9bd0807e4074ea2be79cea5027ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e28fef043446fb4fbfb91318bf5e27b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animActive: 0
@@ -13637,7 +13634,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a29d5868a17e1a149b2e3841d30f7eed, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -.611506224
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a29d5868a17e1a149b2e3841d30f7eed, type: 2}
       propertyPath: m_LocalRotation.z
@@ -13645,11 +13642,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a29d5868a17e1a149b2e3841d30f7eed, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: .791239619
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: a29d5868a17e1a149b2e3841d30f7eed, type: 2}
       propertyPath: m_RootOrder
-      value: 21
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: a29d5868a17e1a149b2e3841d30f7eed, type: 2}
       propertyPath: detectDistance
@@ -13686,6 +13683,14 @@ Prefab:
     - target: {fileID: 100000, guid: a29d5868a17e1a149b2e3841d30f7eed, type: 2}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a29d5868a17e1a149b2e3841d30f7eed, type: 2}
+      propertyPath: enemyType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a29d5868a17e1a149b2e3841d30f7eed, type: 2}
+      propertyPath: patrolTime
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a29d5868a17e1a149b2e3841d30f7eed, type: 2}
@@ -20052,6 +20057,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 22
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f65ea613f5d6c3a49a535b21a84b6466, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f65ea613f5d6c3a49a535b21a84b6466, type: 2}
   m_IsPrefabParent: 0
@@ -22657,7 +22666,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1619139271
 Transform:
   m_ObjectHideFlags: 0

@@ -11,11 +11,16 @@ public class EnemyNavMesh : MonoBehaviour
     private EnemyMoveBehaviour enemyMove;
     private RangedEnemy enemyRang;
     private EnemyStats enemyStats;
-	public enum EnemyType { SPAWN, IDDLE, PATROL, IMMOBILE}
+	public enum EnemyType { CHASE, IDDLE, PATROL, IMMOBILE}
 	public EnemyType enemyType;
 	private float rotationSpeed;
     public bool chasing;
+	public bool isStop = true;
+	public bool resume = false;
+	private bool immobileRange;
     private Animator animationLegs;
+	public float patrolTime;
+	private bool patroling = false;
 	NavMeshHit hit;
 
 
@@ -28,7 +33,6 @@ public class EnemyNavMesh : MonoBehaviour
         enemyRang = GetComponent<RangedEnemy>();
         target = GameObject.FindGameObjectWithTag ("Player");
         setIddle();
-
         //agent.speed = enemyStats.speed;	
 
     }
@@ -36,46 +40,57 @@ public class EnemyNavMesh : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //agent.SetDestination (target.transform.position);
-        /*if (chasing)
-        {
-			
-            if(target!=null){
-                Debug.Log("CHASING");
-                agent.SetDestination (target.transform.position);
-                //agent.SetDestination(new Vector3 (target.transform.position.x, transform.position.y, target.transform.position.z));
-				
-            }
-        }*/
-
-        if (chasing)
-        {
-
-            if (target != null)
-            {
-                
-                agent.SetDestination(target.transform.position);
-				agent.Resume();
-
-                //agent.SetDestination(new Vector3 (target.transform.position.x, transform.position.y, target.transform.position.z));
-            }
-
-			if (!OnSight ())
+		
+		switch (enemyType)
+		{
+			case EnemyType.CHASE:
 			{
-				agent.stoppingDistance = 0.5f;
+				if (chasing) {
+					if (isStop)
+						isStop = false;
+					if (target != null) {          
+						agent.SetDestination (target.transform.position);
+						
+						if (!resume) {
+							agent.Resume ();
+							resume = true;
+						}
+					}
+					
+					if (!OnSight ()) {
+						agent.stoppingDistance = 0.5f;
+						
+					} else {
+						agent.stoppingDistance = 8;
+						RotateTowards (target.transform);
+					}
+				} else {
+					if (!isStop) {
+						agent.Stop ();
+						isStop = true;
+						resume = false;
+					}
+				}
+			} break;
 
-			}
-			else 
+			case EnemyType.PATROL:
 			{
-				agent.stoppingDistance = 8;
-				RotateTowards(target.transform);
-			}
-        }
-        else
-        {
-            agent.Stop();
+				if (enemyRang.dist <= enemyRang.detectDistance) enemyType = EnemyType.CHASE;
+				setRun ();
+				//Patrol (patrolTime);
+			} break;
 
-        }
+			case EnemyType.IMMOBILE:
+			{
+				if (enemyRang.dist <= enemyRang.detectDistance) 
+				{
+					RotateTowards (target.transform);
+					setIddle();
+				}
+			} break;
+
+		}
+        
 
         if (enemyRang.dist <= agent.stoppingDistance)
         {
@@ -85,7 +100,6 @@ public class EnemyNavMesh : MonoBehaviour
         {
             setRun();
         }
-
 
     }
 
@@ -115,4 +129,25 @@ public class EnemyNavMesh : MonoBehaviour
 		Quaternion lookRotation = Quaternion.LookRotation(direction);
 		transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
 	}
+
+	/*public void Patrol(float duration)
+	{
+		float time;
+		if (!patroling)
+		{
+			time = duration;
+			patroling = true;
+		}
+		else
+		{
+			time -= Time.deltaTime;
+			transform.Translate (Vector3.forward * (agent.speed - 1) * Time.deltaTime);
+			if (time <= 0) 
+			{
+				Debug.Log("rotateeeeeeeee");
+				transform.Rotate (0, 180, 0);
+				patroling = false;
+			}
+		}
+	}*/
 }
