@@ -82,7 +82,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   piece1: {fileID: 109352, guid: 7a953a62d3031e245b77a3170eeb8911, type: 2}
-  puntuationText: {fileID: 174928, guid: 8def04c296307264393437efc1be525b, type: 2}
+  puntuationText: {fileID: 174928, guid: 86c891762cc72e240933fb645c25b47a, type: 2}
+  cocaine: 1
 --- !u!212 &21247408
 SpriteRenderer:
   m_ObjectHideFlags: 1

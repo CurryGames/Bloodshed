@@ -84,8 +84,9 @@ public class EnemyStats : MonoBehaviour
                     break;
                 case Death.EXPLOITED:
                     Instantiate(deathExploited, transform.position, aim.transform.rotation);
-                    achievementManager.SetProgressToAchievement("Strike", (float)dataLogic.strike);
                     dataLogic.strike++;
+                    achievementManager.SetProgressToAchievement("Strike", (float)dataLogic.strike);
+                    
                     break;
                 case Death.CARVED:
                     Instantiate(deathshotedGun[Random.Range(0, deathshotedGun.GetLength(0))], transform.position, aim.transform.rotation);

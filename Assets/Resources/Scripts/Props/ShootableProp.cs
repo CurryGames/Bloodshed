@@ -5,6 +5,7 @@ public class ShootableProp : MonoBehaviour {
 	
 	public GameObject piece1;
     public GameObject puntuationText;
+    public bool cocaine;
     private DataLogic dataLogic;
     private AchievementManager achievementManager;
     private int puntuation;
@@ -21,7 +22,13 @@ public class ShootableProp : MonoBehaviour {
 	{
         GameObject piece1GO = (GameObject)Instantiate(piece1, transform.position, transform.rotation);
         AudioSource audiSor = piece1GO.AddComponent<AudioSource>();
-        dataLogic.Play(dataLogic.glass, audiSor, dataLogic.volumFx);
+
+        if (cocaine != true)
+        {
+            dataLogic.Play(dataLogic.glass, audiSor, dataLogic.volumFx);
+        }
+        else dataLogic.Play(dataLogic.balloonPlop, audiSor, dataLogic.volumFx);
+
         achievementManager.AddProgressToAchievement("Rage Againts the Machine", 1.0f);
         puntuation = 10 * playerStats.multiply;
         playerStats.score += puntuation;

@@ -32,6 +32,8 @@ public class DataLogic : MonoBehaviour {
     public AudioClip ammo;
     public AudioClip can;
     public AudioClip glass;
+    public AudioClip balloonPlop;
+    public AudioClip fart;
     public AudioClip door;
     public AudioClip hit;
     public AudioClip bossMusic;

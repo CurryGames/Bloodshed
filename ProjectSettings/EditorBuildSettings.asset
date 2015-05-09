@@ -14,9 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tutorial 1.unity
   - enabled: 1
-    path: Assets/Scenes/Level1.unity
-  - enabled: 1
     path: Assets/Scenes/MarcAlphaPlus.unity
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
   - enabled: 1
     path: Assets/Scenes/Level2.unity
   - enabled: 1
