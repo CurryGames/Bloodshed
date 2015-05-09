@@ -20,7 +20,8 @@ public class EnemyNavMesh : MonoBehaviour
 	private bool immobileRange;
     private Animator animationLegs;
 	public float patrolTime;
-	private bool patroling = false;
+	public bool patroling = false;
+    private float patrolCounter;
 	NavMeshHit hit;
 
 
@@ -77,7 +78,7 @@ public class EnemyNavMesh : MonoBehaviour
 			{
 				if (enemyRang.dist <= enemyRang.detectDistance) enemyType = EnemyType.CHASE;
 				setRun ();
-				//Patrol (patrolTime);
+				Patrol (patrolTime);
 			} break;
 
 			case EnemyType.IMMOBILE:
@@ -130,24 +131,23 @@ public class EnemyNavMesh : MonoBehaviour
 		transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
 	}
 
-	/*public void Patrol(float duration)
+	public void Patrol(float duration)
 	{
-		float time;
 		if (!patroling)
 		{
-			time = duration;
+			patrolCounter = duration;
 			patroling = true;
 		}
 		else
 		{
-			time -= Time.deltaTime;
+            patrolCounter -= Time.deltaTime;
 			transform.Translate (Vector3.forward * (agent.speed - 1) * Time.deltaTime);
-			if (time <= 0) 
+            if (patrolCounter <= 0) 
 			{
 				Debug.Log("rotateeeeeeeee");
 				transform.Rotate (0, 180, 0);
 				patroling = false;
 			}
 		}
-	}*/
+	}
 }
