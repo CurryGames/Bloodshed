@@ -13692,6 +13692,10 @@ Prefab:
       propertyPath: patrolTime
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: a29d5868a17e1a149b2e3841d30f7eed, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a29d5868a17e1a149b2e3841d30f7eed, type: 2}
   m_IsPrefabParent: 0
@@ -26489,6 +26493,18 @@ Prefab:
     - target: {fileID: 100000, guid: a29d5868a17e1a149b2e3841d30f7eed, type: 2}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a29d5868a17e1a149b2e3841d30f7eed, type: 2}
+      propertyPath: chasing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a29d5868a17e1a149b2e3841d30f7eed, type: 2}
+      propertyPath: enemyType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a29d5868a17e1a149b2e3841d30f7eed, type: 2}
+      propertyPath: patrolTime
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a29d5868a17e1a149b2e3841d30f7eed, type: 2}
