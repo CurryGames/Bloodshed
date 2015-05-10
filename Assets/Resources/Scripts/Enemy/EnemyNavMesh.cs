@@ -36,7 +36,7 @@ public class EnemyNavMesh : MonoBehaviour
         enemyRang = GetComponent<RangedEnemy>();
         target = GameObject.FindGameObjectWithTag ("Player");
         setIddle();
-        Debug.Log(enemyType);
+        //Debug.Log(enemyType);
         //agent.speed = enemyStats.speed;	
 
     }
@@ -75,6 +75,16 @@ public class EnemyNavMesh : MonoBehaviour
 						resume = false;
 					}
 				}
+
+                if (enemyRang.dist <= agent.stoppingDistance)
+                {
+                    setIddle();
+                }
+                else if (enemyRang.dist > agent.stoppingDistance && chasing == true)
+                {
+                    setRun();
+                }
+
 			} break;
 
 			case EnemyType.PATROL:
@@ -94,17 +104,6 @@ public class EnemyNavMesh : MonoBehaviour
 			} break;
 
 		}
-        
-
-        if (enemyRang.dist <= agent.stoppingDistance)
-        {
-            setIddle();
-        }
-        else if (enemyRang.dist > agent.stoppingDistance && chasing == true)
-        {
-            setRun();
-        }
-
     }
 
     public void setRun()

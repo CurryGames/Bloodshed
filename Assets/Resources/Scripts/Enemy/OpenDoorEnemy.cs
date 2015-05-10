@@ -18,6 +18,7 @@ public class OpenDoorEnemy : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
+
         if (other.tag == "Enemy")
         {
             EnemyStats enemy = other.GetComponent<EnemyStats>();
@@ -31,6 +32,7 @@ public class OpenDoorEnemy : MonoBehaviour {
         if (other.tag == "Enemy")
         {
             EnemyStats enemy = other.GetComponent<EnemyStats>();
+            
             if (enemy.doorCounter == 0 && open == true) open = false;
             enemy.doorCounter++;
 

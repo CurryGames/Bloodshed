@@ -10,8 +10,6 @@ public class Spawn : MonoBehaviour {
     //public GameObject door2;
 
 	public GameObject[] wave1;
-    public GameObject[] wave2;
-    public GameObject[] wave3;
 	private PlayerStats playerStats;
     private DataLogic dataLogic;
 

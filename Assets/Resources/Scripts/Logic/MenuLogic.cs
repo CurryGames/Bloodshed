@@ -84,6 +84,8 @@ public class MenuLogic : MonoBehaviour {
                 }
             }
 
+            if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
+
 			menu.SetActive(false);
 			options.SetActive(false);
             backButon.SetActive(false);

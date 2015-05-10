@@ -441,7 +441,7 @@ public class PlayerStats : MonoBehaviour {
 		//playerMov.enabled = false;
 		//pauseLogic.enabled = false;
         dataLogic.currentTime = dataLogic.iniTime;
-        GameObject gOS = (GameObject)Instantiate(gameOverScreen, new Vector3(0, 0, 0), Quaternion.Euler(new Vector3(90, 0, 0)));
+        GameObject gOS = (GameObject)Instantiate(gameOverScreen, new Vector3(Camera.main.transform.position.x, 55, Camera.main.transform.position.z), Quaternion.Euler(new Vector3(90, 0, 0)));
         gOS.transform.parent = Camera.main.transform;
         //gOS.transform.position = new Vector3(0, 0, 0);
 
