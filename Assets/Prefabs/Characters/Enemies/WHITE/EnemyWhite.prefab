@@ -18,7 +18,7 @@ GameObject:
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400008}
   m_Layer: 0
-  m_Name: Enemy3
+  m_Name: EnemyWhite
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -367,7 +367,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  anim: {fileID: 100004}
+  enemyType: 0
   chasing: 0
+  isStop: 1
+  resume: 0
+  patrolTime: 0
+  patroling: 0
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

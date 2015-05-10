@@ -6,7 +6,8 @@ public class EnemyNavMesh : MonoBehaviour
 {
 
     public GameObject target;
-    //public GameObject legs;
+    public GameObject anim;
+    private GameObject legs;
     private NavMeshAgent agent;
     private EnemyMoveBehaviour enemyMove;
     private RangedEnemy enemyRang;
@@ -30,10 +31,12 @@ public class EnemyNavMesh : MonoBehaviour
 		rotationSpeed = 10;
         agent = GetComponent<NavMeshAgent>();
         enemyMove = GetComponent<EnemyMoveBehaviour>();
-        //animationLegs = legs.GetComponent<Animator>();
+        foreach (Transform t in anim.transform) if (t.name == "Legs") legs = t.gameObject;
+        animationLegs = legs.GetComponent<Animator>();
         enemyRang = GetComponent<RangedEnemy>();
         target = GameObject.FindGameObjectWithTag ("Player");
         setIddle();
+        Debug.Log(enemyType);
         //agent.speed = enemyStats.speed;	
 
     }
@@ -76,7 +79,7 @@ public class EnemyNavMesh : MonoBehaviour
 
 			case EnemyType.PATROL:
 			{
-				if (enemyRang.dist <= enemyRang.detectDistance) enemyType = EnemyType.CHASE;
+				//if (enemyRang.dist <= enemyRang.detectDistance) enemyType = EnemyType.CHASE;
 				setRun ();
 				Patrol (patrolTime);
 			} break;
@@ -106,12 +109,12 @@ public class EnemyNavMesh : MonoBehaviour
 
     public void setRun()
     {
-        // animationLegs.Play("Legs");
+        animationLegs.Play("Legs");
     }
 
     public void setIddle()
     {
-        // animationLegs.Play("EnemyIdle");
+        animationLegs.Play("EnemyIdle");
     }
 
 	public bool OnSight()
@@ -140,6 +143,7 @@ public class EnemyNavMesh : MonoBehaviour
 		}
 		else
 		{
+            //Debug.Log("patrooool");
             patrolCounter -= Time.deltaTime;
 			transform.Translate (Vector3.forward * (agent.speed - 1) * Time.deltaTime);
             if (patrolCounter <= 0) 
