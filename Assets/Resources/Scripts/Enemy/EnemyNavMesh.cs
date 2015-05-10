@@ -79,7 +79,7 @@ public class EnemyNavMesh : MonoBehaviour
 
 			case EnemyType.PATROL:
 			{
-				//if (enemyRang.dist <= enemyRang.detectDistance) enemyType = EnemyType.CHASE;
+				if (enemyRang.dist <= enemyRang.detectDistance) enemyType = EnemyType.CHASE;
 				setRun ();
 				Patrol (patrolTime);
 			} break;
@@ -121,7 +121,7 @@ public class EnemyNavMesh : MonoBehaviour
 	{
 		if (agent.Raycast (target.transform.position, out hit)) 
 		{
-			Debug.Log ("NOT VISIBLE");
+			//Debug.Log ("NOT VISIBLE");
 			return false;
 		}
 		else return true;
@@ -148,7 +148,7 @@ public class EnemyNavMesh : MonoBehaviour
 			transform.Translate (Vector3.forward * (agent.speed - 1) * Time.deltaTime);
             if (patrolCounter <= 0) 
 			{
-				Debug.Log("rotateeeeeeeee");
+				//Debug.Log("rotateeeeeeeee");
 				transform.Rotate (0, 180, 0);
 				patroling = false;
 			}
