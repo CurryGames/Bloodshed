@@ -180,7 +180,7 @@ public class PlayerShooting : MonoBehaviour
                 playerStats.shotgunBullets--;
 				Shoot ();
                 clockGun = true;
-                Shake();
+				ShakeShotgun();
 			}
             if (clockGun)
             {
@@ -261,7 +261,7 @@ public class PlayerShooting : MonoBehaviour
 		grenadeGO.GetComponent<Rigidbody>().velocity = transform.TransformDirection(Vector3.forward * force);
         Collider gr = grenadeGO.GetComponent<Collider>();
         Collider pl = this.GetComponent<Collider>();
-		Physics.IgnoreCollision (gr, pl);
+		if(pl.enabled != true)Physics.IgnoreCollision (gr, pl);
 	}
 
     public void Shake()
@@ -272,4 +272,15 @@ public class PlayerShooting : MonoBehaviour
         camera.startShake = true;
         
     }
+
+	public void ShakeShotgun()
+	{
+		
+		camera.shakingForce = 0.3F;
+		camera.shakeDecay = 0.05F;
+		camera.startShake = true;
+		
+	}
+
+
 }

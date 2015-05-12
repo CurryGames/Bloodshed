@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class EnemyStats : MonoBehaviour
@@ -13,7 +13,7 @@ public class EnemyStats : MonoBehaviour
     float temp = 0.5f;
     float tempIni = 0.5f;
     float tempHit = 0;
-    private int currentHealth;
+    public int currentHealth;
     public float speed;
     public float speedOnChase;
     private PlayerStats playerStats;
@@ -50,7 +50,7 @@ public class EnemyStats : MonoBehaviour
         speedOnChase = agent.speed;
         speed = 4f;
         maxHealth = 300;
-        currentHealth = maxHealth;
+        //currentHealth = maxHealth;
         brutalPoints = 40;
 
     }

@@ -15,6 +15,7 @@ public class Grenade : MonoBehaviour {
 	public GameObject dirtFX;
     private DataLogic dataLogic;
     public AudioClip explosion;
+	private ShakeCamera camera;
     AudioSource audiSor;
 
 	void Start() 
@@ -23,10 +24,13 @@ public class Grenade : MonoBehaviour {
 		explosionTime = 1.5f;
 		Invoke ("Explode", explosionTime);  
 		Invoke ("PropExplosion", explosionTime);
+		Invoke ("Shake", explosionTime);
         dataLogic = GameObject.FindGameObjectWithTag("DataLogic").
             GetComponent<DataLogic>();
+		camera = Camera.main.GetComponent <ShakeCamera>();
         dataLogic.strike = 0;
         audiSor = dataLogic.gameObject.AddComponent<AudioSource>();
+
 	}
 
 	void Update()
@@ -86,6 +90,8 @@ public class Grenade : MonoBehaviour {
                 dataLogic.Play(dataLogic.can, audiSor, dataLogic.volumFx);
             } 
 		}
+
+
 	}
 
 	void PropExplosion()
@@ -106,6 +112,16 @@ public class Grenade : MonoBehaviour {
 		GameObject dirt = (GameObject) Instantiate(dirtFX, new Vector3(transform.position.x, 0, transform.position.z), Quaternion.Euler(new Vector3(transform.rotation.x, Random.Range(0, 360), transform.rotation.z)));
 		dataLogic.Play(explosion, audiSor, dataLogic.volumFx);
 		Destroy (FX, 5);
+	}
+
+	private void Shake()
+	{
+		if(!camera.isShaking)
+		{
+			camera.shakingForce = 0.5F;
+			camera.shakeDecay = 0.05F;
+			camera.startShake = true;
+		}
 	}
 }
 
