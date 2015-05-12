@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -92,6 +92,7 @@ public class PlayerStats : MonoBehaviour {
         go = true;
         damage = 6;
         multiply = 1;
+		score = dataLogic.iniTime;
         dataLogic.currentTime = dataLogic.iniTime;
         currentBrutality = dataLogic.iniBrutality;
 		currentHealth = dataLogic.iniHealth;
