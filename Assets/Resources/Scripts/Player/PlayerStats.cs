@@ -60,6 +60,7 @@ public class PlayerStats : MonoBehaviour {
 	private Animator animation;
     private Animator animationLegs;
     private AchievementManager achievementManager;
+	public GameObject bossCamera;
 
 	// Use this for initialization
 	void Start () 
@@ -108,6 +109,7 @@ public class PlayerStats : MonoBehaviour {
         dataLogic.PlayLoop(dataLogic.chainsaw, audiSorChainsaw, dataLogic.volumFx);
         audiSorBrutal.Pause();
         audiSorChainsaw.Pause();
+	
 	}
 	
 	// Update is called once per frame
@@ -360,6 +362,7 @@ public class PlayerStats : MonoBehaviour {
             AudioSource audiSor = col.gameObject.AddComponent<AudioSource>();
             dataLogic.PlayLoop(dataLogic.bossMusic, audiSor, dataLogic.volumMusic);
             onBoss = false;
+			bossCamera.SetActive(true);
         } 
 	}
 
