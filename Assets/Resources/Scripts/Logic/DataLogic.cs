@@ -20,6 +20,7 @@ public class DataLogic : MonoBehaviour {
     public int unlockRifle { get; set; }
     public int strike { get; set; }
     public bool riffleActive { get; set; }
+    public bool joystickActive { get; set; }
     public AudioClip riffle;
     public AudioClip gun;
     public AudioClip gunClock;
@@ -91,7 +92,8 @@ public class DataLogic : MonoBehaviour {
 	void Start () {
 		// CARGAMOS EL MENU
         if (!on) Application.LoadLevel("Logo");
-        
+        if (Input.GetJoystickNames().Length < 1) joystickActive = false;
+        else joystickActive = true;
         
 	}
 	

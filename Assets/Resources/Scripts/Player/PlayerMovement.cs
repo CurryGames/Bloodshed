@@ -4,6 +4,9 @@ public class PlayerMovement : MonoBehaviour
 {
 	private PlayerStats playerStats;
 	public float speed;            // The speed that the player will move at.
+    private float grenadesTime;
+    private float timer;
+    private bool mouse;
 	float throwForce;
 	private PlayerShooting playerShot;
     private LoadingScreen loadingScreen;
@@ -35,7 +38,14 @@ public class PlayerMovement : MonoBehaviour
 	void Update()
 	{
 		speed = playerStats.speed;
-        
+
+        grenadesTime += Time.deltaTime;
+
+        timer += Time.deltaTime;
+
+        if (Input.GetAxis("Joy X") != 0 || Input.GetAxis("Joy Y") != 0) mouse = false;
+        else if (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)  mouse = true;
+
         if (!playerStats.brutalMode)
         {
             //if (Input.GetKeyDown("escape")) Application.Quit ();
@@ -54,14 +64,15 @@ public class PlayerMovement : MonoBehaviour
 				throwForce += 0.18f;
 				if (throwForce >= 30) throwForce = 30;
 			}
-			if (Input.GetKeyUp(KeyCode.Mouse1) && playerStats.currentGrenades > 0)
+			if ((Input.GetKeyUp(KeyCode.Mouse1)|| Input.GetAxis("FireJoy") > 0) && playerStats.currentGrenades > 0 && grenadesTime >= 2.0f)
 			{
                 playerStats.currentGrenades--;
 				playerShot.ThrowGrenade(throwForce);
 				throwForce = 15;
+                grenadesTime = 0;
 			}
 
-             if (Input.GetAxis("Mouse ScrollWheel") > 0) // forward
+            if (Input.GetAxis("Mouse ScrollWheel") > 0 || (Input.GetButton("RB"))&& timer > 1.0f) // forward
              {
                  if (playerShot.weapon == PlayerShooting.Weapon.GUN)
                  {
@@ -69,14 +80,16 @@ public class PlayerMovement : MonoBehaviour
                      dataLogic.Play(dataLogic.gunClock, audiSor, dataLogic.volumFx);
                      playerShot.weapon = PlayerShooting.Weapon.SHOTGUN;
                  }
-                 if (playerShot.weapon == PlayerShooting.Weapon.SHOTGUN && dataLogic.riffleActive == true)
+                 else if (playerShot.weapon == PlayerShooting.Weapon.SHOTGUN && dataLogic.riffleActive == true)
                  {
                      AudioSource audiSor = gameObject.AddComponent<AudioSource>();
                      dataLogic.Play(dataLogic.gunClock, audiSor, dataLogic.volumFx);
                      playerShot.weapon = PlayerShooting.Weapon.RIFLE;
                  }
+
+                 timer = 0;
              }
-             else if (Input.GetAxis("Mouse ScrollWheel") < 0) // back
+            else if (Input.GetAxis("Mouse ScrollWheel") < 0 || (Input.GetButton("LB")) && timer > 1.0f) // back
              {
                  if (playerShot.weapon == PlayerShooting.Weapon.SHOTGUN)
                  {
@@ -84,12 +97,14 @@ public class PlayerMovement : MonoBehaviour
                      dataLogic.Play(dataLogic.gunClock, audiSor, dataLogic.volumFx);
                      playerShot.weapon = PlayerShooting.Weapon.GUN;
                  }
-                 if (playerShot.weapon == PlayerShooting.Weapon.RIFLE)
+                 else if (playerShot.weapon == PlayerShooting.Weapon.RIFLE)
                  {
                      AudioSource audiSor = gameObject.AddComponent<AudioSource>();
                      dataLogic.Play(dataLogic.gunClock, audiSor, dataLogic.volumFx);
                      playerShot.weapon = PlayerShooting.Weapon.SHOTGUN;
                  }
+
+                 timer = 0;
              }
         }
     }
@@ -104,9 +119,16 @@ public class PlayerMovement : MonoBehaviour
 		{
 			// Move the player around the scene.
 			Move (h, v);
+            if (!mouse)
+            {
+                RotateJoystick();
+            }
+            else
+            {
+                // Turn the player to face the mouse cursor.
+                Turning();
+            }
 			
-			// Turn the player to face the mouse cursor.
-			Turning ();
 		}
 
 		if (onCharge)
@@ -160,6 +182,27 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
+    void RotateJoystick()
+    {
+        float horizontalSpeed = 1.0F;
+        float verticalSpeed = 1.0F;
+   
+        float h = horizontalSpeed * Input.GetAxis("Joy X");
+        float v = verticalSpeed * Input.GetAxis("Joy Y");
+
+        if (h != 0 || v != 0)
+        {
+            Vector3 moveRotation = new Vector3(h, 0, v);
+
+            Quaternion newRotation = Quaternion.LookRotation(moveRotation);
+
+            playerRigidbody.MoveRotation(newRotation); ;
+        }
+    }
+    
+        
+
+    
 	
 	/*void Animating (float h, float v)
 	{
@@ -169,4 +212,5 @@ public class PlayerMovement : MonoBehaviour
 		// Tell the animator whether or not the player is walking.
 		anim.SetBool ("IsWalking", walking);
 	}*/
+
 }

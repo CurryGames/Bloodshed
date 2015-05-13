@@ -10,7 +10,7 @@ public class LoadingScreen : MonoBehaviour {
     public bool loadNextScreen;
     public bool loadMenu;
     private LevelLogic levelLogic;
-    private DataLogic dataLogic;
+    //private DataLogic dataLogic;
     public float tempInit = 1f;
     public Color color;
 
@@ -23,8 +23,8 @@ public class LoadingScreen : MonoBehaviour {
         color = GetComponent<Renderer>().material.color;
         levelLogic = GameObject.FindGameObjectWithTag("LevelLogic").
             GetComponent<LevelLogic>();
-        dataLogic = GameObject.FindGameObjectWithTag("DataLogic").
-            GetComponent<DataLogic>();
+        /*dataLogic = GameObject.FindGameObjectWithTag("DataLogic").
+            GetComponent<DataLogic>();*/
 
         DontDestroyOnLoad(transform.gameObject);
 	}

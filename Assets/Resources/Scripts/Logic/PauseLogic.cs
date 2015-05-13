@@ -9,7 +9,20 @@ public class PauseLogic : MonoBehaviour {
     public GameObject pause;
 	//private PlayerShooting playerShot;
     private LoadingScreen loadingScreen;
+    static PauseLogic instance;
 
+    void Awake()
+    {
+        //destroy the already existing instance, if any
+        if (instance)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+        DontDestroyOnLoad(this);
+    }
 
 	// Use this for initialization
 	void Start () {
@@ -25,7 +38,7 @@ public class PauseLogic : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Start"))
         {
             Pause = !Pause;
         }

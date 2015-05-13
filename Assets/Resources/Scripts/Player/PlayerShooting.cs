@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
 {
@@ -59,7 +60,7 @@ public class PlayerShooting : MonoBehaviour
 	{
 		// Add the time since Update was last called to the timer.
 
-        if ((playerStats.currentBrutality >= 256) && (Input.GetKeyDown(KeyCode.Space)))
+        if ((playerStats.currentBrutality >= 256) && (Input.GetKeyDown(KeyCode.Space) || Input.GetButton("BrutalJoystick")))
         {
             weapon = Weapon.CHAINSAW;
             playerStats.brutalMode = true;
@@ -81,7 +82,7 @@ public class PlayerShooting : MonoBehaviour
                 timer += Time.deltaTime;
                 timeBetweenBullets = 0.45f;
                 // If the Fire1 button is being press and it's time to fire...
-			    if (Input.GetButton("Fire1") && timer >= timeBetweenBullets && (playerStats.currentHealth > 0) && pauseLogic.Pause == false)
+                if ((Input.GetButton("Fire1") || Input.GetAxis("FireJoy") < 0) && timer >= timeBetweenBullets && (playerStats.currentHealth > 0) && pauseLogic.Pause == false)
                 {
                     // ... shoot the gun.
                     AudioSource audiSor = gameObject.AddComponent<AudioSource>();
@@ -108,7 +109,7 @@ public class PlayerShooting : MonoBehaviour
 			timer += Time.deltaTime;
 			timeBetweenBullets = 0.15f;
 					// If the Fire1 button is being press and it's time to fire...
-            if (Input.GetButton("Fire1") && timer >= timeBetweenBullets && playerStats.riffleBullets > 0 && (playerStats.currentHealth > 0) && pauseLogic.Pause == false)
+            if ((Input.GetButton("Fire1") || Input.GetAxis("FireJoy") < 0) && timer >= timeBetweenBullets && playerStats.riffleBullets > 0 && (playerStats.currentHealth > 0) && pauseLogic.Pause == false)
             {
 								// ... shoot the gun.
                 AudioSource audiSor = gameObject.AddComponent<AudioSource>();
@@ -173,7 +174,8 @@ public class PlayerShooting : MonoBehaviour
 			timer += Time.deltaTime;
 			timeBetweenBullets = 0.85f;
 			// If the Fire1 button is being press and it's time to fire...
-			if (Input.GetButton ("Fire1") && timer >= timeBetweenBullets && playerStats.shotgunBullets > 0 && (playerStats.currentHealth > 0) && pauseLogic.Pause == false) {
+            if ((Input.GetButton("Fire1") || Input.GetAxis("FireJoy") < 0) && timer >= timeBetweenBullets && playerStats.shotgunBullets > 0 && (playerStats.currentHealth > 0) && pauseLogic.Pause == false)
+            {
 				// ... shoot the gun.
                 AudioSource audiSor = gameObject.AddComponent<AudioSource>();
                 dataLogic.Play(dataLogic.shootGun, audiSor, dataLogic.volumFx);
@@ -260,8 +262,10 @@ public class PlayerShooting : MonoBehaviour
 		GameObject grenadeGO = (GameObject)Instantiate (grenade, new Vector3(transform.position.x + 0.5f, transform.position.y, transform.position.z + 0.5f), transform.rotation);
 		grenadeGO.GetComponent<Rigidbody>().velocity = transform.TransformDirection(Vector3.forward * force);
         Collider gr = grenadeGO.GetComponent<Collider>();
-        Collider pl = this.GetComponent<Collider>();
-		if(pl.enabled != true)Physics.IgnoreCollision (gr, pl);
+        gr.enabled = false;
+        StartCoroutine(EnableCollider(gr));
+        /*Collider pl = this.GetComponent<Collider>();
+		Physics.IgnoreCollision (gr, pl);*/
 	}
 
     public void Shake()
@@ -282,5 +286,10 @@ public class PlayerShooting : MonoBehaviour
 		
 	}
 
+    IEnumerator EnableCollider(Collider collider)
+    {
+        yield return new WaitForSeconds(0.3f);
+        collider.enabled = true;
+    }
 
 }

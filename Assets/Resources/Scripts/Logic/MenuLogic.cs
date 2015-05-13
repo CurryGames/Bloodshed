@@ -22,6 +22,7 @@ public class MenuLogic : MonoBehaviour {
     private float currentTemp;
     private AchievementManager achManager;
     public GameObject lightning;
+    public Button play;
 	public Button hd;
 	public Button cuatrotecios;
 	public Button fullhd;
@@ -89,9 +90,10 @@ public class MenuLogic : MonoBehaviour {
 			menu.SetActive(false);
 			options.SetActive(false);
             backButon.SetActive(false);
-			if(Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.Return) || Input.GetButtonDown("Start"))
 			{
                 AudioSource audiSor = gameObject.AddComponent<AudioSource>();
+                play.Select();
                 screen = State.MENU;
                 dataLogic.Play(shoot, audiSor, scrollFx.value);
 			}
@@ -102,6 +104,7 @@ public class MenuLogic : MonoBehaviour {
 			options.SetActive(false);
             backButon.SetActive(false);
             achManager.onMenu = false;
+                
 			break;
 		case State.OPTIONS:
 			start.SetActive(false);

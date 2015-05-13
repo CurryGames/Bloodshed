@@ -1223,7 +1223,7 @@ MonoBehaviour:
   m_Script: {fileID: -619905303, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1997166265}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
 --- !u!4 &565511294
@@ -3375,6 +3375,7 @@ MonoBehaviour:
   scrollMusic: {fileID: 1804169292}
   scrollFx: {fileID: 482867023}
   lightning: {fileID: 143170, guid: 7740fecf9272284469b03fe41cd669a1, type: 2}
+  play: {fileID: 0}
   hd: {fileID: 1976663926}
   cuatrotecios: {fileID: 2113727671}
   fullhd: {fileID: 1372775672}
@@ -4256,6 +4257,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f547884c618a2b4e891667f69eebe24, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1997166265 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 148850, guid: 0f547884c618a2b4e891667f69eebe24, type: 2}
+  m_PrefabInternal: {fileID: 1997166264}
 --- !u!1 &2012771778
 GameObject:
   m_ObjectHideFlags: 0

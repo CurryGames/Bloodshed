@@ -28,6 +28,7 @@ GameObject:
   - 224: {fileID: 22476796}
   - 222: {fileID: 22226048}
   - 114: {fileID: 11437932}
+  - 114: {fileID: 11497586}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -91,7 +92,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: when the brutality bar is full, press the SPACE BAR to use the CHAINSAW!!!
+  m_Text: when the brutality bar is full, press the A Button to use the CHAINSAW!!!
 --- !u!114 &11451642
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -164,6 +165,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &11497586
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e0ba91c7d94e584b8cec3ab51001c50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMouse: when the brutality bar is full, press the SPACE BAR to use the CHAINSAW!!!
+  textJoystick: when the brutality bar is full, press the A Button to use the CHAINSAW!!!
 --- !u!222 &22226048
 CanvasRenderer:
   m_ObjectHideFlags: 1
