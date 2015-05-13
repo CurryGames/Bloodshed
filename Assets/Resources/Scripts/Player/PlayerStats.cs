@@ -2,28 +2,29 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-public class PlayerStats : MonoBehaviour {
+public class PlayerStats : MonoBehaviour
+{
 
-	public float maxHealth;
+    public float maxHealth;
     public float currentHealth { get; set; }
-	public float speed;
+    public float speed;
     public float currentBrutality { get; set; }
     public int deathNumber { get; set; }
-	public int damage;
+    public int damage;
     public int currentMunition;
     public int maxMunition;
-	public int currentGrenades;
-	private GodMode godMode;
-	//public GameObject GameOverScreen;
-	public GameObject EndLevelScreen;
+    public int currentGrenades;
+    private GodMode godMode;
+    //public GameObject GameOverScreen;
+    public GameObject EndLevelScreen;
     public GameObject scoreMessage;
     public GameObject unlockMessage;
     public Slider HealthBar;
     public Slider BrutalityBar;
-	private PauseLogic pauseLogic;
+    private PauseLogic pauseLogic;
     public Text bullets;
     public Text grenades;
-    private GameObject keyText;
+    public GameObject keyText;
     private TextMesh points;
     private DataLogic dataLogic;
     private LoadingScreen loadingScreen;
@@ -37,6 +38,7 @@ public class PlayerStats : MonoBehaviour {
     public bool onCombo { get; set; }
     private int counter = 0;
     private float counterScore = 0;
+    private float keyTimmer;
     private int calculateScore;
     public GameObject gameOverScreen;
     private GameObject scrMsm;
@@ -44,12 +46,13 @@ public class PlayerStats : MonoBehaviour {
     private Text scoreText;
     private Text multiplyText;
 
-	private bool alive = true;
+    private bool alive = true;
     public bool onBoss;
     public bool onKey;
     public bool brutalMode;
-	public bool levelCleared;
+    public bool levelCleared;
     private bool go;
+    private bool keyShowMessage = true;
 
     private float keyCounter;
     public AudioSource audiSorMusic;
@@ -57,25 +60,23 @@ public class PlayerStats : MonoBehaviour {
     public AudioSource audiSorChainsaw;
     public MultiplySize multiplyAnim;
 
-	private Animator animation;
+    private Animator animation;
     private Animator animationLegs;
     private AchievementManager achievementManager;
-	public GameObject bossCamera;
+    public GameObject bossCamera;
 
-	// Use this for initialization
-	void Start () 
-	{
-		godMode = GetComponent<GodMode> (); 
-		animation = GetComponentInChildren<Animator> ();
+    // Use this for initialization
+    void Start()
+    {
+        godMode = GetComponent<GodMode>();
+        animation = GetComponentInChildren<Animator>();
         animationLegs = GameObject.FindGameObjectWithTag("Legs").GetComponent<Animator>();
-		pauseLogic = GameObject.FindGameObjectWithTag ("pause").GetComponent<PauseLogic> ();
+        pauseLogic = GameObject.FindGameObjectWithTag("pause").GetComponent<PauseLogic>();
         dataLogic = GameObject.FindGameObjectWithTag("DataLogic").
             GetComponent<DataLogic>();
         loadingScreen = GameObject.FindGameObjectWithTag("LoadingScreen").
             GetComponent<LoadingScreen>();
-        keyText = GameObject.FindGameObjectWithTag("keyText");
-        keyText.SetActive(false);
-        scoreText = GameObject.FindGameObjectWithTag("scoreText").GetComponent <Text>();
+        scoreText = GameObject.FindGameObjectWithTag("scoreText").GetComponent<Text>();
         multiplyText = GameObject.FindGameObjectWithTag("multiplyText").GetComponent<Text>();
         achievementManager = GameObject.FindGameObjectWithTag("DataLogic").
             GetComponent<AchievementManager>();
@@ -83,50 +84,60 @@ public class PlayerStats : MonoBehaviour {
         bullets = GameObject.FindGameObjectWithTag("BulletText").GetComponent<Text>();
         grenades = GameObject.FindGameObjectWithTag("GrenadesText").GetComponent<Text>();
         playerMov = GetComponent<PlayerMovement>();
-		speed = 6f;
-		maxHealth = 256;
+        speed = 6f;
+        maxHealth = 256;
         riffleBullets = dataLogic.iniRiffleAmmo;
         shotgunBullets = dataLogic.iniShotgunAmmo;
-		currentGrenades = dataLogic.iniGrenades;
-		levelCleared = false;
+        currentGrenades = dataLogic.iniGrenades;
+        levelCleared = false;
         brutalMode = false;
         go = true;
         damage = 6;
         multiply = 1;
-		score = dataLogic.iniTime;
+        score = dataLogic.iniTime;
         dataLogic.currentTime = dataLogic.iniTime;
         currentBrutality = dataLogic.iniBrutality;
-		currentHealth = dataLogic.iniHealth;
-		//GameOverScreen.SetActive (false);
-		//EndLevelScreen.SetActive (false);
+        currentHealth = dataLogic.iniHealth;
+        //GameOverScreen.SetActive (false);
+        //EndLevelScreen.SetActive (false);
         audiSorMusic = gameObject.AddComponent<AudioSource>();
         audiSorBrutal = gameObject.AddComponent<AudioSource>();
         audiSorChainsaw = gameObject.AddComponent<AudioSource>();
-        
-        if(onBoss == false) dataLogic.PlayLoop(dataLogic.music, audiSorMusic, dataLogic.volumMusic);
+
+        if (onBoss == false) dataLogic.PlayLoop(dataLogic.music, audiSorMusic, dataLogic.volumMusic);
         else dataLogic.PlayLoop(dataLogic.heart, audiSorMusic, dataLogic.volumMusic);
         dataLogic.PlayLoop(dataLogic.musicBrutal, audiSorBrutal, dataLogic.volumMusic);
         dataLogic.PlayLoop(dataLogic.chainsaw, audiSorChainsaw, dataLogic.volumFx);
         audiSorBrutal.Pause();
         audiSorChainsaw.Pause();
-	
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-        if (scoreText != null)scoreText.text = score.ToString();
 
-        if (HealthBar != null)HealthBar.value = currentHealth / maxHealth;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (scoreText != null) scoreText.text = score.ToString();
+
+        if (HealthBar != null) HealthBar.value = currentHealth / maxHealth;
         if (BrutalityBar != null) BrutalityBar.value = currentBrutality / 256;
 
         if (go == true) dataLogic.currentTime = score;
 
-		if (currentHealth >= maxHealth) currentHealth = maxHealth;
+        if (currentHealth >= maxHealth) currentHealth = maxHealth;
         if (currentBrutality >= 256) currentBrutality = 256;
-		//if (Input.GetKeyDown (KeyCode.E)) Application.Quit ();
+        //if (Input.GetKeyDown (KeyCode.E)) Application.Quit ();
 
-        if (onCombo == true) 
+        if (keyShowMessage)
+        {
+            keyTimmer += Time.deltaTime;
+            if (keyTimmer >= 7.0f)
+            {
+                keyShowMessage = false;
+                keyTimmer = 0;
+            }
+        }
+
+        if (onCombo == true)
         {
             if (multiplyText != null) multiplyText.text = "X" + multiply.ToString();
             multiplyTemp += Time.deltaTime;
@@ -145,12 +156,12 @@ public class PlayerStats : MonoBehaviour {
         else if (multiplyText != null) multiplyText.text = "";
 
 
-        if (currentHealth <= 0 && alive) 
-		{
-			currentHealth = 0;
+        if (currentHealth <= 0 && alive)
+        {
+            currentHealth = 0;
             GameOver();
-			
-		}
+
+        }
 
         if (riffleBullets <= 0)
         {
@@ -167,14 +178,14 @@ public class PlayerStats : MonoBehaviour {
             currentGrenades = 3;
         }
 
-        if(currentGrenades <= 0)
+        if (currentGrenades <= 0)
         {
             currentGrenades = 0;
-            
+
         }
 
-		if (!alive)
-		{
+        if (!alive)
+        {
             keyCounter += Time.deltaTime;
             if (Input.anyKeyDown && keyCounter >= 2f)
             {
@@ -182,9 +193,9 @@ public class PlayerStats : MonoBehaviour {
                 dataLogic.iniTime = 0;
                 pauseLogic.enabled = true;
             }
-            
 
-		}
+
+        }
 
         if (levelCleared == true)
         {
@@ -192,15 +203,15 @@ public class PlayerStats : MonoBehaviour {
             keyCounter += Time.deltaTime;
             if (scoreMessage != null)
             {
-                counterScore ++;
-                if (counterScore <= 2.5f*60)
+                counterScore++;
+                if (counterScore <= 2.5f * 60)
                 {
-                    calculateScore = (int)Easing.Linear(counterScore, 0, score, 2.5f*60);
-                    
+                    calculateScore = (int)Easing.Linear(counterScore, 0, score, 2.5f * 60);
+
                 }
                 points.text = calculateScore.ToString() + "/" + dataLogic.unlockRifle.ToString();
 
-                if (Input.anyKeyDown && counterScore >= 2.5f* 60)
+                if (Input.anyKeyDown && counterScore >= 2.5f * 60)
                 {
                     loadingScreen.loadNextScreen = true;
                     dataLogic.iniTime = 0;
@@ -208,12 +219,12 @@ public class PlayerStats : MonoBehaviour {
                 }
                 //else calculateScore = score;
 
-                if (calculateScore >= dataLogic.unlockRifle && counter < 1) 
+                if (calculateScore >= dataLogic.unlockRifle && counter < 1)
                 {
-                    Instantiate(unlockMessage, Camera.main.transform.position, Quaternion.Euler(new Vector3(90,0,0)));
+                    Instantiate(unlockMessage, Camera.main.transform.position, Quaternion.Euler(new Vector3(90, 0, 0)));
                     counter++;
                 }
-                
+
             }
             else
             {
@@ -225,40 +236,45 @@ public class PlayerStats : MonoBehaviour {
                 }
             }
         }
-        
+
 
         grenades.text = currentGrenades.ToString();
-	}
+    }
 
-	void OnTriggerEnter (Collider col)
-	{
-		//Debug.Log("COLISION: "+col.name);
+    void OnTriggerEnter(Collider col)
+    {
+        //Debug.Log("COLISION: "+col.name);
 
-		if(col.gameObject.tag == "enemyBullet")
-		{	
-			Destroy(col.gameObject);
-			if (godMode.godmode == false)
-			{
-				GetDamage(damage);
-			}
-			else GetDamage (0);
-		}
+        if (col.gameObject.tag == "enemyBullet")
+        {
+            Destroy(col.gameObject);
+            if (godMode.godmode == false)
+            {
+                GetDamage(damage);
+            }
+            else GetDamage(0);
+        }
 
-		if(col.gameObject.tag == "enemyBulletSHOTGUN")
-		{	
-			Destroy(col.gameObject);
-			if (godMode.godmode == false)
-			{
-				GetDamage(damage);
-			}
-			else GetDamage (0);
-		}
+        if (col.gameObject.tag == "enemyBulletSHOTGUN")
+        {
+            Destroy(col.gameObject);
+            if (godMode.godmode == false)
+            {
+                GetDamage(damage);
+            }
+            else GetDamage(0);
+        }
 
         if ((col.gameObject.tag == "Medicine") && (currentHealth < maxHealth))
         {
             Destroy(col.gameObject);
             GetHealth(100);
+        }
 
+        if ((col.gameObject.tag == "MedicineLil") && (currentHealth < maxHealth))
+        {
+            Destroy(col.gameObject);
+            GetHealth(50);
         }
 
         if ((col.gameObject.tag == "riffleAmmo") && dataLogic.riffleActive == true)
@@ -274,7 +290,7 @@ public class PlayerStats : MonoBehaviour {
             GetAmmoShotgun(10);
         }
 
-        if(col.gameObject.tag == "grenadesBox")
+        if (col.gameObject.tag == "grenadesBox")
         {
             currentGrenades++;
             AudioSource audiSor = gameObject.AddComponent<AudioSource>();
@@ -313,7 +329,7 @@ public class PlayerStats : MonoBehaviour {
             dataLogic.iniBrutality = currentBrutality;
             dataLogic.iniRiffleAmmo = riffleBullets;
             dataLogic.iniShotgunAmmo = shotgunBullets;
-			dataLogic.iniGrenades = currentGrenades;
+            dataLogic.iniGrenades = currentGrenades;
         }
 
         if ((col.tag == "ScreenEndingKey") && brutalMode == false && onKey)
@@ -329,16 +345,19 @@ public class PlayerStats : MonoBehaviour {
 
         if ((col.tag == "keyDoor") && onKey)
         {
-            keyText.SetActive(false);
+
             AudioSource audiSor = gameObject.AddComponent<AudioSource>();
             dataLogic.Play(dataLogic.door, audiSor, dataLogic.volumFx);
             Destroy(col.gameObject);
             onKey = false;
         }
 
-        if ((col.tag == "keyDoor") && onKey == false)
+        if ((col.tag == "keyDoor") && onKey == false && !keyShowMessage)
         {
-            keyText.SetActive(true);
+            GameObject keymessage = (GameObject)Instantiate(keyText, transform.position, transform.rotation);
+            keyShowMessage = true;
+
+            Destroy(keymessage, 9);
         }
 
         if (col.tag == "Key")
@@ -362,22 +381,15 @@ public class PlayerStats : MonoBehaviour {
             AudioSource audiSor = col.gameObject.AddComponent<AudioSource>();
             dataLogic.PlayLoop(dataLogic.bossMusic, audiSor, dataLogic.volumMusic);
             onBoss = false;
-			bossCamera.SetActive(true);
-        } 
-	}
-
-    void OnTriggerExit(Collider col)
-    {
-        if ((col.tag == "keyDoor") && onKey == false)
-        {
-            keyText.SetActive(false);
+            bossCamera.SetActive(true);
         }
     }
 
-	public void GetDamage(int dmg)
-	{
-		currentHealth -= dmg;	
-	}
+
+    public void GetDamage(int dmg)
+    {
+        currentHealth -= dmg;
+    }
 
     void GetHealth(int hlth)
     {
@@ -400,24 +412,27 @@ public class PlayerStats : MonoBehaviour {
         riffleBullets += bulletNum;
     }
 
-	// ANIMATIONS
-	
-	public void setRiffle(){
-	// REPRODUCIR LA ANIMACION DE Riffle
-		animation.Play ("Riffle");
-	}
-	
-	// ANIMACION DE CORRER HACIA LA DERECHA
-	public void setShootgun(){
-		// REPRODUCIMOS LA ANIMACION DE Shotgun
-		animation.Play ("Shootgun");
-		
-	}
-	
-	public void setChainsaw(){
-		// REPRODUCIMOS LA ANIMACION DE Chainsaw
-		animation.Play ("Chainsaw");
-	}
+    // ANIMATIONS
+
+    public void setRiffle()
+    {
+        // REPRODUCIR LA ANIMACION DE Riffle
+        animation.Play("Riffle");
+    }
+
+    // ANIMACION DE CORRER HACIA LA DERECHA
+    public void setShootgun()
+    {
+        // REPRODUCIMOS LA ANIMACION DE Shotgun
+        animation.Play("Shootgun");
+
+    }
+
+    public void setChainsaw()
+    {
+        // REPRODUCIMOS LA ANIMACION DE Chainsaw
+        animation.Play("Chainsaw");
+    }
 
     public void setGun()
     {
@@ -437,22 +452,24 @@ public class PlayerStats : MonoBehaviour {
         animationLegs.Play("Iddle");
     }
 
-	public void GameOver(){
+    public void GameOver()
+    {
 
-		//GameOverScreen.SetActive (true);
+        //GameOverScreen.SetActive (true);
         alive = false;
         playerMov.enabled = false;
-		//playerMov.enabled = false;
-		//pauseLogic.enabled = false;
+        //playerMov.enabled = false;
+        //pauseLogic.enabled = false;
         dataLogic.currentTime = dataLogic.iniTime;
         GameObject gOS = (GameObject)Instantiate(gameOverScreen, new Vector3(Camera.main.transform.position.x, 55, Camera.main.transform.position.z), Quaternion.Euler(new Vector3(90, 0, 0)));
         gOS.transform.parent = Camera.main.transform;
         //gOS.transform.position = new Vector3(0, 0, 0);
 
-	}
-	public void LevelEnd(){
-		
-		//EndLevelScreen.SetActive (true);
+    }
+    public void LevelEnd()
+    {
+
+        //EndLevelScreen.SetActive (true);
         playerMov.enabled = false;
         GameObject gOS = (GameObject)Instantiate(EndLevelScreen, Camera.main.transform.position, Quaternion.Euler(new Vector3(90, 0, 0)));
         levelCleared = true;
@@ -473,7 +490,7 @@ public class PlayerStats : MonoBehaviour {
         dataLogic.iniRiffleAmmo = riffleBullets;
         dataLogic.iniShotgunAmmo = shotgunBullets;
         dataLogic.iniGrenades = currentGrenades;
-	}
+    }
 
     public void enemyKill(int puntuation)
     {
@@ -488,3 +505,4 @@ public class PlayerStats : MonoBehaviour {
         deathNumber++;
     }
 }
+

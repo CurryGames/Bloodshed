@@ -629,6 +629,7 @@ MonoBehaviour:
   BrutalityBar: {fileID: 0}
   bullets: {fileID: 0}
   grenades: {fileID: 0}
+  keyText: {fileID: 196274, guid: 71d8e88e6a1418d46984c3812944eafe, type: 2}
   gameOverScreen: {fileID: 157476, guid: 360fb515c26143348aad411b783583ef, type: 2}
   onBoss: 0
   onKey: 0
@@ -638,6 +639,7 @@ MonoBehaviour:
   audiSorBrutal: {fileID: 0}
   audiSorChainsaw: {fileID: 0}
   multiplyAnim: {fileID: 0}
+  bossCamera: {fileID: 0}
 --- !u!114 &11474776
 MonoBehaviour:
   m_ObjectHideFlags: 1
