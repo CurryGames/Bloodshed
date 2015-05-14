@@ -74,7 +74,6 @@ public class PlayerStats : MonoBehaviour {
         loadingScreen = GameObject.FindGameObjectWithTag("LoadingScreen").
             GetComponent<LoadingScreen>();
         keyText = GameObject.FindGameObjectWithTag("keyText");
-        keyText.SetActive(false);
         scoreText = GameObject.FindGameObjectWithTag("scoreText").GetComponent <Text>();
         multiplyText = GameObject.FindGameObjectWithTag("multiplyText").GetComponent<Text>();
         achievementManager = GameObject.FindGameObjectWithTag("DataLogic").
@@ -256,6 +255,13 @@ public class PlayerStats : MonoBehaviour {
 		}
 
         if ((col.gameObject.tag == "Medicine") && (currentHealth < maxHealth))
+        {
+            Destroy(col.gameObject);
+            GetHealth(100);
+
+        }
+
+        if ((col.gameObject.tag == "MedicineLil") && (currentHealth < maxHealth))
         {
             Destroy(col.gameObject);
             GetHealth(100);

@@ -11,7 +11,7 @@ public class DontDestroy : MonoBehaviour {
         //destroy the already existing instance, if any
         if (instance)
         {
-            Destroy(gameObject);                                      
+            Destroy(instance);                                      
             return;
         }
 
