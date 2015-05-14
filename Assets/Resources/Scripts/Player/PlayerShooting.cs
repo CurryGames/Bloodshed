@@ -14,7 +14,7 @@ public class PlayerShooting : MonoBehaviour
     public GameObject chainsaw;
     public GameObject fire;
     public GameObject fireShotgun;
-    public GameObject gunUI, shotgunUI, riffleUI;
+    private GameObject gunUI, shotgunUI, riffleUI;
 	public Rigidbody grenade;
     private ShakeCamera camera;
     public PlayerStats playerStats;
