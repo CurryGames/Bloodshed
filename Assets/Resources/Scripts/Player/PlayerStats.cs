@@ -14,7 +14,6 @@ public class PlayerStats : MonoBehaviour {
     public int maxMunition;
 	public int currentGrenades;
 	private GodMode godMode;
-	//public GameObject GameOverScreen;
 	public GameObject EndLevelScreen;
     public GameObject scoreMessage;
     public GameObject unlockMessage;
@@ -28,6 +27,7 @@ public class PlayerStats : MonoBehaviour {
     private DataLogic dataLogic;
     private LoadingScreen loadingScreen;
     private PlayerMovement playerMov;
+    private PlayerShooting playerShoot;
     //public ShakeUI shakeUI;
     public int riffleBullets { get; set; }
     public int shotgunBullets { get; set; }
@@ -83,6 +83,7 @@ public class PlayerStats : MonoBehaviour {
         bullets = GameObject.FindGameObjectWithTag("BulletText").GetComponent<Text>();
         grenades = GameObject.FindGameObjectWithTag("GrenadesText").GetComponent<Text>();
         playerMov = GetComponent<PlayerMovement>();
+        playerShoot = GetComponent<PlayerShooting>();
 		speed = 6f;
 		maxHealth = 256;
         riffleBullets = dataLogic.iniRiffleAmmo;
@@ -362,7 +363,8 @@ public class PlayerStats : MonoBehaviour {
             AudioSource audiSor = col.gameObject.AddComponent<AudioSource>();
             dataLogic.PlayLoop(dataLogic.bossMusic, audiSor, dataLogic.volumMusic);
             onBoss = false;
-			bossCamera.SetActive(true);
+            Invoke("ActivateBossCam", 0.75f);
+            DeactivatePlayer();
         } 
 	}
 
@@ -486,5 +488,17 @@ public class PlayerStats : MonoBehaviour {
             multiplyAnim.ResetAnim();
         }
         deathNumber++;
+    }
+
+    public void DeactivatePlayer()
+    {
+        playerMov.enabled = false;
+        playerShoot.enabled = false;
+        setIddle();
+    }
+
+    public void ActivateBossCam()
+    {
+        bossCamera.SetActive(true);
     }
 }
