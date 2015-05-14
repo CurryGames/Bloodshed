@@ -572,9 +572,6 @@ MonoBehaviour:
   chainsaw: {fileID: 0}
   fire: {fileID: 103950, guid: 97f630f0553bd554fb80fb114454ea00, type: 2}
   fireShotgun: {fileID: 103950, guid: d81464da9ae62e74185d89a185e95087, type: 2}
-  gunUI: {fileID: 0}
-  shotgunUI: {fileID: 0}
-  riffleUI: {fileID: 0}
   grenade: {fileID: 188416, guid: dfc7858c3ae271246bb55ce1e78c2597, type: 2}
   playerStats: {fileID: 11400006}
   playerMov: {fileID: 11400002}

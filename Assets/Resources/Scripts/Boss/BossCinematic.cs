@@ -15,6 +15,7 @@ public class BossCinematic : MonoBehaviour {
 	public GameObject wife;
 	public GameObject bloodSplash;
 	public GameObject machinegun;
+    public Animator bossAnim;
 	private bool shot = false;
 	// Use this for initialization
 	void Start () {
@@ -36,10 +37,12 @@ public class BossCinematic : MonoBehaviour {
                 case CineBehaviour.IDLE:
                 {
 					// Set iddle
+                    SetIddle();
                     counter += Time.deltaTime;
                     if (counter >= 3)
                     {
 						// Set Shooting
+                        SetShoot();
                         behav = CineBehaviour.SHOOT;
                         counter = 0;
                     }
@@ -63,6 +66,7 @@ public class BossCinematic : MonoBehaviour {
 					else if (counter >= 3)
 					{
 						// Set iddle
+                        SetIddle();
 						behav = CineBehaviour.GETGUN;
 						counter = 0;
 					}
@@ -78,10 +82,12 @@ public class BossCinematic : MonoBehaviour {
 					if (counter >= 1 && counter < 1.5f)
 					{
 						//set shooting (grab weapon)
+                        SetShoot();
 					}
                     if (counter >= 1.5f)
                     {
 						// Set machinegun
+                        SetMachinegun();
 						DestroyMachinegun();
 						transform.rotation = Quaternion.Euler( new Vector3(0, 180, 0));
 						transform.position = Vector3.MoveTowards(transform.position, new Vector3 (0, 0, 7), 3f * Time.deltaTime);
@@ -123,4 +129,19 @@ public class BossCinematic : MonoBehaviour {
 	{
 		Destroy (machinegun, 0);
 	}
+
+    private void SetIddle()
+    {
+        bossAnim.Play("BossIdle");
+    }
+
+    private void SetShoot()
+    {
+        bossAnim.Play("BossShooting");
+    }
+
+    private void SetMachinegun()
+    {
+        bossAnim.Play("BossMachinegun");
+    }
 }

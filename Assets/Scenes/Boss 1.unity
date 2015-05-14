@@ -7067,6 +7067,7 @@ MonoBehaviour:
   wife: {fileID: 698131479}
   bloodSplash: {fileID: 162032, guid: 325f12a27a9d78f4387e418b982e9a6f, type: 2}
   machinegun: {fileID: 383812186}
+  bossAnim: {fileID: 1866668769}
 --- !u!1001 &1727690454
 Prefab:
   m_ObjectHideFlags: 0
@@ -7508,9 +7509,34 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 444756, guid: 30f621dca86cb8e4e869e196e4b42809, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.20000005
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 30f621dca86cb8e4e869e196e4b42809, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1866668768 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 144754, guid: 30f621dca86cb8e4e869e196e4b42809, type: 2}
+  m_PrefabInternal: {fileID: 1866668767}
+--- !u!95 &1866668769
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1866668768}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6036ce2709a6c0b45b568c5fdb3d43c5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!4 &1869295470 stripped
 Transform:
   m_PrefabParentObject: {fileID: 402086, guid: 7af09ca799c26b446a154763ea2cbaff, type: 2}

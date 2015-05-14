@@ -22,7 +22,7 @@ public class PlayerStats : MonoBehaviour {
 	private PauseLogic pauseLogic;
     public Text bullets;
     public Text grenades;
-    private GameObject keyText;
+    public GameObject keyText;
     private TextMesh points;
     private DataLogic dataLogic;
     private LoadingScreen loadingScreen;
@@ -37,6 +37,7 @@ public class PlayerStats : MonoBehaviour {
     public bool onCombo { get; set; }
     private int counter = 0;
     private float counterScore = 0;
+    private float keyTimmer;
     private int calculateScore;
     public GameObject gameOverScreen;
     private GameObject scrMsm;
@@ -49,6 +50,7 @@ public class PlayerStats : MonoBehaviour {
     public bool onKey;
     public bool brutalMode;
 	public bool levelCleared;
+    private bool keyShowMessage;
     private bool go;
 
     private float keyCounter;
@@ -73,7 +75,6 @@ public class PlayerStats : MonoBehaviour {
             GetComponent<DataLogic>();
         loadingScreen = GameObject.FindGameObjectWithTag("LoadingScreen").
             GetComponent<LoadingScreen>();
-        keyText = GameObject.FindGameObjectWithTag("keyText");
         scoreText = GameObject.FindGameObjectWithTag("scoreText").GetComponent <Text>();
         multiplyText = GameObject.FindGameObjectWithTag("multiplyText").GetComponent<Text>();
         achievementManager = GameObject.FindGameObjectWithTag("DataLogic").
@@ -121,6 +122,16 @@ public class PlayerStats : MonoBehaviour {
         if (BrutalityBar != null) BrutalityBar.value = currentBrutality / 256;
 
         if (go == true) dataLogic.currentTime = score;
+
+        if (keyShowMessage)
+        {
+            keyTimmer += Time.deltaTime;
+            if (keyTimmer >= 7.0f)
+            {
+                keyShowMessage = false;
+                keyTimmer = 0;
+            }
+        }
 
 		if (currentHealth >= maxHealth) currentHealth = maxHealth;
         if (currentBrutality >= 256) currentBrutality = 256;
@@ -336,16 +347,19 @@ public class PlayerStats : MonoBehaviour {
 
         if ((col.tag == "keyDoor") && onKey)
         {
-            keyText.SetActive(false);
+
             AudioSource audiSor = gameObject.AddComponent<AudioSource>();
             dataLogic.Play(dataLogic.door, audiSor, dataLogic.volumFx);
             Destroy(col.gameObject);
             onKey = false;
         }
 
-        if ((col.tag == "keyDoor") && onKey == false)
+        if ((col.tag == "keyDoor") && onKey == false && !keyShowMessage)
         {
-            keyText.SetActive(true);
+            GameObject keymessage = (GameObject)Instantiate(keyText, transform.position, transform.rotation);
+            keyShowMessage = true;
+
+            Destroy(keymessage, 9);
         }
 
         if (col.tag == "Key")
@@ -375,13 +389,6 @@ public class PlayerStats : MonoBehaviour {
         } 
 	}
 
-    void OnTriggerExit(Collider col)
-    {
-        if ((col.tag == "keyDoor") && onKey == false)
-        {
-            keyText.SetActive(false);
-        }
-    }
 
 	public void GetDamage(int dmg)
 	{

@@ -15,12 +15,14 @@ public class TutorialText : MonoBehaviour {
     {
         dataLogic = GameObject.FindGameObjectWithTag("DataLogic").GetComponent<DataLogic>();
         textTutorial = GetComponent<Text>();
+        if ((Input.GetJoystickNames().Length == 0)) textTutorial.text = textMouse;
+        else textTutorial.text = textJoystick;
 	}
 	
 	// Update is called once per frame
 	void Update () 
     {
-        if (dataLogic.joystickActive) textTutorial.text = textJoystick;
-        else if (!dataLogic.joystickActive) textTutorial.text = textMouse;
+       
+        
 	}
 }

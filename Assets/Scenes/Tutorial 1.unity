@@ -18219,7 +18219,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11437932, guid: 73a9c9cf8ad001b4296d464e861d6d13, type: 2}
       propertyPath: m_Text
-      value: Move your player with Left Joystick and press RT to shoot
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 73a9c9cf8ad001b4296d464e861d6d13, type: 2}
