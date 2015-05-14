@@ -170,6 +170,9 @@ public class BossMove : MonoBehaviour {
 				
 
 				break;
+			case BossStats.Stage.CRAWL:
+				transform.position = Vector3.MoveTowards(transform.position, destination, 2 * Time.deltaTime);
+				break;
 			case BossStats.Stage.DEAD:
 				break;
 			}

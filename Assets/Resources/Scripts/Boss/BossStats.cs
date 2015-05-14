@@ -12,12 +12,13 @@ public class BossStats : MonoBehaviour {
     public GameObject death;
     private PlayerStats playerStats;
 	public bool speed;
+	private float crawlTimer = 0;
 	bool down = true;
 	bool hit = false;
 	private DataLogic dataLogic;
 	public Color color;
 	
-	public enum Stage { ONE, TWO, THREE, DEAD}
+	public enum Stage { ONE, TWO, THREE, CRAWL, DEAD}
 	public Stage stage;
 
 	// Use this for initialization
@@ -53,9 +54,13 @@ public class BossStats : MonoBehaviour {
 		 break;
 		 
 		case Stage.THREE:
-			if(currentHealth <= 0) stage = Stage.DEAD;
+			if(currentHealth <= 0) stage = Stage.CRAWL;
 		 break;
 
+		case Stage.CRAWL:
+			crawlTimer += Time.deltaTime;
+			if (crawlTimer >= 3.5f) stage = Stage.DEAD;
+			break;
 		case Stage.DEAD:
          playerStats.LevelEnd();
          GameObject dead = (GameObject)Instantiate(death.gameObject, transform.position, Quaternion.identity);
