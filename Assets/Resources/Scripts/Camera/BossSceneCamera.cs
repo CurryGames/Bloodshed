@@ -12,6 +12,7 @@ public class BossSceneCamera : MonoBehaviour {
 	private Camera cinematicCamera;
 	private GameObject mainCam;
 	public GameObject interfaz;
+	public BossMove bossMove;
     private float currentTime = 0;
     private PlayerMovement playerMov;
     private PlayerShooting playerShoot;
@@ -30,6 +31,8 @@ public class BossSceneCamera : MonoBehaviour {
 		targetPositionIn = new Vector3 (0, transform.position.y, 8);
         targetPositionOut = playerPos.position + new Vector3(0, 63.8f, 0);
         cinematic = CinematicState.INTRO;
+		bossMove = GameObject.FindGameObjectWithTag("Enemy").GetComponent<BossMove>();
+		bossMove.StartCinematic();
 	}
 	
 	// Update is called once per frame
@@ -43,7 +46,7 @@ public class BossSceneCamera : MonoBehaviour {
                 if (currentTime >= 1.5) SmoothCinematicIn();
                 else transform.position = playerPos.position + new Vector3(0, 63.8f, 0);
 
-                if (currentTime >= 5)
+                if (currentTime >= 8)
                 {
                     cinematic = CinematicState.OUTRO;
                     currentTime = 0;
@@ -80,5 +83,6 @@ public class BossSceneCamera : MonoBehaviour {
         playerMov.enabled = true;
         playerShoot.enabled = true;
         interfaz.SetActive(true);
+
 	}
 }

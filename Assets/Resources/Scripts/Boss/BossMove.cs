@@ -8,6 +8,7 @@ public class BossMove : MonoBehaviour {
 	private float throwTimer;
 	private float stunTimer;
 	private BossStats bossStats;
+	private BossCinematic bossCine;
 	public GameObject rocket;
 	public GameObject bulletONE;
 	public GameObject grenade;
@@ -32,6 +33,7 @@ public class BossMove : MonoBehaviour {
 		aimingPlayer = true;
 		player = GameObject.FindWithTag ("Player");
 		bossStats = GetComponent<BossStats> ();
+		bossCine = GetComponent<BossCinematic> ();
 		bossStats.stage = BossStats.Stage.ONE;
 		dataLogic = GameObject.FindGameObjectWithTag("DataLogic").GetComponent<DataLogic>();
 		bossRB = GetComponent<Rigidbody> ();
@@ -265,7 +267,12 @@ public class BossMove : MonoBehaviour {
 		Physics.IgnoreCollision (grenadeGO.GetComponent<Collider>(), this.GetComponent<Collider>());
 	}
 
-
+	public void StartCinematic()
+	{
+		bossStats.enabled = false;
+		bossCine.enabled = true;
+		this.GetComponent<BossMove>().enabled = false;
+	}
     /*
     public void setRun()
     {

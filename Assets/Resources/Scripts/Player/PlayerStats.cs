@@ -368,9 +368,10 @@ public class PlayerStats : MonoBehaviour {
             audiSorMusic.Stop();
             AudioSource audiSor = col.gameObject.AddComponent<AudioSource>();
             dataLogic.PlayLoop(dataLogic.bossMusic, audiSor, dataLogic.volumMusic);
-            onBoss = false;
+           
             Invoke("ActivateBossCam", 0.75f);
             DeactivatePlayer();
+			onBoss = false;
         } 
 	}
 
