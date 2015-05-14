@@ -225,6 +225,7 @@ public class PlayerStats : MonoBehaviour {
                     loadingScreen.loadNextScreen = true;
                     dataLogic.iniTime = 0;
                     pauseLogic.enabled = true;
+                    dataLogic.currentWeapon++;
                 }
                 //else calculateScore = score;
 
@@ -234,7 +235,7 @@ public class PlayerStats : MonoBehaviour {
                     counter++;
                 }
 
-                dataLogic.currentWeapon++;
+                
                 
             }
             else
