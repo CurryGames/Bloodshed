@@ -23,8 +23,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 149202}
-  m_LocalRotation: {x: -.653281569, y: .270598084, z: .270598114, w: .65328145}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -.596367836, y: .379928231, z: .379928291, w: .596367717}
+  m_LocalPosition: {x: -.883160353, y: .0100006675, z: 6.89881182}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -46,7 +46,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: .200000003
+      scalar: .300000012
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -79,16 +79,11 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: 10
+      scalar: 18
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-        - time: 1
           value: 1
           inSlope: 0
           outSlope: 0
@@ -99,18 +94,13 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-        - time: 1
-          value: 0
+          value: .555555582
           inSlope: 0
           outSlope: 0
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-      minMaxState: 0
+      minMaxState: 3
     startColor:
       maxGradient:
         key0:
@@ -274,7 +264,7 @@ ParticleSystem:
     boxX: 1
     boxY: 1
     boxZ: 1
-    arc: 75
+    arc: 50
     placementMode: 0
     m_Mesh: {fileID: 0}
     randomDirection: 0
