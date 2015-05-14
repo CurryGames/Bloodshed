@@ -16,12 +16,16 @@ public class BossCinematic : MonoBehaviour {
 	public GameObject bloodSplash;
 	public GameObject machinegun;
     public Animator bossAnim;
+    private PlayerStats playerStats;
+    private DataLogic dataLogic;
 	private bool shot = false;
 	// Use this for initialization
 	void Start () {
         behav = CineBehaviour.IDLE;
         bStats = GetComponent<BossStats>();
         bMove = GetComponent<BossMove>();
+        playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
+        dataLogic = GameObject.FindGameObjectWithTag("DataLogic").GetComponent<DataLogic>();
 
         gunPos = new Vector3( -2.1f, transform.position.y, 12);
         bMove.enabled = false;
@@ -59,8 +63,12 @@ public class BossCinematic : MonoBehaviour {
 						{
 							BossShooting();
 							shot = true;
+                            Invoke("WifeDead", 0.12f);
+
+                            AudioSource audiSor = gameObject.AddComponent<AudioSource>();
+                            dataLogic.Play(dataLogic.shootGun, audiSor, dataLogic.volumFx);
 						}
-						Invoke ("WifeDead", 0.12f);
+						
                        
                     }
 					else if (counter >= 3)
@@ -89,6 +97,7 @@ public class BossCinematic : MonoBehaviour {
 						// Set machinegun
                         SetMachinegun();
 						DestroyMachinegun();
+
 						transform.rotation = Quaternion.Euler( new Vector3(0, 180, 0));
 						transform.position = Vector3.MoveTowards(transform.position, new Vector3 (0, 0, 7), 3f * Time.deltaTime);
 						counter = 0;
@@ -113,9 +122,9 @@ public class BossCinematic : MonoBehaviour {
 
    	public void BossShooting()
 	{
-		Instantiate ( headshotFX, (transform.position + new Vector3(-0.5f , 1.3f, -2.5f)), Quaternion.Euler (new Vector3 (-90, 65, 0)));
+		GameObject bldFx = (GameObject)Instantiate ( headshotFX, (transform.position + new Vector3(-0.5f , 1.3f, -2.5f)), Quaternion.Euler (new Vector3 (-90, 65, 0)));
 
-		Destroy (headshotFX, 1.5f);
+        Destroy(bldFx, 1.5f);
 	}
 
 	public void WifeDead()
@@ -143,5 +152,9 @@ public class BossCinematic : MonoBehaviour {
     private void SetMachinegun()
     {
         bossAnim.Play("BossMachinegun");
+        playerStats.audiSorMusic.Stop();
+        playerStats.audioSorTension.Stop();
+        AudioSource audiSor = playerStats.gameObject.AddComponent<AudioSource>();
+        dataLogic.PlayLoop(dataLogic.bossMusic, audiSor, dataLogic.volumMusic);
     }
 }

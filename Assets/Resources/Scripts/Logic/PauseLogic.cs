@@ -63,7 +63,7 @@ public class PauseLogic : MonoBehaviour {
 			}
         }
 
-        if (Application.loadedLevel == 2) Destroy(this.gameObject);
+        if (Application.loadedLevel == 2 || Application.loadedLevel == 9) Destroy(this.gameObject);
 
 	}
 

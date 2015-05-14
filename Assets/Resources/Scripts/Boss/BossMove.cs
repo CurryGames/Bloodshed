@@ -12,6 +12,7 @@ public class BossMove : MonoBehaviour {
 	public GameObject rocket;
 	public GameObject bulletONE;
 	public GameObject grenade;
+    public Animator bossAnim;
 	public float dist;
 	public float shootRange = 25f; 
 	public float timeBetweenBullets;
@@ -91,6 +92,7 @@ public class BossMove : MonoBehaviour {
 				break;
 			case BossStats.Stage.TWO:
 
+                SetBazooka();
                 if (transform.position != new Vector3(0, transform.position.y, 0)) Relocate();
 				shootTimer += Time.deltaTime;
 				timeBetweenBullets = 2f;
@@ -100,6 +102,7 @@ public class BossMove : MonoBehaviour {
 					AudioSource audiSorc = gameObject.AddComponent<AudioSource>();
 					dataLogic.Play(dataLogic.shootGun, audiSorc, dataLogic.volumFx);
 				}
+                statesTimer = 0.0f;
 
 				/*if (throwingGrenade)
 				{
@@ -140,11 +143,13 @@ public class BossMove : MonoBehaviour {
 			case BossStats.Stage.THREE:
 				if (onCharge)
 				{
+                    SetCharge();
 					aimingPlayer = false;
 					bossRB.AddRelativeForce (Vector3.forward * 500);
 				}
 				else if (stunt)
 				{
+                    SetStoned();
 					//transform.rotation = Quaternion.Euler(0, transform.rotation.y, 0);
 					stunTimer += Time.deltaTime;
 					if (stunTimer >= 2.5) 
@@ -156,7 +161,8 @@ public class BossMove : MonoBehaviour {
 					}
 				}
 				else 
-				{	
+				{
+                    SetIddle();
 					Relocate ();
 					transform.rotation = Quaternion.LookRotation(destination - transform.position);
 					if (statesTimer > 3)
@@ -171,6 +177,7 @@ public class BossMove : MonoBehaviour {
 
 				break;
 			case BossStats.Stage.CRAWL:
+                SetDead();
 				transform.position = Vector3.MoveTowards(transform.position, destination, 1.4f * Time.deltaTime);
 				break;
 			case BossStats.Stage.DEAD:
@@ -276,16 +283,29 @@ public class BossMove : MonoBehaviour {
 		bossCine.enabled = true;
 		this.GetComponent<BossMove>().enabled = false;
 	}
-    /*
-    public void setRun()
+
+    private void SetBazooka()
     {
-        bossAnim.Play("BossRun");
+        bossAnim.Play("BossBazooka");
     }
 
-    public void setIddle()
+    private void SetCharge()
+    {
+        bossAnim.Play("BossCharge");
+    }
+
+    private void SetStoned()
+    {
+        bossAnim.Play("BossStoned");
+    }
+
+    private void SetIddle()
     {
         bossAnim.Play("BossIddle");
-    }*/
+    }
 
-
+    private void SetDead()
+    {
+        bossAnim.Play("Dead");
+    }
 }

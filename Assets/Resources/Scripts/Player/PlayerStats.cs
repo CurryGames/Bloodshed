@@ -57,6 +57,7 @@ public class PlayerStats : MonoBehaviour {
     public AudioSource audiSorMusic;
     public AudioSource audiSorBrutal;
     public AudioSource audiSorChainsaw;
+    public AudioSource audioSorTension;
     public MultiplySize multiplyAnim;
 
 	private Animator animation;
@@ -103,9 +104,14 @@ public class PlayerStats : MonoBehaviour {
         audiSorMusic = gameObject.AddComponent<AudioSource>();
         audiSorBrutal = gameObject.AddComponent<AudioSource>();
         audiSorChainsaw = gameObject.AddComponent<AudioSource>();
-        
-        if(onBoss == false) dataLogic.PlayLoop(dataLogic.music, audiSorMusic, dataLogic.volumMusic);
-        else dataLogic.PlayLoop(dataLogic.heart, audiSorMusic, dataLogic.volumMusic);
+        audioSorTension = gameObject.AddComponent<AudioSource>();
+
+        if (onBoss == false) dataLogic.PlayLoop(dataLogic.music, audiSorMusic, dataLogic.volumMusic);
+        else
+        {
+            dataLogic.PlayLoop(dataLogic.heart, audiSorMusic, dataLogic.volumMusic);
+            dataLogic.PlayLoop(dataLogic.tension, audioSorTension, dataLogic.volumMusic);
+        }
         dataLogic.PlayLoop(dataLogic.musicBrutal, audiSorBrutal, dataLogic.volumMusic);
         dataLogic.PlayLoop(dataLogic.chainsaw, audiSorChainsaw, dataLogic.volumFx);
         audiSorBrutal.Pause();
@@ -209,7 +215,10 @@ public class PlayerStats : MonoBehaviour {
                     calculateScore = (int)Easing.Linear(counterScore, 0, score, 2.5f*60);
                     
                 }
-                points.text = calculateScore.ToString() + "/" + dataLogic.unlockRifle.ToString();
+
+
+                if (dataLogic.currentWeapon == 0)points.text = calculateScore.ToString() + "/" + dataLogic.unlockRifle.ToString();
+                else points.text = calculateScore.ToString() + "/" + dataLogic.unlockFlamethrower.ToString();
 
                 if (Input.anyKeyDown && counterScore >= 2.5f* 60)
                 {
@@ -224,6 +233,8 @@ public class PlayerStats : MonoBehaviour {
                     Instantiate(unlockMessage, Camera.main.transform.position, Quaternion.Euler(new Vector3(90,0,0)));
                     counter++;
                 }
+
+                dataLogic.currentWeapon++;
                 
             }
             else
@@ -379,9 +390,7 @@ public class PlayerStats : MonoBehaviour {
 
         if (col.tag == "BossStage" && onBoss == true)
         {
-            audiSorMusic.Stop();
-            AudioSource audiSor = col.gameObject.AddComponent<AudioSource>();
-            dataLogic.PlayLoop(dataLogic.bossMusic, audiSor, dataLogic.volumMusic);
+            
            
             Invoke("ActivateBossCam", 0.75f);
             DeactivatePlayer();
@@ -479,10 +488,16 @@ public class PlayerStats : MonoBehaviour {
             scrMsm = (GameObject)Instantiate(scoreMessage, new Vector3(Camera.main.transform.position.x, 55, Camera.main.transform.position.z), Quaternion.Euler(new Vector3(90, 0, 0)));
             points = scrMsm.GetComponent<TextMesh>();
         }
-        if (score >= dataLogic.unlockRifle)
+        if (score >= dataLogic.unlockRifle && dataLogic.currentWeapon == 0)
         {
             dataLogic.riffleActive = true;
             achievementManager.SetProgressToAchievement("Riffle", 1.0f);
+        }
+
+        if (score >= dataLogic.unlockFlamethrower && dataLogic.currentWeapon == 1)
+        {
+            dataLogic.riffleActive = true;
+            //achievementManager.SetProgressToAchievement("Riffle", 1.0f);
         }
         dataLogic.iniHealth = currentHealth;
         dataLogic.iniBrutality = currentBrutality;

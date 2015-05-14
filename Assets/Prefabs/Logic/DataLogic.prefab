@@ -24,7 +24,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -237.740005, y: 0, z: 0}
+  m_LocalPosition: {x: -237.699997, y: 0, z: -50.2999992}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -46,7 +46,7 @@ MonoBehaviour:
   shootGun: {fileID: 8300000, guid: 9acbcc58258d45045be0459df2f80f9b, type: 3}
   shootGunClock: {fileID: 8300000, guid: 2d8e32a54e86bb143808ddae1e05a1d0, type: 3}
   music: {fileID: 8300000, guid: d704310fd3b78ae42b1f8217516d284a, type: 3}
-  musicBrutal: {fileID: 8300000, guid: 5d794df163cc2ba469ee1d5dd5d82285, type: 3}
+  musicBrutal: {fileID: 8300000, guid: ccb578dbc67519048bcbe1e545033653, type: 3}
   chainsaw: {fileID: 8300000, guid: 1bb64d76c0c9f3e4a8ba45b8ab8f7d31, type: 3}
   health: {fileID: 8300000, guid: 48885edad9fcd7549a31828f52a67a6d, type: 3}
   ammo: {fileID: 8300000, guid: 2298a838092ee7f4e9c5edf3dfc7982e, type: 3}
@@ -56,8 +56,9 @@ MonoBehaviour:
   fart: {fileID: 8300000, guid: 06248c1605b094c43afbfd7ea389e155, type: 3}
   door: {fileID: 8300000, guid: f64e8e7d444b8574287d1c59345ced4c, type: 3}
   hit: {fileID: 8300000, guid: 5c39dce5c09aabe4fb80518c16b011a8, type: 3}
-  bossMusic: {fileID: 8300000, guid: d704310fd3b78ae42b1f8217516d284a, type: 3}
+  bossMusic: {fileID: 8300000, guid: 528f450cd4988104dad42beff78f2fc1, type: 3}
   heart: {fileID: 8300000, guid: 48d097c212cf6de4aa76a9c90be4dd35, type: 3}
+  tension: {fileID: 8300000, guid: 32c9a8bbc7d24934e9baadb3f562d3ac, type: 3}
   death: {fileID: 8300000, guid: 1839ed54de3185b4b8e2c986aedcfaa9, type: 3}
   thunder: {fileID: 8300000, guid: 47afffcee522e774b995665c69810515, type: 3}
   volumFx: 1

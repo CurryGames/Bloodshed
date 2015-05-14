@@ -18,7 +18,9 @@ public class DataLogic : MonoBehaviour {
     public int currentTime { get; set; }
 	public int iniGrenades { get; set; }
     public int unlockRifle { get; set; }
+    public int unlockFlamethrower { get; set; }
     public int strike { get; set; }
+    public int currentWeapon { get; set; }
     public bool riffleActive { get; set; }
     public bool joystickActive { get; set; }
     public AudioClip riffle;
@@ -39,6 +41,7 @@ public class DataLogic : MonoBehaviour {
     public AudioClip hit;
     public AudioClip bossMusic;
     public AudioClip heart;
+    public AudioClip tension;
     public AudioClip death;
     public AudioClip thunder;
 
@@ -82,6 +85,7 @@ public class DataLogic : MonoBehaviour {
         iniRiffleAmmo = 200;
         iniShotgunAmmo = 20;
         unlockRifle = 1000;
+        unlockFlamethrower = 10000;
         riffleActive = false;
         QualitySettings.antiAliasing = 0;
 		DontDestroyOnLoad(transform.gameObject);
