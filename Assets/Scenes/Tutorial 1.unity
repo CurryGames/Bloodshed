@@ -393,7 +393,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_BackGroundColor: {r: .220588207, g: .220588207, b: .220588207, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -1032,7 +1032,7 @@ Transform:
   m_LocalScale: {x: 15, y: 13.6800079, z: .956839025}
   m_Children: []
   m_Father: {fileID: 722210890}
-  m_RootOrder: 9
+  m_RootOrder: 8
 --- !u!23 &91204724
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1283,7 +1283,7 @@ Transform:
   m_LocalScale: {x: 17, y: 17, z: 2.17856193}
   m_Children: []
   m_Father: {fileID: 722210890}
-  m_RootOrder: 14
+  m_RootOrder: 13
 --- !u!114 &105495434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1670,7 +1670,7 @@ Transform:
   m_LocalScale: {x: 15, y: 13.6800003, z: .956839085}
   m_Children: []
   m_Father: {fileID: 722210890}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!23 &123291699
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2005,6 +2005,8 @@ GameObject:
   - 4: {fileID: 155914533}
   - 33: {fileID: 155914535}
   - 23: {fileID: 155914534}
+  - 114: {fileID: 155914537}
+  - 114: {fileID: 155914536}
   m_Layer: 8
   m_Name: Pasillo 4
   m_TagString: Floor
@@ -2019,7 +2021,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 155914532}
   m_LocalRotation: {x: .5, y: .5, z: -.500000119, w: .49999994}
-  m_LocalPosition: {x: 13.5, y: 2.4000001, z: -5.0999999}
+  m_LocalPosition: {x: 13.5, y: 4.4000001, z: -5.0999999}
   m_LocalScale: {x: 20.7000008, y: 16.1000004, z: 10.6638184}
   m_Children: []
   m_Father: {fileID: 622781374}
@@ -2057,6 +2059,34 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 155914532}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &155914536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 155914532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6653e6ddee1a047bc0f3a13e08a10b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialIndex: 0
+  uvAnimationRate: {x: 1, y: 0}
+  textureName: _MainTex
+--- !u!114 &155914537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 155914532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6653e6ddee1a047bc0f3a13e08a10b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialIndex: 0
+  uvAnimationRate: {x: .100000001, y: 0}
+  textureName: _MainTex
 --- !u!1001 &158901025
 Prefab:
   m_ObjectHideFlags: 0
@@ -3264,7 +3294,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 5dd63465d23050d469e08817d6710383, type: 2}
+  - {fileID: 2100000, guid: 25b7f17f906f7034fa93acaf00f46209, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -3377,7 +3407,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 5588fbea0269a4f469dc8aee106f464a, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5588fbea0269a4f469dc8aee106f464a, type: 2}
@@ -6510,6 +6540,7 @@ GameObject:
   - 4: {fileID: 634696394}
   - 33: {fileID: 634696396}
   - 23: {fileID: 634696395}
+  - 114: {fileID: 634696397}
   m_Layer: 8
   m_Name: Pasillo 6
   m_TagString: Floor
@@ -6524,7 +6555,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 634696393}
   m_LocalRotation: {x: .5, y: .5, z: -.500000119, w: .49999994}
-  m_LocalPosition: {x: 59.0999985, y: 2.4000001, z: 12.1999998}
+  m_LocalPosition: {x: 59.0999985, y: 4.4000001, z: 12.1999998}
   m_LocalScale: {x: 27.2999992, y: 20.7000008, z: 10.6638184}
   m_Children: []
   m_Father: {fileID: 622781374}
@@ -6562,6 +6593,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 634696393}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &634696397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 634696393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6653e6ddee1a047bc0f3a13e08a10b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialIndex: 0
+  uvAnimationRate: {x: .100000001, y: 0}
+  textureName: _MainTex
 --- !u!1001 &635156846
 Prefab:
   m_ObjectHideFlags: 0
@@ -6663,6 +6708,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2387734, guid: 0a65866fb55e9174b900ff8927aba78b, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 168c86164add0b246b962aea6e36b665, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0a65866fb55e9174b900ff8927aba78b, type: 2}
   m_IsPrefabParent: 0
@@ -7090,6 +7139,7 @@ GameObject:
   - 4: {fileID: 673726368}
   - 33: {fileID: 673726370}
   - 23: {fileID: 673726369}
+  - 114: {fileID: 673726371}
   m_Layer: 8
   m_Name: Pasillo 1
   m_TagString: Floor
@@ -7104,7 +7154,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 673726367}
   m_LocalRotation: {x: .5, y: .5, z: -.500000119, w: .49999994}
-  m_LocalPosition: {x: -11.54, y: 2.4000001, z: 12.2700005}
+  m_LocalPosition: {x: -11.54, y: 4.4000001, z: 12.2700005}
   m_LocalScale: {x: 28.75, y: 10.0272598, z: 10.6638184}
   m_Children: []
   m_Father: {fileID: 622781374}
@@ -7142,6 +7192,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 673726367}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &673726371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 673726367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6653e6ddee1a047bc0f3a13e08a10b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialIndex: 0
+  uvAnimationRate: {x: .100000001, y: 0}
+  textureName: _MainTex
 --- !u!4 &685268660 stripped
 Transform:
   m_PrefabParentObject: {fileID: 402086, guid: 7af09ca799c26b446a154763ea2cbaff, type: 2}
@@ -7846,7 +7910,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 722210889}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.29999995, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 121984353}
@@ -7855,7 +7919,6 @@ Transform:
   - {fileID: 1069741938}
   - {fileID: 1552283033}
   - {fileID: 1451768101}
-  - {fileID: 1760457667}
   - {fileID: 123291698}
   - {fileID: 1128377008}
   - {fileID: 91204723}
@@ -7864,6 +7927,7 @@ Transform:
   - {fileID: 986615882}
   - {fileID: 1019388302}
   - {fileID: 105495433}
+  - {fileID: 1853888560}
   m_Father: {fileID: 0}
   m_RootOrder: 34
 --- !u!4 &722365709 stripped
@@ -7910,7 +7974,7 @@ Transform:
   m_LocalScale: {x: 15, y: 12, z: .956839025}
   m_Children: []
   m_Father: {fileID: 722210890}
-  m_RootOrder: 11
+  m_RootOrder: 10
 --- !u!23 &747176014
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10511,11 +10575,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 986615881}
   m_LocalRotation: {x: .5, y: -.5, z: .5, w: .5}
-  m_LocalPosition: {x: 35.7299995, y: 0, z: -7.5999999}
-  m_LocalScale: {x: 10, y: 20, z: 2.17856193}
+  m_LocalPosition: {x: 45.4000015, y: 0, z: -10.5600004}
+  m_LocalScale: {x: 21.6000004, y: 34.1699982, z: 2.17856193}
   m_Children: []
   m_Father: {fileID: 722210890}
-  m_RootOrder: 12
+  m_RootOrder: 11
 --- !u!114 &986615883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10797,7 +10861,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 5dd63465d23050d469e08817d6710383, type: 2}
+  - {fileID: 2100000, guid: 25b7f17f906f7034fa93acaf00f46209, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -10906,7 +10970,7 @@ Transform:
   m_LocalScale: {x: 27.3999996, y: 16.2299995, z: 2.17856193}
   m_Children: []
   m_Father: {fileID: 722210890}
-  m_RootOrder: 13
+  m_RootOrder: 12
 --- !u!114 &1019388303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11438,6 +11502,7 @@ GameObject:
   - 4: {fileID: 1062926539}
   - 33: {fileID: 1062926541}
   - 23: {fileID: 1062926540}
+  - 114: {fileID: 1062926542}
   m_Layer: 8
   m_Name: Pasillo 8
   m_TagString: Floor
@@ -11452,7 +11517,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1062926538}
   m_LocalRotation: {x: .5, y: .5, z: -.500000119, w: .49999994}
-  m_LocalPosition: {x: 53.5, y: 2.4000001, z: -19}
+  m_LocalPosition: {x: 53.5, y: 4.4000001, z: -19}
   m_LocalScale: {x: 9.5, y: 67.0999985, z: 10.6638184}
   m_Children: []
   m_Father: {fileID: 622781374}
@@ -11490,6 +11555,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1062926538}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1062926542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1062926538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6653e6ddee1a047bc0f3a13e08a10b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialIndex: 0
+  uvAnimationRate: {x: .100000001, y: 0}
+  textureName: _MainTex
 --- !u!1001 &1064219564
 Prefab:
   m_ObjectHideFlags: 0
@@ -12157,7 +12236,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1122285866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 5.26944399}
+  m_LocalPosition: {x: 0, y: 2, z: 5.26944399}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1989209490}
@@ -12195,7 +12274,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 90f6a46c7d14bc242ab6b5694e2fca2e, type: 2}
+  - {fileID: 2100000, guid: 25b4517f5122e494fac04f2d0dffc6dc, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -12396,7 +12475,7 @@ Transform:
   m_LocalScale: {x: 15, y: 13.6800041, z: .956839025}
   m_Children: []
   m_Father: {fileID: 722210890}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!23 &1128377009
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13087,7 +13166,7 @@ Transform:
   m_LocalScale: {x: 15, y: 13.6800041, z: .956839025}
   m_Children: []
   m_Father: {fileID: 722210890}
-  m_RootOrder: 10
+  m_RootOrder: 9
 --- !u!23 &1211786288
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13606,7 +13685,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 90f6a46c7d14bc242ab6b5694e2fca2e, type: 2}
+  - {fileID: 2100000, guid: 25b4517f5122e494fac04f2d0dffc6dc, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -13772,6 +13851,7 @@ GameObject:
   - 4: {fileID: 1263190936}
   - 33: {fileID: 1263190938}
   - 23: {fileID: 1263190937}
+  - 114: {fileID: 1263190939}
   m_Layer: 8
   m_Name: Pasillo 9
   m_TagString: Floor
@@ -13786,7 +13866,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1263190935}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
-  m_LocalPosition: {x: 10.25, y: 2.4000001, z: 40.6199989}
+  m_LocalPosition: {x: 10.25, y: 4.4000001, z: 40.6199989}
   m_LocalScale: {x: 59.5, y: 10.0272598, z: 10.6638184}
   m_Children: []
   m_Father: {fileID: 622781374}
@@ -13824,6 +13904,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1263190935}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1263190939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1263190935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6653e6ddee1a047bc0f3a13e08a10b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialIndex: 0
+  uvAnimationRate: {x: .100000001, y: 0}
+  textureName: _MainTex
 --- !u!4 &1269356916 stripped
 Transform:
   m_PrefabParentObject: {fileID: 489720, guid: 66c3a11fe0410ec40990fa76900339f6, type: 2}
@@ -14668,6 +14762,7 @@ GameObject:
   - 4: {fileID: 1343349779}
   - 33: {fileID: 1343349781}
   - 23: {fileID: 1343349780}
+  - 114: {fileID: 1343349782}
   m_Layer: 8
   m_Name: Pasillo 2
   m_TagString: Floor
@@ -14682,7 +14777,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1343349778}
   m_LocalRotation: {x: .5, y: .5, z: -.500000119, w: .49999994}
-  m_LocalPosition: {x: -8.5, y: 2.4000001, z: 34}
+  m_LocalPosition: {x: -8.5, y: 4.4000001, z: 34}
   m_LocalScale: {x: 20.7000008, y: 10.0272598, z: 10.6638184}
   m_Children: []
   m_Father: {fileID: 622781374}
@@ -14720,6 +14815,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1343349778}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1343349782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1343349778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6653e6ddee1a047bc0f3a13e08a10b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialIndex: 0
+  uvAnimationRate: {x: .100000001, y: 0}
+  textureName: _MainTex
 --- !u!1001 &1346797072
 Prefab:
   m_ObjectHideFlags: 0
@@ -14799,7 +14908,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1347110381}
   m_LocalRotation: {x: .5, y: -.5, z: .5, w: .5}
-  m_LocalPosition: {x: 2.63000011, y: 0, z: 18.25}
+  m_LocalPosition: {x: 2.5, y: 0, z: 21.5300007}
   m_LocalScale: {x: 17, y: 17, z: 2.17856193}
   m_Children: []
   m_Father: {fileID: 722210890}
@@ -15536,7 +15645,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1451768100}
   m_LocalRotation: {x: .5, y: -.5, z: .5, w: .5}
-  m_LocalPosition: {x: 35.7700005, y: 1, z: 19.0200005}
+  m_LocalPosition: {x: 39.3100014, y: 2.31999993, z: 10.8800001}
   m_LocalScale: {x: 17, y: 17, z: 2.17856193}
   m_Children: []
   m_Father: {fileID: 722210890}
@@ -15578,7 +15687,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 3c548155140e51f4ba309dcfaadeec81, type: 2}
+  - {fileID: 2100000, guid: 489dee78cbac0ab47808f2f3b7591547, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -15770,6 +15879,7 @@ GameObject:
   - 4: {fileID: 1453678231}
   - 33: {fileID: 1453678233}
   - 23: {fileID: 1453678232}
+  - 114: {fileID: 1453678234}
   m_Layer: 8
   m_Name: Pasillo 3
   m_TagString: Floor
@@ -15784,7 +15894,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1453678230}
   m_LocalRotation: {x: .5, y: .5, z: -.500000119, w: .49999994}
-  m_LocalPosition: {x: 13.5, y: 2.4000001, z: 13.3999996}
+  m_LocalPosition: {x: 13.5, y: 4.4000001, z: 13.3999996}
   m_LocalScale: {x: 20.7000008, y: 16.1000004, z: 10.6638184}
   m_Children: []
   m_Father: {fileID: 622781374}
@@ -15822,6 +15932,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1453678230}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1453678234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1453678230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6653e6ddee1a047bc0f3a13e08a10b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialIndex: 0
+  uvAnimationRate: {x: .100000001, y: 0}
+  textureName: _MainTex
 --- !u!1 &1458039929
 GameObject:
   m_ObjectHideFlags: 0
@@ -15832,6 +15956,7 @@ GameObject:
   - 4: {fileID: 1458039930}
   - 33: {fileID: 1458039932}
   - 23: {fileID: 1458039931}
+  - 114: {fileID: 1458039933}
   m_Layer: 8
   m_Name: Pasillo 5
   m_TagString: Floor
@@ -15846,7 +15971,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1458039929}
   m_LocalRotation: {x: .5, y: .5, z: -.500000119, w: .49999994}
-  m_LocalPosition: {x: 39.2000008, y: 2.4000001, z: 33.9000015}
+  m_LocalPosition: {x: 39.2000008, y: 4.4000001, z: 33.9000015}
   m_LocalScale: {x: 20.6000004, y: 20.7000008, z: 10.6638184}
   m_Children: []
   m_Father: {fileID: 622781374}
@@ -15884,6 +16009,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1458039929}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1458039933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1458039929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6653e6ddee1a047bc0f3a13e08a10b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialIndex: 0
+  uvAnimationRate: {x: .100000001, y: 0}
+  textureName: _MainTex
 --- !u!4 &1459603084 stripped
 Transform:
   m_PrefabParentObject: {fileID: 457096, guid: c418e199d36b1164096e85150c99d659, type: 2}
@@ -17264,7 +17403,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 90f6a46c7d14bc242ab6b5694e2fca2e, type: 2}
+  - {fileID: 2100000, guid: 392194e4ecea71349aa8465171170e53, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -17526,6 +17665,7 @@ GameObject:
   - 4: {fileID: 1631532144}
   - 33: {fileID: 1631532146}
   - 23: {fileID: 1631532145}
+  - 114: {fileID: 1631532147}
   m_Layer: 8
   m_Name: Pasillo 7
   m_TagString: Floor
@@ -17540,7 +17680,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1631532143}
   m_LocalRotation: {x: .5, y: .5, z: -.500000119, w: .49999994}
-  m_LocalPosition: {x: 53.5, y: 2.4000001, z: -1.20000005}
+  m_LocalPosition: {x: 53.5, y: 4.4000001, z: -1.20000005}
   m_LocalScale: {x: 9.5, y: 49.2000008, z: 10.6638184}
   m_Children: []
   m_Father: {fileID: 622781374}
@@ -17578,6 +17718,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1631532143}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1631532147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1631532143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6653e6ddee1a047bc0f3a13e08a10b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialIndex: 0
+  uvAnimationRate: {x: .100000001, y: 0}
+  textureName: _MainTex
 --- !u!114 &1635746283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18774,95 +18928,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7af09ca799c26b446a154763ea2cbaff, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1760457663
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 138376, guid: 151253f2f17b26b41823e269312d1681, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1760457667}
-  - 33: {fileID: 1760457666}
-  - 23: {fileID: 1760457665}
-  - 114: {fileID: 1760457664}
-  m_Layer: 0
-  m_Name: Glow
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1760457664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11438376, guid: 151253f2f17b26b41823e269312d1681,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1760457663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7b7dcf83ebd406458969f750be68e6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  effect: 0
-  random: 0
-  temp: .699999988
-  tempFlu: 1
-  tempInit: 1
-  tempInitFlu: 0
-  tempEffect: 0
-  glowMax: .200000003
-  glowMim: .25
-  fluMax: 0
-  fluMim: 0
-  color: {r: 0, g: 0, b: 0, a: 0}
-  down: 0
-  fluEffect: 0
---- !u!23 &1760457665
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2338376, guid: 151253f2f17b26b41823e269312d1681,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1760457663}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 3c548155140e51f4ba309dcfaadeec81, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &1760457666
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3338376, guid: 151253f2f17b26b41823e269312d1681,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1760457663}
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1760457667
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 438376, guid: 151253f2f17b26b41823e269312d1681, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1760457663}
-  m_LocalRotation: {x: .5, y: -.5, z: .5, w: .5}
-  m_LocalPosition: {x: 40.9900017, y: 0, z: 22}
-  m_LocalScale: {x: 7, y: 22.7000008, z: 2.17856193}
-  m_Children: []
-  m_Father: {fileID: 722210890}
-  m_RootOrder: 6
 --- !u!1001 &1766988718
 Prefab:
   m_ObjectHideFlags: 0
@@ -20121,6 +20186,95 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 66c3a11fe0410ec40990fa76900339f6, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1853888559
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 138376, guid: 151253f2f17b26b41823e269312d1681, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1853888560}
+  - 33: {fileID: 1853888563}
+  - 23: {fileID: 1853888562}
+  - 114: {fileID: 1853888561}
+  m_Layer: 0
+  m_Name: Glow 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1853888560
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 438376, guid: 151253f2f17b26b41823e269312d1681, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1853888559}
+  m_LocalRotation: {x: .5, y: -.5, z: .5, w: .5}
+  m_LocalPosition: {x: 38.5600014, y: 2.31999993, z: 17.1299992}
+  m_LocalScale: {x: 17, y: 17, z: 2.17856193}
+  m_Children: []
+  m_Father: {fileID: 722210890}
+  m_RootOrder: 14
+--- !u!114 &1853888561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11438376, guid: 151253f2f17b26b41823e269312d1681,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1853888559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7b7dcf83ebd406458969f750be68e6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: 0
+  random: 0
+  temp: 1
+  tempFlu: 1
+  tempInit: 1
+  tempInitFlu: 0
+  tempEffect: 0
+  glowMax: .200000003
+  glowMim: .25
+  fluMax: 0
+  fluMim: 0
+  color: {r: 0, g: 0, b: 0, a: 0}
+  down: 0
+  fluEffect: 0
+--- !u!23 &1853888562
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2338376, guid: 151253f2f17b26b41823e269312d1681,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1853888559}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 489dee78cbac0ab47808f2f3b7591547, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &1853888563
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3338376, guid: 151253f2f17b26b41823e269312d1681,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1853888559}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1856662097 stripped
 Transform:
   m_PrefabParentObject: {fileID: 489720, guid: 66c3a11fe0410ec40990fa76900339f6, type: 2}
@@ -20433,6 +20587,7 @@ GameObject:
   - 4: {fileID: 1957917419}
   - 33: {fileID: 1957917418}
   - 23: {fileID: 1957917417}
+  - 114: {fileID: 1957917420}
   m_Layer: 8
   m_Name: Pasillo
   m_TagString: Floor
@@ -20480,11 +20635,25 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1957917416}
   m_LocalRotation: {x: 0, y: .707106829, z: -.707106829, w: 0}
-  m_LocalPosition: {x: -1.64999998, y: 2.4000001, z: -6.23999977}
+  m_LocalPosition: {x: -1.64999998, y: 4.4000001, z: -6.23999977}
   m_LocalScale: {x: 21.3750114, y: 10.0272579, z: 10.6638165}
   m_Children: []
   m_Father: {fileID: 622781374}
   m_RootOrder: 0
+--- !u!114 &1957917420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1957917416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6653e6ddee1a047bc0f3a13e08a10b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialIndex: 0
+  uvAnimationRate: {x: .100000001, y: 0}
+  textureName: _MainTex
 --- !u!1001 &1959949148
 Prefab:
   m_ObjectHideFlags: 0

@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: StainAtlas06
-  m_Shader: {fileID: 30, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: Glow20
+  m_Shader: {fileID: 4800000, guid: 22cff654fe281eb41a37030a078914e7, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
@@ -18,12 +18,12 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 45cc4852e43783c40a5718757608122d, type: 3}
-          m_Scale: {x: .5, y: .5}
-          m_Offset: {x: .5, y: 0}
+          m_Texture: {fileID: 2800000, guid: e49f7caaf9a61dd4693b3c0b25bc7514, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
     m_Floats: {}
     m_Colors:
       data:
         first:
           name: _Color
-        second: {r: 0, g: .875862122, b: 1, a: .250980407}
+        second: {r: .510921299, g: .853112698, b: .992647052, a: .192156866}

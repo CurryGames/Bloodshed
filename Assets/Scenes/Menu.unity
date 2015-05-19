@@ -265,7 +265,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 5588fbea0269a4f469dc8aee106f464a, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5588fbea0269a4f469dc8aee106f464a, type: 2}
@@ -4291,7 +4291,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 2013905339}
   - 33: {fileID: 2013905338}
-  - 64: {fileID: 2013905337}
   - 23: {fileID: 2013905336}
   - 114: {fileID: 2013905335}
   m_Layer: 0
@@ -4313,7 +4312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   materialIndex: 0
-  uvAnimationRate: {x: 1, y: 2}
+  uvAnimationRate: {x: .5, y: 2}
   textureName: _MainTex
 --- !u!23 &2013905336
 MeshRenderer:
@@ -4339,18 +4338,6 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!64 &2013905337
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2013905334}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &2013905338
 MeshFilter:
   m_ObjectHideFlags: 0
