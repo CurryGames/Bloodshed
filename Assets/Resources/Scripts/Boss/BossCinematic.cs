@@ -131,7 +131,7 @@ public class BossCinematic : MonoBehaviour {
 	{
 		Instantiate ( wifeDead, (new Vector3(-1.37f , 0.5f, 7.77f)), Quaternion.Euler (new Vector3 (90, 0, 0)));
 		Destroy (wife, 0);
-		Instantiate ( bloodSplash, (new Vector3(-1.37f , 0.5f, 5.77f)), Quaternion.Euler (new Vector3 (90, 0, 0))) ;
+		Instantiate ( bloodSplash, (new Vector3(-1.37f , 0.2f, 5.77f)), Quaternion.Euler (new Vector3 (90, 0, 0))) ;
 	}
 
 	public void DestroyMachinegun()

@@ -112,7 +112,7 @@ public class BossStats : MonoBehaviour {
 	public void GetDamage(int dmg)
 	{
 		currentHealth -= dmg;
-        GameObject bld = (GameObject)Instantiate(blood.gameObject, transform.position, Quaternion.identity);
+        GameObject bld = (GameObject)Instantiate(blood.gameObject, new Vector3 (transform.position.x, 0.2f, transform.position.z) , Quaternion.identity);
         AudioSource audiSor = dataLogic.gameObject.AddComponent<AudioSource>();
         dataLogic.Play(dataLogic.hit, audiSor, dataLogic.volumFx);
 		if (hit == false) hit = true;
