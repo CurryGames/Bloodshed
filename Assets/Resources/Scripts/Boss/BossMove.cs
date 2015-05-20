@@ -5,7 +5,7 @@ public class BossMove : MonoBehaviour {
 
 	private GameObject player;
 	private float shootTimer;
-	private float throwTimer;
+	private float throwTimer = 0;
 	private float stunTimer;
 	private BossStats bossStats;
 	private BossCinematic bossCine;
@@ -19,6 +19,7 @@ public class BossMove : MonoBehaviour {
 	private DataLogic dataLogic;
 	public float statesTimer;
 	private Rigidbody bossRB;
+	public bool hasWeapon = false;
 
 	Vector3 destination;
 
@@ -90,22 +91,22 @@ public class BossMove : MonoBehaviour {
 
 				}
 				break;
+
 			case BossStats.Stage.TWO:
-
-                SetBazooka();
-                if (transform.position != new Vector3(0, transform.position.y, 0)) Relocate();
-				shootTimer += Time.deltaTime;
-				timeBetweenBullets = 2f;
-				if (shootTimer >= timeBetweenBullets)
+				if (!hasWeapon)
 				{
-					Shooting();
-					AudioSource audiSorc = gameObject.AddComponent<AudioSource>();
-					dataLogic.Play(dataLogic.shootGun, audiSorc, dataLogic.volumFx);
+					throwTimer++;
+					ThrowMachinegun();
+					if (throwTimer >= 1) 
+					{
+						Relocate();
+						if (transform.position.x == -1 && transform.position.z == 12) hasWeapon = true;
+					}
 				}
-                statesTimer = 0.0f;
-
-				/*if (throwingGrenade)
+				else
 				{
+	                SetBazooka();
+	                if (transform.position != new Vector3(0, transform.position.y, 0)) Relocate();
 					shootTimer += Time.deltaTime;
 					timeBetweenBullets = 2f;
 					if (shootTimer >= timeBetweenBullets)
@@ -114,32 +115,11 @@ public class BossMove : MonoBehaviour {
 						AudioSource audiSorc = gameObject.AddComponent<AudioSource>();
 						dataLogic.Play(dataLogic.shootGun, audiSorc, dataLogic.volumFx);
 					}
-
-					if (statesTimer >= 3) 
-					{
-						throwingGrenade = true;
-						statesTimer = 0;
-					}
+					statesTimer = 0.0f;
 				}
-				else 
-				{
-					Relocate ();
-					throwTimer += Time.deltaTime;
-
-					if (throwTimer >= 1.5f)
-					{
-						ThrowGrenade(20);
-						throwTimer = 0;
-					}
-
-					if (statesTimer >= 2.5) 
-					{
-						throwingGrenade = false;
-						statesTimer = 0;
-						throwTimer = 0;
-					}
-				}*/
+                
 				break;
+
 			case BossStats.Stage.THREE:
 				if (onCharge)
 				{
@@ -212,7 +192,7 @@ public class BossMove : MonoBehaviour {
 	
 		switch (bossStats.stage) {
 		case BossStats.Stage.ONE:
-			GameObject bulletGO = (GameObject)Instantiate (bulletONE, transform.position, Quaternion.LookRotation(player.transform.position - transform.position));
+			GameObject bulletGO = (GameObject)Instantiate (bulletONE, transform.position , Quaternion.LookRotation(player.transform.position - transform.position));
 			Destroy (bulletGO, 2);
 			break;
 		case BossStats.Stage.TWO:
@@ -260,7 +240,9 @@ public class BossMove : MonoBehaviour {
 
 			break;
 			case BossStats.Stage.TWO:
-			transform.position = Vector3.MoveTowards(transform.position, new Vector3( 0, transform.position.y, 0), 9 * Time.deltaTime);
+			if (!hasWeapon) Vector3.MoveTowards(transform.position, new Vector3( -1f, transform.position.y, 12), 9 * Time.deltaTime);
+			else if (transform.position.x != 0 && transform.position.z != 0 && hasWeapon) 
+				transform.position = Vector3.MoveTowards(transform.position, new Vector3( 0, transform.position.y, 0), 9 * Time.deltaTime);
 
 		 	break;
 			case BossStats.Stage.THREE:
@@ -282,6 +264,12 @@ public class BossMove : MonoBehaviour {
 		bossStats.enabled = false;
 		bossCine.enabled = true;
 		this.GetComponent<BossMove>().enabled = false;
+	}
+
+	private void ThrowMachinegun()
+	{		 
+		SetGetGun ();
+		//instatiate gun
 	}
 
     private void SetBazooka()
@@ -308,4 +296,9 @@ public class BossMove : MonoBehaviour {
     {
         bossAnim.Play("Dead");
     }
+
+	private void SetGetGun()
+	{
+		bossAnim.Play ("BossGetGun");
+	}
 }

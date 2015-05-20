@@ -15,7 +15,9 @@ public class BossCinematic : MonoBehaviour {
 	public GameObject wife;
 	public GameObject bloodSplash;
 	public GameObject machinegun;
+	public GameObject bazooka;
     public Animator bossAnim;
+	private Collider bossCol;
     private PlayerStats playerStats;
     private DataLogic dataLogic;
 	private bool shot = false;
@@ -24,6 +26,7 @@ public class BossCinematic : MonoBehaviour {
         behav = CineBehaviour.IDLE;
         bStats = GetComponent<BossStats>();
         bMove = GetComponent<BossMove>();
+		bossCol = GetComponent<BoxCollider> ();
         playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
         dataLogic = GameObject.FindGameObjectWithTag("DataLogic").GetComponent<DataLogic>();
 
@@ -90,7 +93,7 @@ public class BossCinematic : MonoBehaviour {
 					if (counter >= 1 && counter < 1.5f)
 					{
 						//set shooting (grab weapon)
-                        SetShoot();
+				SetGetWeapon();
 					}
                     if (counter >= 1.5f)
                     {
@@ -113,6 +116,7 @@ public class BossCinematic : MonoBehaviour {
 					bMove.enabled = true;
 					bStats.enabled = true;
 					bCine.enabled = false;
+					bossCol.enabled = true;
 				}
 			} break;
 
@@ -134,9 +138,14 @@ public class BossCinematic : MonoBehaviour {
 		Instantiate ( bloodSplash, (new Vector3(-1.37f , 0.2f, 5.77f)), Quaternion.Euler (new Vector3 (90, 0, 0))) ;
 	}
 
-	public void DestroyMachinegun()
+	private void DestroyMachinegun()
 	{
 		Destroy (machinegun, 0);
+	}
+
+	private void DestroyBazooka()
+	{
+		Destroy (bazooka, 0);
 	}
 
     private void SetIddle()
@@ -148,6 +157,11 @@ public class BossCinematic : MonoBehaviour {
     {
         bossAnim.Play("BossShooting");
     }
+
+	private void SetGetWeapon()
+	{
+		bossAnim.Play ("BossGetGun");
+	}
 
     private void SetMachinegun()
     {
