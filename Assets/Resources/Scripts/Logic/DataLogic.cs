@@ -43,7 +43,7 @@ public class DataLogic : MonoBehaviour {
     public AudioClip tension;
     public AudioClip death;
     public AudioClip thunder;
-
+    public AudioClip[] enemyScream;
 
     private int sreenShot;
     public float volumFx;

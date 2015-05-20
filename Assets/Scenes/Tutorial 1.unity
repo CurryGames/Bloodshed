@@ -2133,7 +2133,7 @@ MonoBehaviour:
   assignStartValueBeforeDelay: 1
   loopType: 2
   loopCount: 0
-  duration: 2
+  duration: 3
   easingType: 0
   animCurve:
     serializedVersion: 2
@@ -2152,7 +2152,7 @@ MonoBehaviour:
     m_PostInfinity: 2
   playDirection: 0
   startValueType: 0
-  startValue: {r: .147058845, g: .147058845, b: .147058845, a: 1}
+  startValue: {r: .242647052, g: .247999564, b: .247999564, a: 1}
   endValueType: 0
   endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
   target: {fileID: 0}
@@ -3454,6 +3454,14 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11408712, guid: 5588fbea0269a4f469dc8aee106f464a, type: 2}
+      propertyPath: enemyScreamLong.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11408712, guid: 5588fbea0269a4f469dc8aee106f464a, type: 2}
+      propertyPath: enemyScreamShort.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5588fbea0269a4f469dc8aee106f464a, type: 2}
       propertyPath: m_LocalPosition.x
       value: -237.740005
@@ -3490,6 +3498,30 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11408712, guid: 5588fbea0269a4f469dc8aee106f464a, type: 2}
+      propertyPath: enemyScreamShort.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4f1e25e8b796e474492ff0849e39e994, type: 3}
+    - target: {fileID: 11408712, guid: 5588fbea0269a4f469dc8aee106f464a, type: 2}
+      propertyPath: enemyScreamShort.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: f0f05dd694e3adc47881324598cd499f, type: 3}
+    - target: {fileID: 11408712, guid: 5588fbea0269a4f469dc8aee106f464a, type: 2}
+      propertyPath: enemyScreamLong.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8168fb691911e3e4da5bf0665174139f, type: 3}
+    - target: {fileID: 11408712, guid: 5588fbea0269a4f469dc8aee106f464a, type: 2}
+      propertyPath: enemyScreamLong.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9d70ec57f96a5ec48b5df4e513347e3b, type: 3}
+    - target: {fileID: 11408712, guid: 5588fbea0269a4f469dc8aee106f464a, type: 2}
+      propertyPath: enemyScreamLong.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: d098a2532c905474389b27bd55069447, type: 3}
+    - target: {fileID: 11408712, guid: 5588fbea0269a4f469dc8aee106f464a, type: 2}
+      propertyPath: enemyScreamLong.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: d1a466c78901b304ab36ab291cc9014a, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5588fbea0269a4f469dc8aee106f464a, type: 2}
   m_IsPrefabParent: 0
@@ -5048,6 +5080,15 @@ Prefab:
       propertyPath: BrutalityBar
       value: 
       objectReference: {fileID: 1635746283}
+    - target: {fileID: 21274778, guid: 5fe425e4a57d7464189d6febcd548dc6, type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f9deba1ee8d1b414d9b843a4eb759aa2,
+        type: 3}
+    - target: {fileID: 9574778, guid: 5fe425e4a57d7464189d6febcd548dc6, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5fe425e4a57d7464189d6febcd548dc6, type: 2}
   m_IsPrefabParent: 0
@@ -6758,7 +6799,7 @@ MonoBehaviour:
   assignStartValueBeforeDelay: 1
   loopType: 2
   loopCount: 0
-  duration: 2
+  duration: 3
   easingType: 0
   animCurve:
     serializedVersion: 2
@@ -6777,7 +6818,7 @@ MonoBehaviour:
     m_PostInfinity: 2
   playDirection: 0
   startValueType: 0
-  startValue: {r: .147058845, g: .147058845, b: .147058845, a: 1}
+  startValue: {r: .242647052, g: .247999564, b: .247999564, a: 1}
   endValueType: 0
   endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
   target: {fileID: 0}
@@ -7402,7 +7443,7 @@ MonoBehaviour:
   assignStartValueBeforeDelay: 1
   loopType: 2
   loopCount: 0
-  duration: 2
+  duration: 3
   easingType: 0
   animCurve:
     serializedVersion: 2
@@ -7421,7 +7462,7 @@ MonoBehaviour:
     m_PostInfinity: 2
   playDirection: 0
   startValueType: 0
-  startValue: {r: .147058845, g: .147058845, b: .147058845, a: 1}
+  startValue: {r: .242647052, g: .247999564, b: .247999564, a: 1}
   endValueType: 0
   endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
   target: {fileID: 0}
@@ -11426,7 +11467,7 @@ MonoBehaviour:
   assignStartValueBeforeDelay: 1
   loopType: 2
   loopCount: 0
-  duration: 2
+  duration: 3
   easingType: 0
   animCurve:
     serializedVersion: 2
@@ -11445,7 +11486,7 @@ MonoBehaviour:
     m_PostInfinity: 2
   playDirection: 0
   startValueType: 0
-  startValue: {r: .147058845, g: .147058845, b: .147058845, a: 1}
+  startValue: {r: .242647052, g: .247999564, b: .247999564, a: 1}
   endValueType: 0
   endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
   target: {fileID: 0}
@@ -11894,7 +11935,7 @@ MonoBehaviour:
   assignStartValueBeforeDelay: 1
   loopType: 2
   loopCount: 0
-  duration: 2
+  duration: 3
   easingType: 0
   animCurve:
     serializedVersion: 2
@@ -11913,7 +11954,7 @@ MonoBehaviour:
     m_PostInfinity: 2
   playDirection: 0
   startValueType: 0
-  startValue: {r: .147058845, g: .147058845, b: .147058845, a: 1}
+  startValue: {r: .242647052, g: .247999564, b: .247999564, a: 1}
   endValueType: 0
   endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
   target: {fileID: 0}
@@ -12721,6 +12762,7 @@ GameObject:
   - 114: {fileID: 1126421724}
   - 114: {fileID: 1126421728}
   - 114: {fileID: 1126421729}
+  - 114: {fileID: 1126421730}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -12802,7 +12844,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: daf9781cad112c75d0008dfa8d76c639, type: 3}
   textureRamp: {fileID: 0}
-  rampOffset: -16.0900002
+  rampOffset: -.100000001
 --- !u!114 &1126421729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12932,6 +12974,29 @@ MonoBehaviour:
     type: 3}
   colorCorrectionSelectiveShader: {fileID: 4800000, guid: e515e0f94cefc4c0db54b45cba621544,
     type: 3}
+--- !u!114 &1126421730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1126421722}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88a26a276b4e47619ce2c5adad33fab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monochrome: 1
+  grainIntensityMin: .100000001
+  grainIntensityMax: .200000003
+  grainSize: 2
+  scratchIntensityMin: .0500000007
+  scratchIntensityMax: .25
+  scratchFPS: 10
+  scratchJitter: .00999999978
+  grainTexture: {fileID: 2800000, guid: ffa9c02760c2b4e8eb9814ec06c4b05b, type: 3}
+  scratchTexture: {fileID: 2800000, guid: 6205c27cc031f4e66b8ea90d1bfaa158, type: 3}
+  shaderRGB: {fileID: 4800000, guid: 5d7f4c401ae8946bcb0d6ff68a9e7466, type: 3}
+  shaderYUV: {fileID: 4800000, guid: 0e447868506ba49f0a73235b8a8b647a, type: 3}
 --- !u!1 &1128377007
 GameObject:
   m_ObjectHideFlags: 0
@@ -14437,7 +14502,7 @@ MonoBehaviour:
   assignStartValueBeforeDelay: 1
   loopType: 2
   loopCount: 0
-  duration: 2
+  duration: 3
   easingType: 0
   animCurve:
     serializedVersion: 2
@@ -14456,7 +14521,7 @@ MonoBehaviour:
     m_PostInfinity: 2
   playDirection: 0
   startValueType: 0
-  startValue: {r: .147058845, g: .147058845, b: .147058845, a: 1}
+  startValue: {r: .242647052, g: .247999564, b: .247999564, a: 1}
   endValueType: 0
   endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
   target: {fileID: 0}
@@ -15397,7 +15462,7 @@ MonoBehaviour:
   assignStartValueBeforeDelay: 1
   loopType: 2
   loopCount: 0
-  duration: 2
+  duration: 3
   easingType: 0
   animCurve:
     serializedVersion: 2
@@ -15416,7 +15481,7 @@ MonoBehaviour:
     m_PostInfinity: 2
   playDirection: 0
   startValueType: 0
-  startValue: {r: .147058845, g: .147058845, b: .147058845, a: 1}
+  startValue: {r: .242647052, g: .247999564, b: .247999564, a: 1}
   endValueType: 0
   endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
   target: {fileID: 0}
@@ -16575,7 +16640,7 @@ MonoBehaviour:
   assignStartValueBeforeDelay: 1
   loopType: 2
   loopCount: 0
-  duration: 2
+  duration: 3
   easingType: 0
   animCurve:
     serializedVersion: 2
@@ -16594,7 +16659,7 @@ MonoBehaviour:
     m_PostInfinity: 2
   playDirection: 0
   startValueType: 0
-  startValue: {r: .147058845, g: .147058845, b: .147058845, a: 1}
+  startValue: {r: .242647052, g: .247999564, b: .247999564, a: 1}
   endValueType: 0
   endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
   target: {fileID: 0}
@@ -16693,7 +16758,7 @@ MonoBehaviour:
   assignStartValueBeforeDelay: 1
   loopType: 2
   loopCount: 0
-  duration: 2
+  duration: 3
   easingType: 0
   animCurve:
     serializedVersion: 2
@@ -16712,7 +16777,7 @@ MonoBehaviour:
     m_PostInfinity: 2
   playDirection: 0
   startValueType: 0
-  startValue: {r: .147058845, g: .147058845, b: .147058845, a: 1}
+  startValue: {r: .242647052, g: .247999564, b: .247999564, a: 1}
   endValueType: 0
   endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
   target: {fileID: 0}
@@ -18455,7 +18520,7 @@ MonoBehaviour:
   assignStartValueBeforeDelay: 1
   loopType: 2
   loopCount: 0
-  duration: 2
+  duration: 3
   easingType: 0
   animCurve:
     serializedVersion: 2
@@ -18474,7 +18539,7 @@ MonoBehaviour:
     m_PostInfinity: 2
   playDirection: 0
   startValueType: 0
-  startValue: {r: .147058845, g: .147058845, b: .147058845, a: 1}
+  startValue: {r: .242647052, g: .247999564, b: .247999564, a: 1}
   endValueType: 0
   endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
   target: {fileID: 0}
@@ -21458,7 +21523,7 @@ MonoBehaviour:
   assignStartValueBeforeDelay: 1
   loopType: 2
   loopCount: 0
-  duration: 2
+  duration: 3
   easingType: 0
   animCurve:
     serializedVersion: 2
@@ -21477,7 +21542,7 @@ MonoBehaviour:
     m_PostInfinity: 2
   playDirection: 0
   startValueType: 0
-  startValue: {r: .147058845, g: .147058845, b: .147058845, a: 1}
+  startValue: {r: .242647052, g: .247999564, b: .247999564, a: 1}
   endValueType: 0
   endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
   target: {fileID: 0}

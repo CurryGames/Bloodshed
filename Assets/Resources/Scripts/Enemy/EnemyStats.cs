@@ -97,6 +97,8 @@ public class EnemyStats : MonoBehaviour
             //Destroy(bld,2);
             AudioSource audiSor = dataLogic.gameObject.AddComponent<AudioSource>();
             dataLogic.Play(dataLogic.death, audiSor, dataLogic.volumFx);
+            AudioSource audiSor2 = dataLogic.gameObject.AddComponent<AudioSource>();
+            dataLogic.Play(dataLogic.enemyScream[Random.Range(0, dataLogic.enemyScream.Length)], audiSor2, dataLogic.volumFx);
             achievementManager.AddProgressToAchievement("Carnage", 1.0f);
             
 			puntuation =  100 * playerStats.multiply;
