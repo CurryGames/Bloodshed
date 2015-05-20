@@ -55,7 +55,8 @@ public class LoadingScreen : MonoBehaviour {
 
             case State.LOADING:
 
-                levelLogic.loadCurrentLevel();
+                //levelLogic.loadCurrentLevel();
+                Application.LoadLevel(Application.loadedLevel);
 
                 break;
             case State.FADEIN:

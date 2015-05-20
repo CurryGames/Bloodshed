@@ -14,8 +14,7 @@ public class DataLogic : MonoBehaviour {
     public float iniBrutality { get; set; }
     public int iniRiffleAmmo { get; set; }
     public int iniShotgunAmmo { get; set; }
-    public int iniTime { get; set; }
-    public int currentTime { get; set; }
+    public int iniScore { get; set; }
 	public int iniGrenades { get; set; }
     public int unlockRifle { get; set; }
     public int unlockFlamethrower { get; set; }
@@ -82,6 +81,7 @@ public class DataLogic : MonoBehaviour {
         sreenShot = 0;
         iniHealth = 256;
         iniBrutality = 0;
+        currentWeapon = 0;
         iniRiffleAmmo = 200;
         iniShotgunAmmo = 20;
         unlockRifle = 1000;
@@ -107,6 +107,15 @@ public class DataLogic : MonoBehaviour {
         {
             Application.CaptureScreenshot("ScreenShoot" + sreenShot.ToString("000") + ".png");
             sreenShot++;
+        }
+
+        if(Application.loadedLevel == 4)
+        {
+            currentWeapon = 0;
+        }
+        else if(Application.loadedLevel == 5)
+        {
+            currentWeapon = 1;
         }
 	}
 

@@ -84,19 +84,19 @@ public class BossStats : MonoBehaviour {
 			Destroy(col.gameObject);
             
 			//dataLogic.Play(death, audiSor, dataLogic.volumFx);
-			GetDamage(100);			
+			GetDamage(60);			
 		}
 		
 		if ((col.gameObject.tag == "BulletSHOTGUN"))
 		{
 			Destroy(col.gameObject);
-			GetDamage(140);	
+			GetDamage(100);	
 		} 
 		
 		if ((col.gameObject.tag == "BulletRIFLE"))
 		{
 			Destroy(col.gameObject);
-			GetDamage(140);			
+			GetDamage(60);			
 		}		
 	}
 
@@ -104,7 +104,7 @@ public class BossStats : MonoBehaviour {
 	{
 		if (col.gameObject.tag == "Chainsaw")
 		{
-			GetDamage(40);
+			GetDamage(20);
 		}
 	}
 	

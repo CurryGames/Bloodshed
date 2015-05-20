@@ -622,6 +622,10 @@ MonoBehaviour:
   EndLevelScreen: {fileID: 190598, guid: 97b2aca838635d74a86c31cdd95e9a29, type: 2}
   scoreMessage: {fileID: 161894, guid: 08d6c4f6175964d4cb7dcfe6620df2de, type: 2}
   unlockMessage: {fileID: 112508, guid: ea8d3f807f974b64e87741cd93f838d2, type: 2}
+  brutalMessage:
+  - {fileID: 142446, guid: 652908ba41727cf44ba3689b830ccddc, type: 2}
+  - {fileID: 142446, guid: 77fe645e7cb73b744844c3378dd3b391, type: 2}
+  - {fileID: 142446, guid: b69a9ae99718f224ebd66cda6527d903, type: 2}
   HealthBar: {fileID: 0}
   BrutalityBar: {fileID: 0}
   bullets: {fileID: 0}
@@ -635,6 +639,7 @@ MonoBehaviour:
   audiSorMusic: {fileID: 0}
   audiSorBrutal: {fileID: 0}
   audiSorChainsaw: {fileID: 0}
+  audioSorTension: {fileID: 0}
   multiplyAnim: {fileID: 0}
   bossCamera: {fileID: 0}
 --- !u!114 &11474776

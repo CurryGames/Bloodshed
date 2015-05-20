@@ -11,16 +11,18 @@ public class DontDestroy : MonoBehaviour {
         //destroy the already existing instance, if any
         if (instance)
         {
-            Destroy(instance);                                      
+            Destroy(instance.gameObject);
+            
             return;
         }
 
         instance = this;
-        DontDestroyOnLoad(this);                                
+        DontDestroyOnLoad(this);                  
     }
 	
 	// Update is called once per frame
-	void Update () {
-	
+	void Update ()
+    {
+
 	}
 }

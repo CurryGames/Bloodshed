@@ -105,6 +105,20 @@ public class EnemyStats : MonoBehaviour
 			TextMesh punText = pText.GetComponent <TextMesh>();
 			punText.text = puntuation.ToString();
 			Destroy(pText, 1.5f);
+
+            if(playerStats.multiply == 5)
+            {
+                playerStats.BrutalMessageInstantiate(playerStats.brutalMessage[0]);
+            }
+            else if (playerStats.multiply == 8)
+            {
+                playerStats.BrutalMessageInstantiate(playerStats.brutalMessage[1]);
+            }
+            else if (playerStats.multiply == 13)
+            {
+                playerStats.BrutalMessageInstantiate(playerStats.brutalMessage[2]);
+            }
+
             Destroy(gameObject);
         }
 		if (hit) 

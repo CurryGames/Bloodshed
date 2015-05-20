@@ -17,6 +17,7 @@ public class PlayerStats : MonoBehaviour {
 	public GameObject EndLevelScreen;
     public GameObject scoreMessage;
     public GameObject unlockMessage;
+    public GameObject[] brutalMessage;
     public Slider HealthBar;
     public Slider BrutalityBar;
 	private PauseLogic pauseLogic;
@@ -95,8 +96,7 @@ public class PlayerStats : MonoBehaviour {
         go = true;
         damage = 6;
         multiply = 1;
-		score = dataLogic.iniTime;
-        dataLogic.currentTime = dataLogic.iniTime;
+		score = dataLogic.iniScore;
         currentBrutality = dataLogic.iniBrutality;
 		currentHealth = dataLogic.iniHealth;
 		//GameOverScreen.SetActive (false);
@@ -126,8 +126,6 @@ public class PlayerStats : MonoBehaviour {
 
         if (HealthBar != null)HealthBar.value = currentHealth / maxHealth;
         if (BrutalityBar != null) BrutalityBar.value = currentBrutality / 256;
-
-        if (go == true) dataLogic.currentTime = score;
 
         if (keyShowMessage)
         {
@@ -196,7 +194,6 @@ public class PlayerStats : MonoBehaviour {
             if (Input.anyKeyDown && keyCounter >= 2f)
             {
                 loadingScreen.loadCurrentScreen = true;
-                dataLogic.iniTime = 0;
                 pauseLogic.enabled = true;
             }
             
@@ -223,9 +220,9 @@ public class PlayerStats : MonoBehaviour {
                 if (Input.anyKeyDown && counterScore >= 2.5f* 60)
                 {
                     loadingScreen.loadNextScreen = true;
-                    dataLogic.iniTime = 0;
+                    dataLogic.iniScore = 0;
                     pauseLogic.enabled = true;
-                    dataLogic.currentWeapon++;
+                    //dataLogic.currentWeapon++;
                 }
                 //else calculateScore = score;
 
@@ -243,7 +240,7 @@ public class PlayerStats : MonoBehaviour {
                 if (Input.anyKeyDown && keyCounter >= 2f)
                 {
                     loadingScreen.loadNextScreen = true;
-                    dataLogic.iniTime = 0;
+                    dataLogic.iniScore = 0;
                     pauseLogic.enabled = true;
                 }
             }
@@ -338,7 +335,7 @@ public class PlayerStats : MonoBehaviour {
         if ((col.tag == "ScreenEnding") && brutalMode == false)
         {
             loadingScreen.loadNextScreen = true;
-            dataLogic.iniTime = dataLogic.currentTime;
+            dataLogic.iniScore = score;
             dataLogic.iniHealth = currentHealth;
             dataLogic.iniBrutality = currentBrutality;
             dataLogic.iniRiffleAmmo = riffleBullets;
@@ -349,7 +346,7 @@ public class PlayerStats : MonoBehaviour {
         if ((col.tag == "ScreenEndingKey") && brutalMode == false && onKey)
         {
             loadingScreen.loadNextScreen = true;
-            dataLogic.iniTime = dataLogic.currentTime;
+            dataLogic.iniScore = score;
             dataLogic.iniHealth = currentHealth;
             dataLogic.iniBrutality = currentBrutality;
             dataLogic.iniRiffleAmmo = riffleBullets;
@@ -470,7 +467,6 @@ public class PlayerStats : MonoBehaviour {
         playerMov.enabled = false;
 		//playerMov.enabled = false;
 		//pauseLogic.enabled = false;
-        dataLogic.currentTime = dataLogic.iniTime;
         GameObject gOS = (GameObject)Instantiate(gameOverScreen, new Vector3(Camera.main.transform.position.x, 55, Camera.main.transform.position.z), Quaternion.Euler(new Vector3(90, 0, 0)));
         gOS.transform.parent = Camera.main.transform;
         //gOS.transform.position = new Vector3(0, 0, 0);
@@ -530,5 +526,13 @@ public class PlayerStats : MonoBehaviour {
     public void ActivateBossCam()
     {
         bossCamera.SetActive(true);
+    }
+
+    public void BrutalMessageInstantiate(GameObject msm)
+    {
+        GameObject brMsm = (GameObject)Instantiate(msm, new Vector3(Camera.main.transform.position.x, 0, Camera.main.transform.position.z), Quaternion.identity);
+        brMsm.transform.parent = Camera.main.transform;
+
+        Destroy(brMsm, 7.0f);
     }
 }
