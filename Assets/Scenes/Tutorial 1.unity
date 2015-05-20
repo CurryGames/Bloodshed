@@ -3454,14 +3454,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 11408712, guid: 5588fbea0269a4f469dc8aee106f464a, type: 2}
-      propertyPath: enemyScreamLong.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 11408712, guid: 5588fbea0269a4f469dc8aee106f464a, type: 2}
-      propertyPath: enemyScreamShort.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5588fbea0269a4f469dc8aee106f464a, type: 2}
       propertyPath: m_LocalPosition.x
       value: -237.740005
@@ -3492,36 +3484,8 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5588fbea0269a4f469dc8aee106f464a, type: 2}
       propertyPath: m_RootOrder
-      value: 47
+      value: 41
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 5588fbea0269a4f469dc8aee106f464a, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11408712, guid: 5588fbea0269a4f469dc8aee106f464a, type: 2}
-      propertyPath: enemyScreamShort.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 4f1e25e8b796e474492ff0849e39e994, type: 3}
-    - target: {fileID: 11408712, guid: 5588fbea0269a4f469dc8aee106f464a, type: 2}
-      propertyPath: enemyScreamShort.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: f0f05dd694e3adc47881324598cd499f, type: 3}
-    - target: {fileID: 11408712, guid: 5588fbea0269a4f469dc8aee106f464a, type: 2}
-      propertyPath: enemyScreamLong.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 8168fb691911e3e4da5bf0665174139f, type: 3}
-    - target: {fileID: 11408712, guid: 5588fbea0269a4f469dc8aee106f464a, type: 2}
-      propertyPath: enemyScreamLong.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 9d70ec57f96a5ec48b5df4e513347e3b, type: 3}
-    - target: {fileID: 11408712, guid: 5588fbea0269a4f469dc8aee106f464a, type: 2}
-      propertyPath: enemyScreamLong.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: d098a2532c905474389b27bd55069447, type: 3}
-    - target: {fileID: 11408712, guid: 5588fbea0269a4f469dc8aee106f464a, type: 2}
-      propertyPath: enemyScreamLong.Array.data[3]
-      value: 
-      objectReference: {fileID: 8300000, guid: d1a466c78901b304ab36ab291cc9014a, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5588fbea0269a4f469dc8aee106f464a, type: 2}
   m_IsPrefabParent: 0
@@ -12763,6 +12727,7 @@ GameObject:
   - 114: {fileID: 1126421728}
   - 114: {fileID: 1126421729}
   - 114: {fileID: 1126421730}
+  - 95: {fileID: 1126421731}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -12851,7 +12816,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1126421722}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1fd999d1b2cf94a45a5b0a47ce074bef, type: 3}
   m_Name: 
@@ -12962,9 +12927,9 @@ MonoBehaviour:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-  saturation: 1.5
+  saturation: 1.02076805
   selectiveCc: 1
-  selectiveFromColor: {r: 1, g: 0, b: 0, a: 1}
+  selectiveFromColor: {r: .279411793, g: .279411793, b: .279411793, a: 1}
   selectiveToColor: {r: .319574058, g: 0, b: .338235319, a: 1}
   mode: 0
   updateTextures: 1
@@ -12997,6 +12962,23 @@ MonoBehaviour:
   scratchTexture: {fileID: 2800000, guid: 6205c27cc031f4e66b8ea90d1bfaa158, type: 3}
   shaderRGB: {fileID: 4800000, guid: 5d7f4c401ae8946bcb0d6ff68a9e7466, type: 3}
   shaderYUV: {fileID: 4800000, guid: 0e447868506ba49f0a73235b8a8b647a, type: 3}
+--- !u!95 &1126421731
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1126421722}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 36f65094f4924184b9fadc58de2a844e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1128377007
 GameObject:
   m_ObjectHideFlags: 0

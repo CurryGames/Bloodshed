@@ -41,8 +41,13 @@ public class SecretRoom : MonoBehaviour {
     {
         if ((col.gameObject.tag == "Player") && visible == false)
         {
-            visible = true;
-            boxCol.enabled = false;
-        }     
+            ShowRoom();
+        }
+    }
+
+    public void ShowRoom()
+    {
+        visible = true;
+        boxCol.enabled = false;
     }
 }

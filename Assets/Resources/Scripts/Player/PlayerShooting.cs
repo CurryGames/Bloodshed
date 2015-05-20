@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityStandardAssets.ImageEffects;
 
 public class PlayerShooting : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class PlayerShooting : MonoBehaviour
     private GameObject gunUI, shotgunUI, riffleUI;
 	public Rigidbody grenade;
     private ShakeCamera camera;
+    private ColorCorrectionCurves colorCorrection;
     public PlayerStats playerStats;
 	public PlayerMovement playerMov;
     private PauseLogic pauseLogic;
@@ -54,6 +56,8 @@ public class PlayerShooting : MonoBehaviour
         gunUI = GameObject.FindGameObjectWithTag("gunUI");
         shotgunUI = GameObject.FindGameObjectWithTag("shotgunUI");
         riffleUI = GameObject.FindGameObjectWithTag("riffleUI");
+        colorCorrection = Camera.main.GetComponent<ColorCorrectionCurves>();
+        colorCorrection.enabled = false;
         clockGun = false;
 	}
 	void Update ()
@@ -64,6 +68,7 @@ public class PlayerShooting : MonoBehaviour
         {
             weapon = Weapon.CHAINSAW;
             playerStats.brutalMode = true;
+            colorCorrection.enabled = true;
             if (playerStats.onBoss == false)
             {
                 playerStats.audiSorMusic.Pause();
@@ -156,6 +161,7 @@ public class PlayerShooting : MonoBehaviour
 				playerStats.speed = 6;
 				playerStats.brutalMode = false;
 				playerMov.onCharge = false;
+                colorCorrection.enabled = false;
                 if (playerStats.onBoss == false)
                 {
                     playerStats.audiSorMusic.Play();

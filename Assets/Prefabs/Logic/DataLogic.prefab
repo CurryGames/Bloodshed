@@ -24,7 +24,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -237.699997, y: 0, z: -50.2999992}
+  m_LocalPosition: {x: -237.740005, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -61,8 +61,17 @@ MonoBehaviour:
   tension: {fileID: 8300000, guid: 32c9a8bbc7d24934e9baadb3f562d3ac, type: 3}
   death: {fileID: 8300000, guid: 1839ed54de3185b4b8e2c986aedcfaa9, type: 3}
   thunder: {fileID: 8300000, guid: 47afffcee522e774b995665c69810515, type: 3}
-  volumFx: 1
-  volumMusic: 1
+  enemyScream:
+  - {fileID: 8300000, guid: 8168fb691911e3e4da5bf0665174139f, type: 3}
+  - {fileID: 8300000, guid: d1a466c78901b304ab36ab291cc9014a, type: 3}
+  - {fileID: 8300000, guid: 9d70ec57f96a5ec48b5df4e513347e3b, type: 3}
+  - {fileID: 8300000, guid: 4f1e25e8b796e474492ff0849e39e994, type: 3}
+  - {fileID: 8300000, guid: d098a2532c905474389b27bd55069447, type: 3}
+  - {fileID: 8300000, guid: f0f05dd694e3adc47881324598cd499f, type: 3}
+  breakWall: {fileID: 8300000, guid: 1b4154dd40069ae41b6687596dd54194, type: 3}
+  tada: {fileID: 8300000, guid: 3cde8e901bd8ed1488e89b966e53e857, type: 3}
+  volumFx: .5
+  volumMusic: .5
   on: 1
 --- !u!114 &11430078
 MonoBehaviour:

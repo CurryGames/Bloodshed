@@ -44,6 +44,8 @@ public class DataLogic : MonoBehaviour {
     public AudioClip death;
     public AudioClip thunder;
     public AudioClip[] enemyScream;
+    public AudioClip breakWall;
+    public AudioClip tada;
 
     private int sreenShot;
     public float volumFx;

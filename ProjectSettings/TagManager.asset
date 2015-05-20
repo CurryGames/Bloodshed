@@ -50,6 +50,8 @@ TagManager:
   - riffleUI
   - BulletText
   - GrenadesText
+  - MedicineLil
+  - SecretRoom
   layers:
   - Default
   - TransparentFX

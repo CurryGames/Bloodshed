@@ -84,6 +84,14 @@ public class BarrelExplosion : MonoBehaviour {
                 {
                     AudioSource audiSor = col.gameObject.AddComponent<AudioSource>();
                     dataLogic.Play(dataLogic.can, audiSor, dataLogic.volumFx);
+                }
+
+                if (col.tag == "SecretRoom")
+                {
+                    SecretRoom destProp = col.GetComponent<SecretRoom>();
+                    destProp.ShowRoom();
+                    AudioSource audiSor = col.gameObject.AddComponent<AudioSource>();
+                    dataLogic.Play(dataLogic.tada, audiSor, dataLogic.volumFx);
                 } 
 			}
 

@@ -2,13 +2,15 @@
 using System.Collections;
 
 public class DestructibleProp : MonoBehaviour {
+
+    public enum PropType { WALL, WATERTAP, RUBISH}
 	
 	public GameObject piece1;
     public GameObject puntuationText;
-    public bool rubish;
     private DataLogic dataLogic;
     private int puntuation;
     private PlayerStats playerStats;
+    public PropType propType;
 
     void Start()
     {
@@ -22,11 +24,20 @@ public class DestructibleProp : MonoBehaviour {
         GameObject piece1GO = (GameObject)Instantiate(piece1, transform.position, transform.rotation);
         AudioSource audiSor = piece1GO.AddComponent<AudioSource>();
 
-        if (rubish != true)
+        switch (propType)
         {
+
+            case PropType.WALL:
+                dataLogic.Play(dataLogic.breakWall, audiSor, dataLogic.volumFx);
+            break;
+            case PropType.WATERTAP:
             dataLogic.Play(dataLogic.glass, audiSor, dataLogic.volumFx);
+            break;
+            case PropType.RUBISH:
+            dataLogic.Play(dataLogic.fart, audiSor, dataLogic.volumFx);
+            break;
+
         }
-        else dataLogic.Play(dataLogic.fart, audiSor, dataLogic.volumFx);
 
         puntuation = 15 * playerStats.multiply;
         playerStats.score += puntuation;

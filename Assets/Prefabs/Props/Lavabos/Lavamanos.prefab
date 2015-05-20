@@ -265,7 +265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece1: {fileID: 174582, guid: 21d2e01e90709234f9fed288b2475bc8, type: 2}
   puntuationText: {fileID: 174928, guid: 8def04c296307264393437efc1be525b, type: 2}
-  rubish: 0
+  propType: 1
 --- !u!114 &11450642
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -279,7 +279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece1: {fileID: 174582, guid: 21d2e01e90709234f9fed288b2475bc8, type: 2}
   puntuationText: {fileID: 174928, guid: 8def04c296307264393437efc1be525b, type: 2}
-  rubish: 0
+  propType: 1
 --- !u!114 &11450644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -293,7 +293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece1: {fileID: 174582, guid: 21d2e01e90709234f9fed288b2475bc8, type: 2}
   puntuationText: {fileID: 174928, guid: 8def04c296307264393437efc1be525b, type: 2}
-  rubish: 0
+  propType: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

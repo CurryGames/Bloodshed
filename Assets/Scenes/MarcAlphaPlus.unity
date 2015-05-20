@@ -1716,8 +1716,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   piece1: {fileID: 174582, guid: 21d2e01e90709234f9fed288b2475bc8, type: 2}
-  puntuationText: {fileID: 0}
-  rubish: 0
+  puntuationText: {fileID: 174928, guid: 8def04c296307264393437efc1be525b, type: 2}
+  propType: 1
 --- !u!65 &150778057
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3505,8 +3505,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   piece1: {fileID: 174582, guid: 21d2e01e90709234f9fed288b2475bc8, type: 2}
-  puntuationText: {fileID: 0}
-  rubish: 0
+  puntuationText: {fileID: 174928, guid: 8def04c296307264393437efc1be525b, type: 2}
+  propType: 1
 --- !u!33 &285534045
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6607,7 +6607,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece1: {fileID: 138188, guid: 3fec7aafea91edb4b97567a863816cc0, type: 2}
   puntuationText: {fileID: 174928, guid: 86c891762cc72e240933fb645c25b47a, type: 2}
-  rubish: 0
+  propType: 0
 --- !u!65 &609083633
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11434,8 +11434,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   piece1: {fileID: 174582, guid: 21d2e01e90709234f9fed288b2475bc8, type: 2}
-  puntuationText: {fileID: 0}
-  rubish: 0
+  puntuationText: {fileID: 174928, guid: 8def04c296307264393437efc1be525b, type: 2}
+  propType: 1
 --- !u!33 &1035421245
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -18077,8 +18077,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   piece1: {fileID: 174582, guid: 21d2e01e90709234f9fed288b2475bc8, type: 2}
-  puntuationText: {fileID: 0}
-  rubish: 0
+  puntuationText: {fileID: 174928, guid: 8def04c296307264393437efc1be525b, type: 2}
+  propType: 1
 --- !u!65 &1603758772
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18165,8 +18165,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   piece1: {fileID: 174582, guid: 21d2e01e90709234f9fed288b2475bc8, type: 2}
-  puntuationText: {fileID: 0}
-  rubish: 0
+  puntuationText: {fileID: 174928, guid: 8def04c296307264393437efc1be525b, type: 2}
+  propType: 1
 --- !u!65 &1605235667
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18563,7 +18563,7 @@ Transform:
   - {fileID: 170073162}
   - {fileID: 1292029477}
   m_Father: {fileID: 0}
-  m_RootOrder: 48
+  m_RootOrder: 49
 --- !u!1 &1619816359
 GameObject:
   m_ObjectHideFlags: 0
@@ -24040,8 +24040,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   piece1: {fileID: 174582, guid: 21d2e01e90709234f9fed288b2475bc8, type: 2}
-  puntuationText: {fileID: 0}
-  rubish: 0
+  puntuationText: {fileID: 174928, guid: 8def04c296307264393437efc1be525b, type: 2}
+  propType: 1
 --- !u!33 &2105640639
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -24208,6 +24208,8 @@ GameObject:
   - 114: {fileID: 2144967694}
   - 114: {fileID: 2144967693}
   - 114: {fileID: 2144967696}
+  - 114: {fileID: 2144967700}
+  - 95: {fileID: 2144967701}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -24338,3 +24340,149 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
+--- !u!114 &2144967700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2144967691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fd999d1b2cf94a45a5b0a47ce074bef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redChannel:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1.09369791
+      value: .564062536
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  greenChannel:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: -.0437499881
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1.00833333
+      value: .725000024
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  blueChannel:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  useDepthCorrection: 0
+  zCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  depthRedChannel:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  depthGreenChannel:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  depthBlueChannel:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  saturation: 1.02076805
+  selectiveCc: 1
+  selectiveFromColor: {r: .279411793, g: .279411793, b: .279411793, a: 1}
+  selectiveToColor: {r: .319574058, g: 0, b: .338235319, a: 1}
+  mode: 0
+  updateTextures: 1
+  colorCorrectionCurvesShader: {fileID: 4800000, guid: 62bcade1028c24ca1a39760ed84b9487,
+    type: 3}
+  simpleColorCorrectionCurvesShader: {fileID: 4800000, guid: 438ddd58d82c84d9eb1fdc56111702e1,
+    type: 3}
+  colorCorrectionSelectiveShader: {fileID: 4800000, guid: e515e0f94cefc4c0db54b45cba621544,
+    type: 3}
+--- !u!95 &2144967701
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2144967691}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 36f65094f4924184b9fadc58de2a844e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
