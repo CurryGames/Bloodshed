@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.ImageEffects;
 using System.Collections;
 
 public class PlayerStats : MonoBehaviour {
@@ -45,6 +46,7 @@ public class PlayerStats : MonoBehaviour {
 
     private Text scoreText;
     private Text multiplyText;
+    private Grayscale grayscale;
 
 	private bool alive = true;
     public bool onBoss;
@@ -86,6 +88,7 @@ public class PlayerStats : MonoBehaviour {
         grenades = GameObject.FindGameObjectWithTag("GrenadesText").GetComponent<Text>();
         playerMov = GetComponent<PlayerMovement>();
         playerShoot = GetComponent<PlayerShooting>();
+        grayscale = Camera.main.GetComponent<Grayscale>();
 		speed = 6f;
 		maxHealth = 256;
         riffleBullets = dataLogic.iniRiffleAmmo;
@@ -96,6 +99,7 @@ public class PlayerStats : MonoBehaviour {
         go = true;
         damage = 6;
         multiply = 1;
+        grayscale.enabled = false;
 		score = dataLogic.iniScore;
         currentBrutality = dataLogic.iniBrutality;
 		currentHealth = dataLogic.iniHealth;
@@ -158,6 +162,13 @@ public class PlayerStats : MonoBehaviour {
         }
 
         else if (multiplyText != null) multiplyText.text = "";
+
+        if (currentHealth <= maxHealth / 4 && !brutalMode && alive && !levelCleared)
+        {
+            grayscale.enabled = true;
+
+        }
+        else grayscale.enabled = false;
 
 
         if (currentHealth <= 0 && alive) 
