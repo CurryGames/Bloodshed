@@ -905,6 +905,7 @@ GameObject:
   - 114: {fileID: 30527920}
   - 114: {fileID: 30527921}
   - 95: {fileID: 30527922}
+  - 114: {fileID: 30527923}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -1181,6 +1182,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &30527923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 30527912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 243a781cad112c75d0008dfa8d76c639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shader: {fileID: 4800000, guid: daf9781cad112c75d0008dfa8d76c639, type: 3}
+  textureRamp: {fileID: 0}
+  rampOffset: 0
 --- !u!1 &33240865
 GameObject:
   m_ObjectHideFlags: 0
