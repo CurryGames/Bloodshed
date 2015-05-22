@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 496812}
   m_Layer: 0
-  m_Name: MessageBrutal 2
+  m_Name: CARNAGE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,7 +91,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146500}
-  m_Text: MASSACRE!!
+  m_Text: CARNAGE!!!
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1

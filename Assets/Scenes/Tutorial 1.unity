@@ -5030,12 +5030,8 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 5fe425e4a57d7464189d6febcd548dc6, type: 2}
       propertyPath: m_RootOrder
-      value: 19
+      value: 18
       objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 5fe425e4a57d7464189d6febcd548dc6, type: 2}
-      propertyPath: chainsaw
-      value: 
-      objectReference: {fileID: 1619139270}
     - target: {fileID: 11400006, guid: 5fe425e4a57d7464189d6febcd548dc6, type: 2}
       propertyPath: HealthBar
       value: 
@@ -5044,15 +5040,10 @@ Prefab:
       propertyPath: BrutalityBar
       value: 
       objectReference: {fileID: 1635746283}
-    - target: {fileID: 21274778, guid: 5fe425e4a57d7464189d6febcd548dc6, type: 2}
-      propertyPath: m_Sprite
+    - target: {fileID: 11400000, guid: 5fe425e4a57d7464189d6febcd548dc6, type: 2}
+      propertyPath: chainsaw
       value: 
-      objectReference: {fileID: 21300000, guid: f9deba1ee8d1b414d9b843a4eb759aa2,
-        type: 3}
-    - target: {fileID: 9574778, guid: 5fe425e4a57d7464189d6febcd548dc6, type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1619139270}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5fe425e4a57d7464189d6febcd548dc6, type: 2}
   m_IsPrefabParent: 0

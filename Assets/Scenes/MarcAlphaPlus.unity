@@ -1414,6 +1414,7 @@ GameObject:
   - 4: {fileID: 134802808}
   - 33: {fileID: 134802810}
   - 23: {fileID: 134802809}
+  - 114: {fileID: 134802811}
   m_Layer: 8
   m_Name: Pasillo 1
   m_TagString: Floor
@@ -1428,7 +1429,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 134802807}
   m_LocalRotation: {x: 0, y: .707106829, z: -.707106829, w: 0}
-  m_LocalPosition: {x: -37.5, y: 2, z: -31.3999996}
+  m_LocalPosition: {x: -37.5, y: 5, z: -31.3999996}
   m_LocalScale: {x: 35.1000137, y: 10.0272598, z: 10.6638184}
   m_Children: []
   m_Father: {fileID: 869205879}
@@ -1464,6 +1465,46 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 134802807}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &134802811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 134802807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoRun: 1
+  tweenName: 
+  startDelay: 0
+  assignStartValueBeforeDelay: 1
+  loopType: 2
+  loopCount: 0
+  duration: 3
+  easingType: 0
+  animCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  playDirection: 0
+  startValueType: 0
+  startValue: {r: .242647052, g: .247999564, b: .247999564, a: 1}
+  endValueType: 0
+  endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
+  target: {fileID: 0}
 --- !u!1 &140122984
 GameObject:
   m_ObjectHideFlags: 0
@@ -4842,19 +4883,19 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1514163428}
+    m_TransformParent: {fileID: 2016982783}
     m_Modifications:
     - target: {fileID: 421994, guid: 790c5b434f9022544ab01c88c6b370fe, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.51306701
+      value: -1.33718252
       objectReference: {fileID: 0}
     - target: {fileID: 421994, guid: 790c5b434f9022544ab01c88c6b370fe, type: 2}
       propertyPath: m_LocalPosition.y
-      value: .0719336271
+      value: .271933556
       objectReference: {fileID: 0}
     - target: {fileID: 421994, guid: 790c5b434f9022544ab01c88c6b370fe, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -3.65635777
+      value: -1.284338
       objectReference: {fileID: 0}
     - target: {fileID: 421994, guid: 790c5b434f9022544ab01c88c6b370fe, type: 2}
       propertyPath: m_LocalRotation.x
@@ -4874,7 +4915,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 421994, guid: 790c5b434f9022544ab01c88c6b370fe, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 121994, guid: 790c5b434f9022544ab01c88c6b370fe, type: 2}
       propertyPath: m_Name
@@ -4894,7 +4935,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 421994, guid: 790c5b434f9022544ab01c88c6b370fe, type: 2}
       propertyPath: m_LocalScale.x
-      value: 2.27683306
+      value: 2.2768333
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 790c5b434f9022544ab01c88c6b370fe, type: 2}
@@ -6045,7 +6086,7 @@ Transform:
   - {fileID: 2105640640}
   - {fileID: 1035421246}
   m_Father: {fileID: 2016982783}
-  m_RootOrder: 51
+  m_RootOrder: 54
 --- !u!1001 &528959246
 Prefab:
   m_ObjectHideFlags: 0
@@ -6509,6 +6550,7 @@ GameObject:
   - 4: {fileID: 584541570}
   - 33: {fileID: 584541573}
   - 23: {fileID: 584541571}
+  - 114: {fileID: 584541572}
   m_Layer: 8
   m_Name: Pasillo
   m_TagString: Floor
@@ -6523,7 +6565,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 584541569}
   m_LocalRotation: {x: 0, y: .707106829, z: -.707106829, w: 0}
-  m_LocalPosition: {x: -9.39999962, y: 1.84000003, z: -41.9399986}
+  m_LocalPosition: {x: -9.39999962, y: 5, z: -41.9000015}
   m_LocalScale: {x: 35.0999985, y: 10.0272579, z: 10.6638165}
   m_Children: []
   m_Father: {fileID: 869205879}
@@ -6552,6 +6594,46 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!114 &584541572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 584541569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoRun: 1
+  tweenName: 
+  startDelay: 0
+  assignStartValueBeforeDelay: 1
+  loopType: 2
+  loopCount: 0
+  duration: 3
+  easingType: 0
+  animCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  playDirection: 0
+  startValueType: 0
+  startValue: {r: .242647052, g: .247999564, b: .247999564, a: 1}
+  endValueType: 0
+  endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
+  target: {fileID: 0}
 --- !u!33 &584541573
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -7356,9 +7438,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 897930173}
-  - {fileID: 1969082501}
   m_Father: {fileID: 2016982783}
-  m_RootOrder: 49
+  m_RootOrder: 52
 --- !u!1 &670967224
 GameObject:
   m_ObjectHideFlags: 0
@@ -7472,7 +7553,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 45506f881752e464ca78f85e7ba363b7, type: 2}
+  - {fileID: 2100000, guid: 8062a8d675498f446ae45379b2095ae6, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -7550,7 +7631,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 28aca747c86ab7d4eba2202536adb07f, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 28aca747c86ab7d4eba2202536adb07f, type: 2}
@@ -8414,7 +8495,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 462146, guid: e5fe1bef2b00b4d47a768cff28119e7a, type: 2}
       propertyPath: m_RootOrder
-      value: 53
+      value: 56
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e5fe1bef2b00b4d47a768cff28119e7a, type: 2}
@@ -9335,7 +9416,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: aebf8e6d4eeb1994eb10149dd3d1ace5, type: 2}
+  - {fileID: 2100000, guid: 8762b8589fa78234eadf76286768951c, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -11726,7 +11807,7 @@ Prefab:
       objectReference: {fileID: 1105754754}
     - target: {fileID: 100000, guid: 5a055cffe3a520c48a8a52595e1b3de5, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5a055cffe3a520c48a8a52595e1b3de5, type: 2}
@@ -15762,6 +15843,7 @@ GameObject:
   - 4: {fileID: 1371006038}
   - 33: {fileID: 1371006040}
   - 23: {fileID: 1371006039}
+  - 114: {fileID: 1371006041}
   m_Layer: 8
   m_Name: Pasillo 2
   m_TagString: Floor
@@ -15776,7 +15858,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1371006037}
   m_LocalRotation: {x: .5, y: .5, z: -.500000119, w: .49999994}
-  m_LocalPosition: {x: 11, y: 2, z: -18}
+  m_LocalPosition: {x: 11, y: 5, z: -18}
   m_LocalScale: {x: 47, y: 12.3999996, z: 10.6638203}
   m_Children: []
   m_Father: {fileID: 869205879}
@@ -15812,6 +15894,46 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1371006037}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1371006041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1371006037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoRun: 1
+  tweenName: 
+  startDelay: 0
+  assignStartValueBeforeDelay: 1
+  loopType: 2
+  loopCount: 0
+  duration: 3
+  easingType: 0
+  animCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  playDirection: 0
+  startValueType: 0
+  startValue: {r: .242647052, g: .247999564, b: .247999564, a: 1}
+  endValueType: 0
+  endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
+  target: {fileID: 0}
 --- !u!1 &1377879460
 GameObject:
   m_ObjectHideFlags: 0
@@ -15822,6 +15944,7 @@ GameObject:
   - 4: {fileID: 1377879463}
   - 33: {fileID: 1377879462}
   - 23: {fileID: 1377879461}
+  - 114: {fileID: 1377879464}
   m_Layer: 8
   m_Name: Pasillo 1
   m_TagString: Floor
@@ -15867,11 +15990,51 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1377879460}
   m_LocalRotation: {x: 0, y: .707106829, z: -.707106829, w: 0}
-  m_LocalPosition: {x: -1.60000002, y: 2.5999999, z: -3.67000008}
+  m_LocalPosition: {x: -1.60000002, y: 5, z: -3.67000008}
   m_LocalScale: {x: 21.3750229, y: 9.39999962, z: 10.6638184}
   m_Children: []
   m_Father: {fileID: 1784985343}
   m_RootOrder: 0
+--- !u!114 &1377879464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1377879460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoRun: 1
+  tweenName: 
+  startDelay: 0
+  assignStartValueBeforeDelay: 1
+  loopType: 2
+  loopCount: 0
+  duration: 3
+  easingType: 0
+  animCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  playDirection: 0
+  startValueType: 0
+  startValue: {r: .242647052, g: .247999564, b: .247999564, a: 1}
+  endValueType: 0
+  endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
+  target: {fileID: 0}
 --- !u!1 &1383774719
 GameObject:
   m_ObjectHideFlags: 0
@@ -16136,6 +16299,7 @@ GameObject:
   - 4: {fileID: 1427302120}
   - 33: {fileID: 1427302122}
   - 23: {fileID: 1427302121}
+  - 114: {fileID: 1427302123}
   m_Layer: 8
   m_Name: Pasillo 6
   m_TagString: Floor
@@ -16150,7 +16314,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1427302119}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
-  m_LocalPosition: {x: -14.7799997, y: 2, z: -42.6100006}
+  m_LocalPosition: {x: -14.7799997, y: 5, z: -42.6100006}
   m_LocalScale: {x: 47, y: 12.3999977, z: 10.6638165}
   m_Children: []
   m_Father: {fileID: 869205879}
@@ -16186,6 +16350,46 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1427302119}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1427302123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1427302119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoRun: 1
+  tweenName: 
+  startDelay: 0
+  assignStartValueBeforeDelay: 1
+  loopType: 2
+  loopCount: 0
+  duration: 3
+  easingType: 0
+  animCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  playDirection: 0
+  startValueType: 0
+  startValue: {r: .242647052, g: .247999564, b: .247999564, a: 1}
+  endValueType: 0
+  endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
+  target: {fileID: 0}
 --- !u!1 &1429237985
 GameObject:
   m_ObjectHideFlags: 0
@@ -16550,7 +16754,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 5dd63465d23050d469e08817d6710383, type: 2}
+  - {fileID: 2100000, guid: 8062a8d675498f446ae45379b2095ae6, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -16835,10 +17039,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 946239719}
-  - {fileID: 16898122}
-  - {fileID: 1619379006}
   m_Father: {fileID: 2016982783}
-  m_RootOrder: 48
+  m_RootOrder: 50
 --- !u!1001 &1517036829
 Prefab:
   m_ObjectHideFlags: 0
@@ -17321,19 +17523,19 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 667076171}
+    m_TransformParent: {fileID: 2016982783}
     m_Modifications:
     - target: {fileID: 421994, guid: 790c5b434f9022544ab01c88c6b370fe, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.31693244
+      value: -6.16718197
       objectReference: {fileID: 0}
     - target: {fileID: 421994, guid: 790c5b434f9022544ab01c88c6b370fe, type: 2}
       propertyPath: m_LocalPosition.y
-      value: .0719335526
+      value: .271933556
       objectReference: {fileID: 0}
     - target: {fileID: 421994, guid: 790c5b434f9022544ab01c88c6b370fe, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -3.99635792
+      value: -1.62433815
       objectReference: {fileID: 0}
     - target: {fileID: 421994, guid: 790c5b434f9022544ab01c88c6b370fe, type: 2}
       propertyPath: m_LocalRotation.x
@@ -17353,7 +17555,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 421994, guid: 790c5b434f9022544ab01c88c6b370fe, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 51
       objectReference: {fileID: 0}
     - target: {fileID: 121994, guid: 790c5b434f9022544ab01c88c6b370fe, type: 2}
       propertyPath: m_Name
@@ -17373,7 +17575,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 421994, guid: 790c5b434f9022544ab01c88c6b370fe, type: 2}
       propertyPath: m_LocalScale.y
-      value: 2.27683306
+      value: 2.2768333
       objectReference: {fileID: 0}
     - target: {fileID: 421994, guid: 790c5b434f9022544ab01c88c6b370fe, type: 2}
       propertyPath: m_LocalScale.z
@@ -18029,7 +18231,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 462146, guid: e5fe1bef2b00b4d47a768cff28119e7a, type: 2}
       propertyPath: m_RootOrder
-      value: 50
+      value: 53
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e5fe1bef2b00b4d47a768cff28119e7a, type: 2}
@@ -18404,12 +18606,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1619379005}
   m_LocalRotation: {x: .705278933, y: -.0508099943, z: .0508099943, w: .705278933}
-  m_LocalPosition: {x: 1.07306719, y: .0719340295, z: -4.57635784}
+  m_LocalPosition: {x: -2.77718234, y: .271934032, z: -2.20433807}
   m_LocalScale: {x: 1.37013602, y: 1.37013495, z: 1.37013495}
   m_Children:
   - {fileID: 1772288075}
-  m_Father: {fileID: 1514163428}
-  m_RootOrder: 2
+  m_Father: {fileID: 2016982783}
+  m_RootOrder: 49
 --- !u!114 &1619379007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19278,6 +19480,7 @@ GameObject:
   - 33: {fileID: 1690723429}
   - 23: {fileID: 1690723427}
   - 64: {fileID: 1690723428}
+  - 114: {fileID: 1690723431}
   m_Layer: 8
   m_Name: Floor
   m_TagString: Floor
@@ -19340,6 +19543,46 @@ Transform:
   m_Children: []
   m_Father: {fileID: 474673336}
   m_RootOrder: 8
+--- !u!114 &1690723431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1690723426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoRun: 1
+  tweenName: 
+  startDelay: 0
+  assignStartValueBeforeDelay: 1
+  loopType: 2
+  loopCount: 0
+  duration: 3
+  easingType: 0
+  animCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  playDirection: 0
+  startValueType: 0
+  startValue: {r: .242647052, g: .247999564, b: .247999564, a: 1}
+  endValueType: 0
+  endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
+  target: {fileID: 0}
 --- !u!4 &1708600837 stripped
 Transform:
   m_PrefabParentObject: {fileID: 438376, guid: 151253f2f17b26b41823e269312d1681, type: 2}
@@ -19354,6 +19597,7 @@ GameObject:
   - 4: {fileID: 1710862476}
   - 33: {fileID: 1710862478}
   - 23: {fileID: 1710862477}
+  - 114: {fileID: 1710862479}
   m_Layer: 8
   m_Name: Pasillo 4
   m_TagString: Floor
@@ -19368,7 +19612,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1710862475}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
-  m_LocalPosition: {x: -25.9699993, y: 2, z: 24.3999996}
+  m_LocalPosition: {x: -25.9699993, y: 5, z: 24.3999996}
   m_LocalScale: {x: 47, y: 12.3999996, z: 10.6638203}
   m_Children: []
   m_Father: {fileID: 869205879}
@@ -19404,6 +19648,46 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1710862475}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1710862479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1710862475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoRun: 1
+  tweenName: 
+  startDelay: 0
+  assignStartValueBeforeDelay: 1
+  loopType: 2
+  loopCount: 0
+  duration: 3
+  easingType: 0
+  animCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  playDirection: 0
+  startValueType: 0
+  startValue: {r: .242647052, g: .247999564, b: .247999564, a: 1}
+  endValueType: 0
+  endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
+  target: {fileID: 0}
 --- !u!1001 &1745976357
 Prefab:
   m_ObjectHideFlags: 0
@@ -19449,7 +19733,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 5588fbea0269a4f469dc8aee106f464a, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5588fbea0269a4f469dc8aee106f464a, type: 2}
       propertyPath: volumFx
@@ -19790,6 +20074,7 @@ GameObject:
   - 4: {fileID: 1783024442}
   - 33: {fileID: 1783024444}
   - 23: {fileID: 1783024443}
+  - 114: {fileID: 1783024445}
   m_Layer: 8
   m_Name: Pasillo 2
   m_TagString: Floor
@@ -19840,6 +20125,46 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1783024441}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1783024445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1783024441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoRun: 1
+  tweenName: 
+  startDelay: 0
+  assignStartValueBeforeDelay: 1
+  loopType: 2
+  loopCount: 0
+  duration: 3
+  easingType: 0
+  animCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  playDirection: 0
+  startValueType: 0
+  startValue: {r: .242647052, g: .247999564, b: .247999564, a: 1}
+  endValueType: 0
+  endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
+  target: {fileID: 0}
 --- !u!1 &1784985341
 GameObject:
   m_ObjectHideFlags: 0
@@ -19852,7 +20177,7 @@ GameObject:
   - 114: {fileID: 1784985344}
   m_Layer: 0
   m_Name: SecretRoom
-  m_TagString: Untagged
+  m_TagString: SecretRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19904,6 +20229,7 @@ GameObject:
   - 4: {fileID: 1786372886}
   - 33: {fileID: 1786372888}
   - 23: {fileID: 1786372887}
+  - 114: {fileID: 1786372889}
   m_Layer: 8
   m_Name: Pasillo 5
   m_TagString: Floor
@@ -19954,6 +20280,46 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1786372885}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1786372889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1786372885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoRun: 1
+  tweenName: 
+  startDelay: 0
+  assignStartValueBeforeDelay: 1
+  loopType: 2
+  loopCount: 0
+  duration: 3
+  easingType: 0
+  animCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  playDirection: 0
+  startValueType: 0
+  startValue: {r: .242647052, g: .247999564, b: .247999564, a: 1}
+  endValueType: 0
+  endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
+  target: {fileID: 0}
 --- !u!1 &1790442432
 GameObject:
   m_ObjectHideFlags: 0
@@ -22077,28 +22443,10 @@ Transform:
   m_Children: []
   m_Father: {fileID: 785321461}
   m_RootOrder: 4
---- !u!1 &1969082500 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 121994, guid: 790c5b434f9022544ab01c88c6b370fe, type: 2}
-  m_PrefabInternal: {fileID: 1561550503}
 --- !u!4 &1969082501 stripped
 Transform:
   m_PrefabParentObject: {fileID: 421994, guid: 790c5b434f9022544ab01c88c6b370fe, type: 2}
   m_PrefabInternal: {fileID: 1561550503}
---- !u!114 &1969082502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1969082500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e50eec4bd8d4dca4ba540e7640701345, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  piece1: {fileID: 196320, guid: 43bdb5ab12cc93d44a34cc5470ed5584, type: 2}
-  puntuationText: {fileID: 0}
-  cocaine: 0
 --- !u!1 &1975695947
 GameObject:
   m_ObjectHideFlags: 0
@@ -22621,7 +22969,10 @@ Transform:
   - {fileID: 1181133353}
   - {fileID: 331923061}
   - {fileID: 366931878}
+  - {fileID: 16898122}
+  - {fileID: 1619379006}
   - {fileID: 1514163428}
+  - {fileID: 1969082501}
   - {fileID: 667076171}
   - {fileID: 741661663}
   - {fileID: 528600932}
@@ -23196,6 +23547,7 @@ GameObject:
   - 4: {fileID: 2044886539}
   - 33: {fileID: 2044886541}
   - 23: {fileID: 2044886540}
+  - 114: {fileID: 2044886542}
   m_Layer: 8
   m_Name: Pasillo 3
   m_TagString: Floor
@@ -23246,6 +23598,46 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2044886538}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2044886542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2044886538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  autoRun: 1
+  tweenName: 
+  startDelay: 0
+  assignStartValueBeforeDelay: 1
+  loopType: 2
+  loopCount: 0
+  duration: 3
+  easingType: 0
+  animCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  playDirection: 0
+  startValueType: 0
+  startValue: {r: .242647052, g: .247999564, b: .247999564, a: 1}
+  endValueType: 0
+  endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
+  target: {fileID: 0}
 --- !u!1001 &2051818984
 Prefab:
   m_ObjectHideFlags: 0
@@ -23693,7 +24085,7 @@ Transform:
   - {fileID: 1605235665}
   - {fileID: 1603758770}
   m_Father: {fileID: 2016982783}
-  m_RootOrder: 52
+  m_RootOrder: 55
 --- !u!1 &2087515590
 GameObject:
   m_ObjectHideFlags: 0

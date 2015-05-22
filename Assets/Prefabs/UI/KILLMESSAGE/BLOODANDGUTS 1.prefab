@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 496812}
   m_Layer: 0
-  m_Name: MessageBrutal
+  m_Name: BLOODANDGUTS 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,7 +91,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146500}
-  m_Text: BLOODSHED!!!
+  m_Text: BLOOD AND GUTS!
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoRun: 1
   tweenName: 
-  startDelay: 4
+  startDelay: 2
   assignStartValueBeforeDelay: 1
   loopType: 0
   loopCount: 0

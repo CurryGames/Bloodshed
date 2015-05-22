@@ -49,6 +49,7 @@ public class PlayerStats : MonoBehaviour {
     private Grayscale grayscale;
 
 	private bool alive = true;
+    private bool brutalMsm;
     public bool onBoss;
     public bool onKey;
     public bool brutalMode;
@@ -57,6 +58,7 @@ public class PlayerStats : MonoBehaviour {
     private bool go;
 
     private float keyCounter;
+    private float brutalTimmer;
     public AudioSource audiSorMusic;
     public AudioSource audiSorBrutal;
     public AudioSource audiSorChainsaw;
@@ -97,6 +99,7 @@ public class PlayerStats : MonoBehaviour {
 		levelCleared = false;
         brutalMode = false;
         go = true;
+        brutalMsm = false;
         damage = 6;
         multiply = 1;
         grayscale.enabled = false;
@@ -170,6 +173,15 @@ public class PlayerStats : MonoBehaviour {
         }
         else grayscale.enabled = false;
 
+        if (brutalMsm)
+        {
+            brutalTimmer += Time.deltaTime;
+            if(brutalTimmer >= 1.0f)
+            {
+                brutalTimmer = 0;
+                brutalMsm = false;
+            }
+        }
 
         if (currentHealth <= 0 && alive) 
 		{
@@ -541,9 +553,12 @@ public class PlayerStats : MonoBehaviour {
 
     public void BrutalMessageInstantiate(GameObject msm)
     {
-        GameObject brMsm = (GameObject)Instantiate(msm, new Vector3(Camera.main.transform.position.x, 0, Camera.main.transform.position.z), Quaternion.identity);
-        brMsm.transform.parent = Camera.main.transform;
-
-        Destroy(brMsm, 7.0f);
+        if (!brutalMsm)
+        {
+            GameObject brMsm = (GameObject)Instantiate(msm, new Vector3(Camera.main.transform.position.x, 0, Camera.main.transform.position.z), Quaternion.identity);
+            brMsm.transform.parent = Camera.main.transform;
+            brutalMsm = true;
+            Destroy(brMsm, 7.0f);
+        }
     }
 }

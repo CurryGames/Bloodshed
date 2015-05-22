@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using DaikonForge.Tween.Components;
 
 public class SecretRoom : MonoBehaviour {
 
@@ -9,6 +10,8 @@ public class SecretRoom : MonoBehaviour {
     public GameObject plane;
     private Color color;
     private BoxCollider boxCol;
+    private DataLogic dataLogic;
+    private TweenObjectColor tweenMaterial;
 
 	// Use this for initialization
 	void Start () 
@@ -17,7 +20,10 @@ public class SecretRoom : MonoBehaviour {
         temp = 1f;
         initTemp = 1f;
         color = plane.GetComponent<Renderer>().material.color;
+        dataLogic = GameObject.FindGameObjectWithTag("DataLogic"). GetComponent<DataLogic>();
         boxCol = GetComponent<BoxCollider>();
+
+        tweenMaterial = plane.GetComponent<TweenObjectColor>();
 	}
 	
 	// Update is called once per frame
@@ -49,5 +55,16 @@ public class SecretRoom : MonoBehaviour {
     {
         visible = true;
         boxCol.enabled = false;
+        tweenMaterial.enabled = false;
+        StartCoroutine(Scrolltext());
     }
+
+    IEnumerator Scrolltext()
+    {
+        yield return new WaitForSeconds(0.5f);
+        AudioSource audiSor = dataLogic.gameObject.AddComponent<AudioSource>();
+        dataLogic.Play(dataLogic.tada, audiSor, dataLogic.volumFx);
+       
+    }
+
 }

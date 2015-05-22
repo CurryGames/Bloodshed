@@ -90,8 +90,6 @@ public class BarrelExplosion : MonoBehaviour {
                 {
                     SecretRoom destProp = col.GetComponent<SecretRoom>();
                     destProp.ShowRoom();
-                    AudioSource audiSor = col.gameObject.AddComponent<AudioSource>();
-                    dataLogic.Play(dataLogic.tada, audiSor, dataLogic.volumFx);
                 } 
 			}
 
@@ -106,6 +104,7 @@ public class BarrelExplosion : MonoBehaviour {
 		GameObject FX = (GameObject) Instantiate(explosionFX, new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Quaternion.Euler( new Vector3(90, 0, 0)));
 		Destroy (FX, 4);
 	}
+
 
 }
 

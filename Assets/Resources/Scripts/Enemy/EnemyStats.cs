@@ -110,15 +110,15 @@ public class EnemyStats : MonoBehaviour
 
             if(playerStats.multiply == 5)
             {
-                playerStats.BrutalMessageInstantiate(playerStats.brutalMessage[0]);
+                playerStats.BrutalMessageInstantiate(playerStats.brutalMessage[Random.Range(0,4)]);
             }
             else if (playerStats.multiply == 8)
             {
-                playerStats.BrutalMessageInstantiate(playerStats.brutalMessage[1]);
+                playerStats.BrutalMessageInstantiate(playerStats.brutalMessage[Random.Range(5, 7)]);
             }
             else if (playerStats.multiply == 13)
             {
-                playerStats.BrutalMessageInstantiate(playerStats.brutalMessage[2]);
+                playerStats.BrutalMessageInstantiate(playerStats.brutalMessage[8]);
             }
 
             Destroy(gameObject);

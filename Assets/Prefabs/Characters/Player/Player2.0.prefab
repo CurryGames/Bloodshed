@@ -625,6 +625,12 @@ MonoBehaviour:
   brutalMessage:
   - {fileID: 142446, guid: 652908ba41727cf44ba3689b830ccddc, type: 2}
   - {fileID: 142446, guid: 77fe645e7cb73b744844c3378dd3b391, type: 2}
+  - {fileID: 142446, guid: b8ee69299c088954ca468e2ea309a18c, type: 2}
+  - {fileID: 142446, guid: 4c92ccbd829d6d24b99641b79c4be2a6, type: 2}
+  - {fileID: 142446, guid: 59ac5ce9cb42ccc4e931a61b12a2f968, type: 2}
+  - {fileID: 142446, guid: 99da5fbe022ed584892b60b7879fd7c9, type: 2}
+  - {fileID: 142446, guid: 8891d2e27d0cdfc4a8eba06ff36c3369, type: 2}
+  - {fileID: 142446, guid: a4f40d1dc1baae34593a649ab088d3f8, type: 2}
   - {fileID: 142446, guid: b69a9ae99718f224ebd66cda6527d903, type: 2}
   HealthBar: {fileID: 0}
   BrutalityBar: {fileID: 0}
@@ -703,7 +709,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 08b77ff7c15a96249876878ab36bb9ca, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f9deba1ee8d1b414d9b843a4eb759aa2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

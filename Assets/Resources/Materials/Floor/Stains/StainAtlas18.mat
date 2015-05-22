@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: StainAtlas04
+  m_Name: StainAtlas18
   m_Shader: {fileID: 30, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -26,4 +26,4 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 1, g: .183823526, b: .470892489, a: .321568638}
+        second: {r: .183823526, g: 1, b: .493407726, a: .321568638}
