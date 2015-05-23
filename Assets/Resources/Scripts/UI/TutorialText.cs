@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class TutorialText : MonoBehaviour {
 
-    private DataLogic dataLogic;
     private Text textTutorial;
     public string textMouse;
     public string textJoystick;
@@ -13,10 +12,16 @@ public class TutorialText : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
-        dataLogic = GameObject.FindGameObjectWithTag("DataLogic").GetComponent<DataLogic>();
         textTutorial = GetComponent<Text>();
-        if ((Input.GetJoystickNames().Length == 0)) textTutorial.text = textMouse;
+
+        // NO FUNCIONA EN UNITY5
+        /*if ((Input.GetJoystickNames().Length > 1)) textTutorial.text = textJoystick;
+        else textTutorial.text = textMouse;*/
+
+        if (string.IsNullOrEmpty(Input.GetJoystickNames()[0])) textTutorial.text = textMouse;
         else textTutorial.text = textJoystick;
+
+        //Debug.Log(Input.GetJoystickNames().Length);
 	}
 	
 	// Update is called once per frame

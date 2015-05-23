@@ -22,6 +22,7 @@ public class EnemyNavMesh : MonoBehaviour
     private Animator animationLegs;
 	public float patrolTime;
 	public bool patroling = false;
+    private bool onPatrol;
     private float patrolCounter;
 	NavMeshHit hit;
 
@@ -36,6 +37,7 @@ public class EnemyNavMesh : MonoBehaviour
         enemyRang = GetComponent<RangedEnemy>();
         target = GameObject.FindGameObjectWithTag ("Player");
         setIddle();
+        if (enemyType == EnemyType.PATROL) onPatrol = true;
         //Debug.Log(enemyType);
         //agent.speed = enemyStats.speed;	
 
@@ -44,7 +46,8 @@ public class EnemyNavMesh : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		
+        if (onPatrol) enemyType = EnemyType.PATROL;
+
 		switch (enemyType)
 		{
 			case EnemyType.CHASE:
@@ -89,9 +92,17 @@ public class EnemyNavMesh : MonoBehaviour
 
 			case EnemyType.PATROL:
 			{
-				if (enemyRang.dist <= enemyRang.detectDistance) enemyType = EnemyType.CHASE;
-				setRun ();
-				Patrol (patrolTime);
+                if (enemyRang.dist <= enemyRang.detectDistance)
+                {
+                    enemyType = EnemyType.CHASE;
+                    setIddle();
+                    onPatrol = false;
+                }
+                else
+                {
+                    setRun();
+                    Patrol(patrolTime);
+                }
 			} break;
 
 			case EnemyType.IMMOBILE:

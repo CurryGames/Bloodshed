@@ -68,6 +68,8 @@ public class PlayerStats : MonoBehaviour {
 	private Animator animation;
     private Animator animationLegs;
     private AchievementManager achievementManager;
+    private AudioReverbFilter audioReberb;
+    private GameObject brutalityFire;
 	public GameObject bossCamera;
 
 	// Use this for initialization
@@ -91,6 +93,7 @@ public class PlayerStats : MonoBehaviour {
         playerMov = GetComponent<PlayerMovement>();
         playerShoot = GetComponent<PlayerShooting>();
         grayscale = Camera.main.GetComponent<Grayscale>();
+        brutalityFire = GameObject.FindGameObjectWithTag("BrutalityFire");
 		speed = 6f;
 		maxHealth = 256;
         riffleBullets = dataLogic.iniRiffleAmmo;
@@ -112,6 +115,8 @@ public class PlayerStats : MonoBehaviour {
         audiSorBrutal = gameObject.AddComponent<AudioSource>();
         audiSorChainsaw = gameObject.AddComponent<AudioSource>();
         audioSorTension = gameObject.AddComponent<AudioSource>();
+
+        foreach (Transform t in Camera.main.transform) if (t.name == "AudioListener") audioReberb = t.gameObject.GetComponent<AudioReverbFilter>();
 
         if (onBoss == false) dataLogic.PlayLoop(dataLogic.music, audiSorMusic, dataLogic.volumMusic);
         else
@@ -145,7 +150,12 @@ public class PlayerStats : MonoBehaviour {
         }
 
 		if (currentHealth >= maxHealth) currentHealth = maxHealth;
-        if (currentBrutality >= 256) currentBrutality = 256;
+        if (currentBrutality >= 256)
+        {
+            currentBrutality = 256;
+            brutalityFire.SetActive(true);
+        }
+        else brutalityFire.SetActive(false);
 		//if (Input.GetKeyDown (KeyCode.E)) Application.Quit ();
 
         if (onCombo == true) 
@@ -169,9 +179,13 @@ public class PlayerStats : MonoBehaviour {
         if (currentHealth <= maxHealth / 4 && !brutalMode && alive && !levelCleared)
         {
             grayscale.enabled = true;
-
+            audioReberb.enabled = true;
         }
-        else grayscale.enabled = false;
+        else 
+        {
+            grayscale.enabled = false;
+            audioReberb.enabled = false;
+        }
 
         if (brutalMsm)
         {
@@ -350,7 +364,7 @@ public class PlayerStats : MonoBehaviour {
             dataLogic.iniGrenades = currentGrenades;
         }
 
-        if ((col.tag == "levelEnding") && brutalMode == false)
+        if ((col.tag == "levelEnding") && !levelCleared)
         {
             LevelEnd();
         }
@@ -498,6 +512,7 @@ public class PlayerStats : MonoBehaviour {
 	public void LevelEnd(){
 		
 		//EndLevelScreen.SetActive (true);
+        brutalMode = false;
         playerMov.enabled = false;
         GameObject gOS = (GameObject)Instantiate(EndLevelScreen, Camera.main.transform.position, Quaternion.Euler(new Vector3(90, 0, 0)));
         levelCleared = true;

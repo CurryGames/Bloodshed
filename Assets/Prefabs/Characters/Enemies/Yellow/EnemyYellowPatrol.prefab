@@ -370,7 +370,7 @@ MonoBehaviour:
   anim: {fileID: 100004}
   enemyType: 2
   chasing: 0
-  isStop: 1
+  isStop: 0
   resume: 0
   patrolTime: 3
   patroling: 0

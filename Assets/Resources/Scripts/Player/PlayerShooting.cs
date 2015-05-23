@@ -152,7 +152,7 @@ public class PlayerShooting : MonoBehaviour
 			}
 			else playerMov.onCharge = false;
 
-			if (playerStats.currentBrutality <= 0)
+			if (playerStats.currentBrutality <= 0 || !playerStats.brutalMode)
 			{
 				chainsaw.SetActive(false);
 				colliderSaw.enabled = false;
@@ -268,10 +268,8 @@ public class PlayerShooting : MonoBehaviour
 		GameObject grenadeGO = (GameObject)Instantiate (grenade, new Vector3(transform.position.x + 0.5f, transform.position.y, transform.position.z + 0.5f), transform.rotation);
 		grenadeGO.GetComponent<Rigidbody>().velocity = transform.TransformDirection(Vector3.forward * force);
         Collider gr = grenadeGO.GetComponent<Collider>();
-        gr.enabled = false;
-        StartCoroutine(EnableCollider(gr));
-        /*Collider pl = this.GetComponent<Collider>();
-		Physics.IgnoreCollision (gr, pl);*/
+        Collider pl = this.GetComponent<Collider>();
+		Physics.IgnoreCollision (gr, pl);
 	}
 
     public void Shake()
@@ -291,11 +289,5 @@ public class PlayerShooting : MonoBehaviour
 		camera.startShake = true;
 		
 	}
-
-    IEnumerator EnableCollider(Collider collider)
-    {
-        yield return new WaitForSeconds(0.3f);
-        collider.enabled = true;
-    }
 
 }
