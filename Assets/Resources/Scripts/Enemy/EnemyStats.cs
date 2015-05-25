@@ -5,6 +5,7 @@ public class EnemyStats : MonoBehaviour
 {
 
     private NavMeshAgent agent;
+    private EnemyNavMesh enemyNav;
     public enum Death { SHOOTEDGUN, EXPLOITED, SHOOTEDSHOTGUN, CARVED }
 
     public int maxHealth;
@@ -46,6 +47,7 @@ public class EnemyStats : MonoBehaviour
         color = enemySprite.GetComponent<Renderer>().material.color;
         achievementManager = GameObject.FindGameObjectWithTag("DataLogic").
             GetComponent<AchievementManager>();
+        enemyNav = GetComponent<EnemyNavMesh>();
 
         speedOnChase = agent.speed;
         speed = 4f;
@@ -183,6 +185,7 @@ public class EnemyStats : MonoBehaviour
         currentHealth -= dmg;
         GameObject bld= (GameObject)Instantiate(blood.gameObject, new Vector3(transform.position.x, 0.2f, transform.position.z),Quaternion.identity);
         if (hit == false) hit = true;
+        enemyNav.SetChasing();
     }
 
     void HitAnim()

@@ -24,6 +24,7 @@ public class EnemyNavMesh : MonoBehaviour
 	public bool patroling = false;
     private bool onPatrol;
     private float patrolCounter;
+    private bool behindWall;
 	NavMeshHit hit;
 
 
@@ -38,6 +39,7 @@ public class EnemyNavMesh : MonoBehaviour
         target = GameObject.FindGameObjectWithTag ("Player");
         setIddle();
         if (enemyType == EnemyType.PATROL) onPatrol = true;
+        behindWall = true;
         //Debug.Log(enemyType);
         //agent.speed = enemyStats.speed;	
 
@@ -48,73 +50,89 @@ public class EnemyNavMesh : MonoBehaviour
     {
         if (onPatrol) enemyType = EnemyType.PATROL;
 
-		switch (enemyType)
-		{
-			case EnemyType.CHASE:
-			{
-				if (chasing) {
-					if (isStop)
-						isStop = false;
-					if (target != null) {          
-						agent.SetDestination (target.transform.position);
-						
-						if (!resume) {
-							agent.Resume ();
-							resume = true;
-						}
-					}
-					
-					if (!OnSight ()) {
-						agent.stoppingDistance = 0.5f;
-						
-					} else {
-						agent.stoppingDistance = 8;
-						RotateTowards (target.transform);
-					}
-				} else {
-					if (!isStop) {
-						agent.Stop ();
-						isStop = true;
-						resume = false;
-					}
-				}
+        if (enemyRang.dist <= 35)
+        {
+            switch (enemyType)
+            {
+                case EnemyType.CHASE:
+                    {
+                        if (chasing)
+                        {
+                            if (isStop)
+                                isStop = false;
+                            if (target != null)
+                            {
+                                agent.SetDestination(target.transform.position);
 
-                if (enemyRang.dist <= agent.stoppingDistance)
-                {
-                    setIddle();
-                }
-                else if (enemyRang.dist > agent.stoppingDistance && chasing == true)
-                {
-                    setRun();
-                }
+                                if (!resume)
+                                {
+                                    agent.Resume();
+                                    resume = true;
+                                }
+                            }
 
-			} break;
+                            if (!OnSight())
+                            {
+                                agent.stoppingDistance = 0.5f;
 
-			case EnemyType.PATROL:
-			{
-                if (enemyRang.dist <= enemyRang.detectDistance)
-                {
-                    enemyType = EnemyType.CHASE;
-                    setIddle();
-                    onPatrol = false;
-                }
-                else
-                {
-                    setRun();
-                    Patrol(patrolTime);
-                }
-			} break;
+                            }
+                            else
+                            {
+                                agent.stoppingDistance = 8;
+                                RotateTowards(target.transform);
+                            }
+                        }
+                        else
+                        {
+                            if (!isStop)
+                            {
+                                agent.Stop();
+                                isStop = true;
+                                resume = false;
+                            }
+                        }
 
-			case EnemyType.IMMOBILE:
-			{
-				if (enemyRang.dist <= enemyRang.detectDistance) 
-				{
-					RotateTowards (target.transform);
-					setIddle();
-				}
-			} break;
+                        if (enemyRang.dist <= agent.stoppingDistance)
+                        {
+                            setIddle();
+                        }
+                        else if (enemyRang.dist > agent.stoppingDistance && chasing == true)
+                        {
+                            setRun();
+                        }
 
-		}
+                    } break;
+
+                case EnemyType.PATROL:
+                    {          
+                        RaycastHit hit;
+                        if ((enemyRang.dist <= enemyRang.detectDistance) && (Physics.Raycast(transform.position, target.transform.position - transform.position, out hit) && hit.transform.tag == "Player"))
+                        {
+
+                            enemyType = EnemyType.CHASE;
+                            setIddle();
+                            onPatrol = false;
+                            Debug.Log("player not on sight");
+                        }
+                        else
+                        {
+                            setRun();
+                            Patrol(patrolTime); 
+                        }
+                    } break;
+
+                case EnemyType.IMMOBILE:
+                    {
+                        if (enemyRang.dist <= enemyRang.detectDistance)
+                        {
+                            RotateTowards(target.transform);
+                            setIddle();
+                        }
+                    } break;
+
+            }
+        }
+		
     }
 
     public void setRun()
@@ -143,6 +161,16 @@ public class EnemyNavMesh : MonoBehaviour
 		Quaternion lookRotation = Quaternion.LookRotation(direction);
 		transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
 	}
+
+    public void SetChasing()
+    { 
+        if (enemyType != EnemyType.CHASE)
+        {
+            enemyType = EnemyType.CHASE;
+            chasing = true;
+            onPatrol = false;
+        }   
+    }
 
 	public void Patrol(float duration)
 	{
