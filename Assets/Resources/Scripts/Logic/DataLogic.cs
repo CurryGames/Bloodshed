@@ -25,8 +25,10 @@ public class DataLogic : MonoBehaviour {
     public AudioClip riffle;
     public AudioClip gun;
     public AudioClip gunClock;
+    public AudioClip enemyGun;
     public AudioClip shootGun;
     public AudioClip shootGunClock;
+    public AudioClip enemyShootGun;
     public AudioClip music;
     public AudioClip musicBrutal;
     public AudioClip chainsaw;

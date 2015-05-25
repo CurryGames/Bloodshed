@@ -18905,23 +18905,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5588fbea0269a4f469dc8aee106f464a, type: 2}
       propertyPath: m_RootOrder
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 5588fbea0269a4f469dc8aee106f464a, type: 2}
-      propertyPath: on
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 5588fbea0269a4f469dc8aee106f464a, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 5588fbea0269a4f469dc8aee106f464a, type: 2}
-      propertyPath: volumFx
-      value: .5
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 5588fbea0269a4f469dc8aee106f464a, type: 2}
-      propertyPath: volumMusic
-      value: .300000012
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5588fbea0269a4f469dc8aee106f464a, type: 2}
