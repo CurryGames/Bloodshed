@@ -19,7 +19,7 @@ public class BossMove : MonoBehaviour {
 	private DataLogic dataLogic;
 	public float statesTimer;
 	private Rigidbody bossRB;
-	public bool hasWeapon = false;
+	public bool hasWeapon;
 
 	Vector3 destination;
 
@@ -39,7 +39,7 @@ public class BossMove : MonoBehaviour {
 		bossStats.stage = BossStats.Stage.ONE;
 		dataLogic = GameObject.FindGameObjectWithTag("DataLogic").GetComponent<DataLogic>();
 		bossRB = GetComponent<Rigidbody> ();
-
+        hasWeapon = true;
 
 		statesTimer = 0;
 
@@ -105,6 +105,7 @@ public class BossMove : MonoBehaviour {
 				}
 				else
 				{
+                    Relocate();
 	                SetBazooka();
 	                if (transform.position != new Vector3(0, transform.position.y, 0)) Relocate();
 					shootTimer += Time.deltaTime;
@@ -240,9 +241,11 @@ public class BossMove : MonoBehaviour {
 
 			break;
 			case BossStats.Stage.TWO:
-			if (!hasWeapon) Vector3.MoveTowards(transform.position, new Vector3( -1f, transform.position.y, 12), 9 * Time.deltaTime);
+            if (transform.position.x != 0 && transform.position.z != 0)
+                transform.position = Vector3.MoveTowards(transform.position, new Vector3(0, transform.position.y, 0), 9 * Time.deltaTime);
+			/*if (!hasWeapon) Vector3.MoveTowards(transform.position, new Vector3( -1f, transform.position.y, 12), 9 * Time.deltaTime);
 			else if (transform.position.x != 0 && transform.position.z != 0 && hasWeapon) 
-				transform.position = Vector3.MoveTowards(transform.position, new Vector3( 0, transform.position.y, 0), 9 * Time.deltaTime);
+				transform.position = Vector3.MoveTowards(transform.position, new Vector3( 0, transform.position.y, 0), 9 * Time.deltaTime);*/
 
 		 	break;
 			case BossStats.Stage.THREE:
