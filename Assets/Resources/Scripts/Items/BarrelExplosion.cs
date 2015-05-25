@@ -42,6 +42,7 @@ public class BarrelExplosion : MonoBehaviour {
 	{
 		if (other.tag == "Bullet" || other.tag == "BulletSHOTGUN" || other.tag == "BulletRIFLE")
 		{
+            dataLogic.strike = 0;
 			Destroy (other.gameObject);
 			foreach (Collider col in Physics.OverlapSphere( transform.position, radius))
 			{

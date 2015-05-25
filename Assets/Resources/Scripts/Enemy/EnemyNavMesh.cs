@@ -22,7 +22,7 @@ public class EnemyNavMesh : MonoBehaviour
     private Animator animationLegs;
 	public float patrolTime;
 	public bool patroling = false;
-    private bool onPatrol;
+    //private bool onPatrol;
     private float patrolCounter;
     private bool behindWall;
 	NavMeshHit hit;
@@ -38,7 +38,7 @@ public class EnemyNavMesh : MonoBehaviour
         enemyRang = GetComponent<RangedEnemy>();
         target = GameObject.FindGameObjectWithTag ("Player");
         setIddle();
-        if (enemyType == EnemyType.PATROL) onPatrol = true;
+        //if (enemyType == EnemyType.PATROL) onPatrol = true;
         behindWall = true;
         //Debug.Log(enemyType);
         //agent.speed = enemyStats.speed;	
@@ -48,7 +48,7 @@ public class EnemyNavMesh : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (onPatrol) enemyType = EnemyType.PATROL;
+        //if (onPatrol) enemyType = EnemyType.PATROL;
 
         if (enemyRang.dist <= 35)
         {
@@ -111,7 +111,7 @@ public class EnemyNavMesh : MonoBehaviour
 
                             enemyType = EnemyType.CHASE;
                             setIddle();
-                            onPatrol = false;
+                            //onPatrol = false;
                             Debug.Log("player not on sight");
                         }
                         else
@@ -165,12 +165,12 @@ public class EnemyNavMesh : MonoBehaviour
 	}
 
     public void SetChasing()
-    { 
-        if (enemyType != EnemyType.CHASE)
+    {
+        if (enemyType != EnemyType.CHASE && enemyType != EnemyType.IMMOBILE)
         {
             enemyType = EnemyType.CHASE;
             chasing = true;
-            onPatrol = false;
+            //onPatrol = false;
         }   
     }
 

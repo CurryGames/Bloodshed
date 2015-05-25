@@ -43,7 +43,7 @@ public class PlayerStats : MonoBehaviour {
     private int calculateScore;
     public GameObject gameOverScreen;
     private GameObject scrMsm;
-    private EnemyNavMesh enemyNav;
+    //private EnemyNavMesh enemyNav;
     private Text scoreText;
     private Text multiplyText;
     private Grayscale grayscale;
@@ -94,7 +94,7 @@ public class PlayerStats : MonoBehaviour {
         playerShoot = GetComponent<PlayerShooting>();
         grayscale = Camera.main.GetComponent<Grayscale>();
         brutalityFire = GameObject.FindGameObjectWithTag("BrutalityFire");
-        enemyNav = GetComponent<EnemyNavMesh>();
+        //enemyNav = GetComponent<EnemyNavMesh>();
 		speed = 6f;
 		maxHealth = 256;
         riffleBullets = dataLogic.iniRiffleAmmo;
@@ -438,7 +438,7 @@ public class PlayerStats : MonoBehaviour {
 	public void GetDamage(int dmg)
 	{
 		currentHealth -= dmg;
-        enemyNav.enemyType = EnemyNavMesh.EnemyType.CHASE;
+        
 	}
 
     void GetHealth(int hlth)

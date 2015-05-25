@@ -35,6 +35,8 @@ public class LoadingScreen : MonoBehaviour {
         if (loadCurrentScreen) loadingCurrentLevel();
         if (loadNextScreen) loadingNexttLevel();
         if (loadMenu) loadingMenu();
+
+        if (levelLogic == null) levelLogic = GameObject.FindGameObjectWithTag("LevelLogic").GetComponent<LevelLogic>();
 	}
     public void loadingCurrentLevel()
     {

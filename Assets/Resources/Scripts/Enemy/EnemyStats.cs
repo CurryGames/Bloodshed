@@ -185,6 +185,7 @@ public class EnemyStats : MonoBehaviour
         currentHealth -= dmg;
         GameObject bld= (GameObject)Instantiate(blood.gameObject, new Vector3(transform.position.x, 0.2f, transform.position.z),Quaternion.identity);
         if (hit == false) hit = true;
+        //if (enemyNav.enemyType == EnemyNavMesh.EnemyType.PATROL) enemyNav.enemyType = EnemyNavMesh.EnemyType.CHASE;
         enemyNav.SetChasing();
     }
 

@@ -26,6 +26,7 @@ public class MenuLogic : MonoBehaviour {
 	public Button hd;
 	public Button cuatrotecios;
 	public Button fullhd;
+    public Slider slider;
 	public Toggle fullScr;
     private bool down;
     private float temp;
@@ -146,6 +147,7 @@ public class MenuLogic : MonoBehaviour {
 
         dataLogic.volumMusic = scrollMusic.value;
         dataLogic.volumFx = scrollFx.value;
+        dataLogic.ligthnessIntensity = slider.value;
 		Screen.fullScreen = fullScr.isOn;
 	}
 

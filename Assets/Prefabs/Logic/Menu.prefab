@@ -54,6 +54,7 @@ MonoBehaviour:
   hd: {fileID: 0}
   cuatrotecios: {fileID: 0}
   fullhd: {fileID: 0}
+  slider: {fileID: 0}
   fullScr: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:

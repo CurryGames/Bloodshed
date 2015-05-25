@@ -22,6 +22,7 @@ public class DataLogic : MonoBehaviour {
     public int currentWeapon { get; set; }
     public bool riffleActive { get; set; }
     public bool joystickActive { get; set; }
+    public float ligthnessIntensity { get; set; }
     public AudioClip riffle;
     public AudioClip gun;
     public AudioClip gunClock;
@@ -90,6 +91,7 @@ public class DataLogic : MonoBehaviour {
         iniShotgunAmmo = 20;
         unlockRifle = 1000;
         unlockFlamethrower = 10000;
+        ligthnessIntensity = 0.2f;
         riffleActive = false;
         QualitySettings.antiAliasing = 0;
 		DontDestroyOnLoad(transform.gameObject);

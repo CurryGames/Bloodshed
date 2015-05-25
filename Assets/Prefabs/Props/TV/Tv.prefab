@@ -71,7 +71,7 @@ Transform:
   m_GameObject: {fileID: 121994}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106829}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.27683306, y: 2.27683306, z: 1}
   m_Children:
   - {fileID: 421992}
   - {fileID: 431598}
@@ -145,6 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   piece1: {fileID: 196320, guid: 43bdb5ab12cc93d44a34cc5470ed5584, type: 2}
   puntuationText: {fileID: 174928, guid: 8def04c296307264393437efc1be525b, type: 2}
+  cocaine: 0
 --- !u!114 &11421994
 MonoBehaviour:
   m_ObjectHideFlags: 1
