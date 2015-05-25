@@ -147,12 +147,14 @@ public class EnemyNavMesh : MonoBehaviour
 
 	public bool OnSight()
 	{
-		if (agent.Raycast (target.transform.position, out hit)) 
+        //if (agent.Raycast (target.transform.position, out hit)) 
+        RaycastHit hit;
+        if ((Physics.Raycast(transform.position, target.transform.position - transform.position, out hit) && hit.transform.tag == "Player"))		
 		{
 			//Debug.Log ("NOT VISIBLE");
-			return false;
+			return true;
 		}
-		else return true;
+		else return false;
 	}
 
 	private void RotateTowards (Transform target) 
