@@ -166,12 +166,9 @@ public class EnemyNavMesh : MonoBehaviour
 
     public void SetChasing()
     {
-        if (enemyType != EnemyType.CHASE && enemyType != EnemyType.IMMOBILE)
-        {
+            //patroling = false;
             enemyType = EnemyType.CHASE;
-            chasing = true;
-            //onPatrol = false;
-        }   
+            chasing = true; 
     }
 
 	public void Patrol(float duration)
