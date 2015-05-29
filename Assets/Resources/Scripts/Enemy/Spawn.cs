@@ -6,7 +6,7 @@ public class Spawn : MonoBehaviour {
     public enum State { PAUSED, ONPLAY, CLEARED }
     public State state;
     public GameObject door;
-    //public GameObject door1;
+    public GameObject SpawnDoor;
     //public GameObject door2;
 
 	public GameObject[] wave1;
@@ -29,6 +29,8 @@ public class Spawn : MonoBehaviour {
 		playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
         dataLogic = GameObject.FindGameObjectWithTag("DataLogic").GetComponent<DataLogic>();
 
+        if (SpawnDoor != null) SpawnDoor.SetActive(true);
+
 	}
 	
 	// Update is called once per frame
@@ -42,11 +44,12 @@ public class Spawn : MonoBehaviour {
 				
 				if (active)door.SetActive(false);
 
-                break;
+            break;
             case State.ONPLAY:
 
 				currentTime -= Time.deltaTime;
 				if (active) door.SetActive(true);
+                
 
 			    if ((currentTime <= 0)  && (emiesNumber < maxEnemies))
                 {
@@ -55,8 +58,11 @@ public class Spawn : MonoBehaviour {
 				    emiesNumber++;
             
                 }
+
+                if (emiesNumber == maxEnemies && SpawnDoor != null) SpawnDoor.SetActive(true);
+                else if ((emiesNumber < maxEnemies) && SpawnDoor != null) SpawnDoor.SetActive(false);
                 
-			    if(deathCount >= maxDeath)
+			    if (deathCount >= maxDeath)
 			    {
                     AudioSource audiSor = gameObject.AddComponent<AudioSource>();
                     dataLogic.Play(dataLogic.door, audiSor, dataLogic.volumFx);
@@ -65,12 +71,12 @@ public class Spawn : MonoBehaviour {
 					
 			    }
                 
-                break;
-                case State.CLEARED:
-				
-				    deathCount = 0;
-				    if (active)door.SetActive(false);
-                    break;
+            break;
+            case State.CLEARED:
+                if (SpawnDoor != null) SpawnDoor.SetActive(true);
+				deathCount = 0;
+				if (active)door.SetActive(false);
+            break;
             }
 		}
 

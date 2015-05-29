@@ -370,9 +370,10 @@ public class PlayerStats : MonoBehaviour {
             LevelEnd();
         }
 
-        if ((col.tag == "ScreenEnding") && brutalMode == false)
+        if ((col.tag == "ScreenEnding"))
         {
             loadingScreen.loadNextScreen = true;
+            brutalMode = false;
             dataLogic.iniScore = score;
             dataLogic.iniHealth = currentHealth;
             dataLogic.iniBrutality = currentBrutality;
@@ -381,15 +382,24 @@ public class PlayerStats : MonoBehaviour {
 			dataLogic.iniGrenades = currentGrenades;
         }
 
-        if ((col.tag == "ScreenEndingKey") && brutalMode == false && onKey)
+        if ((col.tag == "ScreenEndingKey") && onKey)
         {
             loadingScreen.loadNextScreen = true;
+            brutalMode = false;
             dataLogic.iniScore = score;
             dataLogic.iniHealth = currentHealth;
             dataLogic.iniBrutality = currentBrutality;
             dataLogic.iniRiffleAmmo = riffleBullets;
             dataLogic.iniShotgunAmmo = shotgunBullets;
             dataLogic.iniGrenades = currentGrenades;
+        }
+
+        if ((col.tag == "keyDoor") && onKey == false && !keyShowMessage)
+        {
+            GameObject keymessage = (GameObject)Instantiate(keyText, transform.position, transform.rotation);
+            keyShowMessage = true;
+
+            Destroy(keymessage, 9);
         }
 
         if ((col.tag == "keyDoor") && onKey)
@@ -399,14 +409,6 @@ public class PlayerStats : MonoBehaviour {
             dataLogic.Play(dataLogic.door, audiSor, dataLogic.volumFx);
             Destroy(col.gameObject);
             onKey = false;
-        }
-
-        if ((col.tag == "keyDoor") && onKey == false && !keyShowMessage)
-        {
-            GameObject keymessage = (GameObject)Instantiate(keyText, transform.position, transform.rotation);
-            keyShowMessage = true;
-
-            Destroy(keymessage, 9);
         }
 
         if (col.tag == "Key")
