@@ -710,6 +710,7 @@ GameObject:
   - 33: {fileID: 26055074}
   - 23: {fileID: 26055073}
   - 114: {fileID: 26055075}
+  - 114: {fileID: 26055076}
   m_Layer: 8
   m_Name: Pasillo 7
   m_TagString: Floor
@@ -768,7 +769,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 26055071}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
   m_Name: 
@@ -802,6 +803,31 @@ MonoBehaviour:
   endValueType: 0
   endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
   target: {fileID: 0}
+--- !u!114 &26055076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 26055071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd349b1c31c4a604a971862e5adf12fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitNormalColor:
+    serializedVersion: 2
+    rgba: 4144958
+  FinalNormalColor:
+    serializedVersion: 2
+    rgba: 983301
+  InitBrutalColor:
+    serializedVersion: 2
+    rgba: 328999
+  FinalBrutalColor:
+    serializedVersion: 2
+    rgba: 107
+  duration: 3
+  brutalDuration: 1
 --- !u!1 &26689862 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 102086, guid: 7af09ca799c26b446a154763ea2cbaff, type: 2}
@@ -1034,7 +1060,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 30527912}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1fd999d1b2cf94a45a5b0a47ce074bef, type: 3}
   m_Name: 
@@ -5117,6 +5143,7 @@ GameObject:
   - 33: {fileID: 282113851}
   - 23: {fileID: 282113850}
   - 114: {fileID: 282113852}
+  - 114: {fileID: 282113853}
   m_Layer: 8
   m_Name: Pasillo 9
   m_TagString: Floor
@@ -5175,7 +5202,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 282113848}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
   m_Name: 
@@ -5209,6 +5236,31 @@ MonoBehaviour:
   endValueType: 0
   endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
   target: {fileID: 0}
+--- !u!114 &282113853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 282113848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd349b1c31c4a604a971862e5adf12fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitNormalColor:
+    serializedVersion: 2
+    rgba: 4144958
+  FinalNormalColor:
+    serializedVersion: 2
+    rgba: 983301
+  InitBrutalColor:
+    serializedVersion: 2
+    rgba: 328999
+  FinalBrutalColor:
+    serializedVersion: 2
+    rgba: 107
+  duration: 3
+  brutalDuration: 1
 --- !u!1 &282420314
 GameObject:
   m_ObjectHideFlags: 0
@@ -5754,6 +5806,7 @@ GameObject:
   - 33: {fileID: 297556556}
   - 23: {fileID: 297556555}
   - 114: {fileID: 297556557}
+  - 114: {fileID: 297556558}
   m_Layer: 8
   m_Name: Pasillo 3
   m_TagString: Floor
@@ -5812,7 +5865,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 297556553}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
   m_Name: 
@@ -5846,6 +5899,31 @@ MonoBehaviour:
   endValueType: 0
   endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
   target: {fileID: 0}
+--- !u!114 &297556558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 297556553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd349b1c31c4a604a971862e5adf12fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitNormalColor:
+    serializedVersion: 2
+    rgba: 4144958
+  FinalNormalColor:
+    serializedVersion: 2
+    rgba: 983301
+  InitBrutalColor:
+    serializedVersion: 2
+    rgba: 328999
+  FinalBrutalColor:
+    serializedVersion: 2
+    rgba: 107
+  duration: 3
+  brutalDuration: 1
 --- !u!1 &297783843
 GameObject:
   m_ObjectHideFlags: 0
@@ -7031,6 +7109,7 @@ GameObject:
   - 33: {fileID: 353584560}
   - 23: {fileID: 353584559}
   - 114: {fileID: 353584561}
+  - 114: {fileID: 353584562}
   m_Layer: 8
   m_Name: Pasillo 8
   m_TagString: Floor
@@ -7089,7 +7168,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 353584557}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
   m_Name: 
@@ -7123,6 +7202,31 @@ MonoBehaviour:
   endValueType: 0
   endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
   target: {fileID: 0}
+--- !u!114 &353584562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 353584557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd349b1c31c4a604a971862e5adf12fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitNormalColor:
+    serializedVersion: 2
+    rgba: 4144958
+  FinalNormalColor:
+    serializedVersion: 2
+    rgba: 983301
+  InitBrutalColor:
+    serializedVersion: 2
+    rgba: 328999
+  FinalBrutalColor:
+    serializedVersion: 2
+    rgba: 107
+  duration: 3
+  brutalDuration: 1
 --- !u!1001 &361025459
 Prefab:
   m_ObjectHideFlags: 0
@@ -9055,7 +9159,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 494983628}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
   m_Name: 
@@ -9089,6 +9193,31 @@ MonoBehaviour:
   endValueType: 0
   endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
   target: {fileID: 0}
+--- !u!114 &494983630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 494983628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd349b1c31c4a604a971862e5adf12fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitNormalColor:
+    serializedVersion: 2
+    rgba: 4144958
+  FinalNormalColor:
+    serializedVersion: 2
+    rgba: 983301
+  InitBrutalColor:
+    serializedVersion: 2
+    rgba: 328999
+  FinalBrutalColor:
+    serializedVersion: 2
+    rgba: 107
+  duration: 3
+  brutalDuration: 1
 --- !u!4 &497530774 stripped
 Transform:
   m_PrefabParentObject: {fileID: 404520, guid: 28147d7451e10ad44b8d843766682567, type: 2}
@@ -9816,6 +9945,7 @@ GameObject:
   - 33: {fileID: 534886053}
   - 23: {fileID: 534886052}
   - 114: {fileID: 534886054}
+  - 114: {fileID: 534886055}
   m_Layer: 8
   m_Name: Pasillo 4
   m_TagString: Floor
@@ -9874,7 +10004,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 534886050}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
   m_Name: 
@@ -9908,6 +10038,31 @@ MonoBehaviour:
   endValueType: 0
   endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
   target: {fileID: 0}
+--- !u!114 &534886055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 534886050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd349b1c31c4a604a971862e5adf12fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitNormalColor:
+    serializedVersion: 2
+    rgba: 4144958
+  FinalNormalColor:
+    serializedVersion: 2
+    rgba: 983301
+  InitBrutalColor:
+    serializedVersion: 2
+    rgba: 328999
+  FinalBrutalColor:
+    serializedVersion: 2
+    rgba: 107
+  duration: 3
+  brutalDuration: 1
 --- !u!1 &545340674
 GameObject:
   m_ObjectHideFlags: 0
@@ -11517,7 +11672,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 637040813}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
   m_Name: 
@@ -11551,6 +11706,31 @@ MonoBehaviour:
   endValueType: 0
   endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
   target: {fileID: 0}
+--- !u!114 &637040815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 637040813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd349b1c31c4a604a971862e5adf12fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitNormalColor:
+    serializedVersion: 2
+    rgba: 4144958
+  FinalNormalColor:
+    serializedVersion: 2
+    rgba: 983301
+  InitBrutalColor:
+    serializedVersion: 2
+    rgba: 328999
+  FinalBrutalColor:
+    serializedVersion: 2
+    rgba: 107
+  duration: 3
+  brutalDuration: 1
 --- !u!65 &637040819
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14428,6 +14608,7 @@ GameObject:
   - 33: {fileID: 842830974}
   - 23: {fileID: 842830973}
   - 114: {fileID: 842830975}
+  - 114: {fileID: 842830976}
   m_Layer: 8
   m_Name: Pasillo 10
   m_TagString: Floor
@@ -14486,7 +14667,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 842830971}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
   m_Name: 
@@ -14520,6 +14701,31 @@ MonoBehaviour:
   endValueType: 0
   endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
   target: {fileID: 0}
+--- !u!114 &842830976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 842830971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd349b1c31c4a604a971862e5adf12fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitNormalColor:
+    serializedVersion: 2
+    rgba: 4144958
+  FinalNormalColor:
+    serializedVersion: 2
+    rgba: 983301
+  InitBrutalColor:
+    serializedVersion: 2
+    rgba: 328999
+  FinalBrutalColor:
+    serializedVersion: 2
+    rgba: 107
+  duration: 3
+  brutalDuration: 1
 --- !u!4 &850798813 stripped
 Transform:
   m_PrefabParentObject: {fileID: 415808, guid: 9b6246b088a92e5448a3ec2398232f9c, type: 2}
@@ -19630,6 +19836,7 @@ GameObject:
   - 33: {fileID: 1183735769}
   - 23: {fileID: 1183735768}
   - 114: {fileID: 1183735770}
+  - 114: {fileID: 1183735771}
   m_Layer: 8
   m_Name: Pasillo 13
   m_TagString: Floor
@@ -19688,7 +19895,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1183735766}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
   m_Name: 
@@ -19722,6 +19929,31 @@ MonoBehaviour:
   endValueType: 0
   endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
   target: {fileID: 0}
+--- !u!114 &1183735771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1183735766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd349b1c31c4a604a971862e5adf12fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitNormalColor:
+    serializedVersion: 2
+    rgba: 4144958
+  FinalNormalColor:
+    serializedVersion: 2
+    rgba: 983301
+  InitBrutalColor:
+    serializedVersion: 2
+    rgba: 328999
+  FinalBrutalColor:
+    serializedVersion: 2
+    rgba: 107
+  duration: 3
+  brutalDuration: 1
 --- !u!1001 &1187309590
 Prefab:
   m_ObjectHideFlags: 0
@@ -20087,6 +20319,7 @@ GameObject:
   - 33: {fileID: 1207275907}
   - 23: {fileID: 1207275906}
   - 114: {fileID: 1207275908}
+  - 114: {fileID: 1207275909}
   m_Layer: 8
   m_Name: Pasillo 6
   m_TagString: Floor
@@ -20145,7 +20378,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1207275904}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
   m_Name: 
@@ -20179,6 +20412,31 @@ MonoBehaviour:
   endValueType: 0
   endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
   target: {fileID: 0}
+--- !u!114 &1207275909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1207275904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd349b1c31c4a604a971862e5adf12fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitNormalColor:
+    serializedVersion: 2
+    rgba: 4144958
+  FinalNormalColor:
+    serializedVersion: 2
+    rgba: 983301
+  InitBrutalColor:
+    serializedVersion: 2
+    rgba: 328999
+  FinalBrutalColor:
+    serializedVersion: 2
+    rgba: 107
+  duration: 3
+  brutalDuration: 1
 --- !u!1 &1212406383
 GameObject:
   m_ObjectHideFlags: 0
@@ -21466,6 +21724,7 @@ GameObject:
   - 33: {fileID: 1315150592}
   - 23: {fileID: 1315150591}
   - 114: {fileID: 1315150593}
+  - 114: {fileID: 1315150594}
   m_Layer: 8
   m_Name: Pasillo 11
   m_TagString: Floor
@@ -21524,7 +21783,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1315150589}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
   m_Name: 
@@ -21558,6 +21817,31 @@ MonoBehaviour:
   endValueType: 0
   endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
   target: {fileID: 0}
+--- !u!114 &1315150594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1315150589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd349b1c31c4a604a971862e5adf12fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitNormalColor:
+    serializedVersion: 2
+    rgba: 4144958
+  FinalNormalColor:
+    serializedVersion: 2
+    rgba: 983301
+  InitBrutalColor:
+    serializedVersion: 2
+    rgba: 328999
+  FinalBrutalColor:
+    serializedVersion: 2
+    rgba: 107
+  duration: 3
+  brutalDuration: 1
 --- !u!1 &1317156127
 GameObject:
   m_ObjectHideFlags: 0
@@ -22212,6 +22496,7 @@ GameObject:
   - 33: {fileID: 1392718148}
   - 23: {fileID: 1392718147}
   - 114: {fileID: 1392718149}
+  - 114: {fileID: 1392718150}
   m_Layer: 8
   m_Name: Pasillo 2
   m_TagString: Floor
@@ -22270,7 +22555,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1392718145}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
   m_Name: 
@@ -22304,6 +22589,31 @@ MonoBehaviour:
   endValueType: 0
   endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
   target: {fileID: 0}
+--- !u!114 &1392718150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1392718145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd349b1c31c4a604a971862e5adf12fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitNormalColor:
+    serializedVersion: 2
+    rgba: 4144958
+  FinalNormalColor:
+    serializedVersion: 2
+    rgba: 983301
+  InitBrutalColor:
+    serializedVersion: 2
+    rgba: 328999
+  FinalBrutalColor:
+    serializedVersion: 2
+    rgba: 107
+  duration: 3
+  brutalDuration: 1
 --- !u!1 &1393727254
 GameObject:
   m_ObjectHideFlags: 0
@@ -25669,6 +25979,7 @@ GameObject:
   - 33: {fileID: 1592990636}
   - 23: {fileID: 1592990635}
   - 114: {fileID: 1592990637}
+  - 114: {fileID: 1592990638}
   m_Layer: 8
   m_Name: Pasillo 12
   m_TagString: Floor
@@ -25727,7 +26038,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1592990633}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
   m_Name: 
@@ -25761,6 +26072,31 @@ MonoBehaviour:
   endValueType: 0
   endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
   target: {fileID: 0}
+--- !u!114 &1592990638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1592990633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd349b1c31c4a604a971862e5adf12fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitNormalColor:
+    serializedVersion: 2
+    rgba: 4144958
+  FinalNormalColor:
+    serializedVersion: 2
+    rgba: 983301
+  InitBrutalColor:
+    serializedVersion: 2
+    rgba: 328999
+  FinalBrutalColor:
+    serializedVersion: 2
+    rgba: 107
+  duration: 3
+  brutalDuration: 1
 --- !u!1 &1594652577
 GameObject:
   m_ObjectHideFlags: 0
@@ -30824,6 +31160,7 @@ GameObject:
   - 33: {fileID: 1962102098}
   - 23: {fileID: 1962102097}
   - 114: {fileID: 1962102099}
+  - 114: {fileID: 1962102100}
   m_Layer: 8
   m_Name: Pasillo 5
   m_TagString: Floor
@@ -30882,7 +31219,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1962102095}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
   m_Name: 
@@ -30916,6 +31253,31 @@ MonoBehaviour:
   endValueType: 0
   endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
   target: {fileID: 0}
+--- !u!114 &1962102100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1962102095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd349b1c31c4a604a971862e5adf12fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitNormalColor:
+    serializedVersion: 2
+    rgba: 4144958
+  FinalNormalColor:
+    serializedVersion: 2
+    rgba: 983301
+  InitBrutalColor:
+    serializedVersion: 2
+    rgba: 328999
+  FinalBrutalColor:
+    serializedVersion: 2
+    rgba: 107
+  duration: 3
+  brutalDuration: 1
 --- !u!1001 &1963435959
 Prefab:
   m_ObjectHideFlags: 0
@@ -31950,7 +32312,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1998004477}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
   m_Name: 
@@ -31984,6 +32346,31 @@ MonoBehaviour:
   endValueType: 0
   endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
   target: {fileID: 0}
+--- !u!114 &1998004479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1998004477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd349b1c31c4a604a971862e5adf12fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitNormalColor:
+    serializedVersion: 2
+    rgba: 4144958
+  FinalNormalColor:
+    serializedVersion: 2
+    rgba: 983301
+  InitBrutalColor:
+    serializedVersion: 2
+    rgba: 328999
+  FinalBrutalColor:
+    serializedVersion: 2
+    rgba: 107
+  duration: 3
+  brutalDuration: 1
 --- !u!1001 &2001355344
 Prefab:
   m_ObjectHideFlags: 0
@@ -32467,6 +32854,7 @@ GameObject:
   - 33: {fileID: 2029986375}
   - 23: {fileID: 2029986374}
   - 114: {fileID: 2029986376}
+  - 114: {fileID: 2029986377}
   m_Layer: 8
   m_Name: Pasillo 1
   m_TagString: Floor
@@ -32525,7 +32913,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2029986372}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
   m_Name: 
@@ -32559,6 +32947,31 @@ MonoBehaviour:
   endValueType: 0
   endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
   target: {fileID: 0}
+--- !u!114 &2029986377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2029986372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd349b1c31c4a604a971862e5adf12fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitNormalColor:
+    serializedVersion: 2
+    rgba: 4144958
+  FinalNormalColor:
+    serializedVersion: 2
+    rgba: 983301
+  InitBrutalColor:
+    serializedVersion: 2
+    rgba: 328999
+  FinalBrutalColor:
+    serializedVersion: 2
+    rgba: 107
+  duration: 3
+  brutalDuration: 1
 --- !u!1001 &2031708498
 Prefab:
   m_ObjectHideFlags: 0
@@ -33018,6 +33431,7 @@ GameObject:
   - 33: {fileID: 2057000253}
   - 23: {fileID: 2057000252}
   - 114: {fileID: 2057000254}
+  - 114: {fileID: 2057000255}
   m_Layer: 8
   m_Name: Pasillo 14
   m_TagString: Floor
@@ -33076,7 +33490,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2057000250}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
   m_Name: 
@@ -33110,6 +33524,31 @@ MonoBehaviour:
   endValueType: 0
   endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
   target: {fileID: 0}
+--- !u!114 &2057000255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2057000250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd349b1c31c4a604a971862e5adf12fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitNormalColor:
+    serializedVersion: 2
+    rgba: 4144958
+  FinalNormalColor:
+    serializedVersion: 2
+    rgba: 983301
+  InitBrutalColor:
+    serializedVersion: 2
+    rgba: 328999
+  FinalBrutalColor:
+    serializedVersion: 2
+    rgba: 107
+  duration: 3
+  brutalDuration: 1
 --- !u!1 &2057738314
 GameObject:
   m_ObjectHideFlags: 0

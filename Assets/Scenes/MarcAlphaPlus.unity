@@ -1209,7 +1209,7 @@ GameObject:
   - 4: {fileID: 100701712}
   - 33: {fileID: 100701715}
   - 23: {fileID: 100701714}
-  - 114: {fileID: 100701713}
+  - 114: {fileID: 100701716}
   m_Layer: 8
   m_Name: Pasillo 7
   m_TagString: Floor
@@ -1229,46 +1229,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 869205879}
   m_RootOrder: 34
---- !u!114 &100701713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 100701711}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  autoRun: 1
-  tweenName: 
-  startDelay: 0
-  assignStartValueBeforeDelay: 1
-  loopType: 2
-  loopCount: 0
-  duration: 3
-  easingType: 0
-  animCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 1
-      tangentMode: 0
-    - time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  playDirection: 0
-  startValueType: 0
-  startValue: {r: .242647052, g: .247999564, b: .247999564, a: 1}
-  endValueType: 0
-  endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
-  target: {fileID: 0}
 --- !u!23 &100701714
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1300,6 +1260,31 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 100701711}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &100701716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 100701711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd349b1c31c4a604a971862e5adf12fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitNormalColor:
+    serializedVersion: 2
+    rgba: 4144958
+  FinalNormalColor:
+    serializedVersion: 2
+    rgba: 983301
+  InitBrutalColor:
+    serializedVersion: 2
+    rgba: 328999
+  FinalBrutalColor:
+    serializedVersion: 2
+    rgba: 107
+  duration: 3
+  brutalDuration: 1
 --- !u!1 &104147078
 GameObject:
   m_ObjectHideFlags: 0
@@ -1515,7 +1500,7 @@ GameObject:
   - 4: {fileID: 134802808}
   - 33: {fileID: 134802810}
   - 23: {fileID: 134802809}
-  - 114: {fileID: 134802811}
+  - 114: {fileID: 134802812}
   m_Layer: 8
   m_Name: Pasillo 1
   m_TagString: Floor
@@ -1566,7 +1551,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 134802807}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &134802811
+--- !u!114 &134802812
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -1574,38 +1559,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 134802807}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
+  m_Script: {fileID: 11500000, guid: fd349b1c31c4a604a971862e5adf12fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoRun: 1
-  tweenName: 
-  startDelay: 0
-  assignStartValueBeforeDelay: 1
-  loopType: 2
-  loopCount: 0
-  duration: 3
-  easingType: 0
-  animCurve:
+  InitNormalColor:
     serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 1
-      tangentMode: 0
-    - time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  playDirection: 0
-  startValueType: 0
-  startValue: {r: .242647052, g: .247999564, b: .247999564, a: 1}
-  endValueType: 0
-  endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
-  target: {fileID: 0}
+    rgba: 4144958
+  FinalNormalColor:
+    serializedVersion: 2
+    rgba: 983301
+  InitBrutalColor:
+    serializedVersion: 2
+    rgba: 328999
+  FinalBrutalColor:
+    serializedVersion: 2
+    rgba: 107
+  duration: 3
+  brutalDuration: 1
 --- !u!1 &144248039
 GameObject:
   m_ObjectHideFlags: 0
@@ -3069,7 +3039,7 @@ GameObject:
   - 4: {fileID: 235075283}
   - 33: {fileID: 235075286}
   - 23: {fileID: 235075285}
-  - 114: {fileID: 235075284}
+  - 114: {fileID: 235075287}
   m_Layer: 8
   m_Name: Pasillo 9
   m_TagString: Floor
@@ -3089,46 +3059,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 869205879}
   m_RootOrder: 36
---- !u!114 &235075284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 235075282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  autoRun: 1
-  tweenName: 
-  startDelay: 0
-  assignStartValueBeforeDelay: 1
-  loopType: 2
-  loopCount: 0
-  duration: 3
-  easingType: 0
-  animCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 1
-      tangentMode: 0
-    - time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  playDirection: 0
-  startValueType: 0
-  startValue: {r: .242647052, g: .247999564, b: .247999564, a: 1}
-  endValueType: 0
-  endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
-  target: {fileID: 0}
 --- !u!23 &235075285
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3160,6 +3090,31 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 235075282}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &235075287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 235075282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd349b1c31c4a604a971862e5adf12fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitNormalColor:
+    serializedVersion: 2
+    rgba: 4144958
+  FinalNormalColor:
+    serializedVersion: 2
+    rgba: 983301
+  InitBrutalColor:
+    serializedVersion: 2
+    rgba: 328999
+  FinalBrutalColor:
+    serializedVersion: 2
+    rgba: 107
+  duration: 3
+  brutalDuration: 1
 --- !u!1 &256119932
 GameObject:
   m_ObjectHideFlags: 0
@@ -6621,6 +6576,7 @@ GameObject:
   - 33: {fileID: 584541573}
   - 23: {fileID: 584541571}
   - 114: {fileID: 584541572}
+  - 114: {fileID: 584541574}
   m_Layer: 8
   m_Name: Pasillo
   m_TagString: Floor
@@ -6670,7 +6626,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 584541569}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
   m_Name: 
@@ -6711,6 +6667,31 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 584541569}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &584541574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 584541569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd349b1c31c4a604a971862e5adf12fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitNormalColor:
+    serializedVersion: 2
+    rgba: 4144958
+  FinalNormalColor:
+    serializedVersion: 2
+    rgba: 983301
+  InitBrutalColor:
+    serializedVersion: 2
+    rgba: 328999
+  FinalBrutalColor:
+    serializedVersion: 2
+    rgba: 107
+  duration: 3
+  brutalDuration: 1
 --- !u!4 &608402285 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 71196ab40eacc9f4ebcbe856b8624b63, type: 2}
@@ -13346,7 +13327,7 @@ GameObject:
   - 4: {fileID: 1208315408}
   - 33: {fileID: 1208315411}
   - 23: {fileID: 1208315410}
-  - 114: {fileID: 1208315409}
+  - 114: {fileID: 1208315412}
   m_Layer: 8
   m_Name: Pasillo 8
   m_TagString: Floor
@@ -13366,46 +13347,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 869205879}
   m_RootOrder: 35
---- !u!114 &1208315409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1208315407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  autoRun: 1
-  tweenName: 
-  startDelay: 0
-  assignStartValueBeforeDelay: 1
-  loopType: 2
-  loopCount: 0
-  duration: 3
-  easingType: 0
-  animCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 1
-      tangentMode: 0
-    - time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  playDirection: 0
-  startValueType: 0
-  startValue: {r: .242647052, g: .247999564, b: .247999564, a: 1}
-  endValueType: 0
-  endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
-  target: {fileID: 0}
 --- !u!23 &1208315410
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13437,6 +13378,31 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1208315407}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1208315412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1208315407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd349b1c31c4a604a971862e5adf12fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitNormalColor:
+    serializedVersion: 2
+    rgba: 4144958
+  FinalNormalColor:
+    serializedVersion: 2
+    rgba: 983301
+  InitBrutalColor:
+    serializedVersion: 2
+    rgba: 328999
+  FinalBrutalColor:
+    serializedVersion: 2
+    rgba: 107
+  duration: 3
+  brutalDuration: 1
 --- !u!4 &1209078894 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 456ec3d882ffa414dbad00c5cb256101, type: 2}
@@ -15232,7 +15198,7 @@ GameObject:
   - 4: {fileID: 1371006038}
   - 33: {fileID: 1371006040}
   - 23: {fileID: 1371006039}
-  - 114: {fileID: 1371006041}
+  - 114: {fileID: 1371006042}
   m_Layer: 8
   m_Name: Pasillo 2
   m_TagString: Floor
@@ -15283,7 +15249,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1371006037}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1371006041
+--- !u!114 &1371006042
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -15291,38 +15257,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1371006037}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
+  m_Script: {fileID: 11500000, guid: fd349b1c31c4a604a971862e5adf12fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoRun: 1
-  tweenName: 
-  startDelay: 0
-  assignStartValueBeforeDelay: 1
-  loopType: 2
-  loopCount: 0
-  duration: 3
-  easingType: 0
-  animCurve:
+  InitNormalColor:
     serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 1
-      tangentMode: 0
-    - time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  playDirection: 0
-  startValueType: 0
-  startValue: {r: .242647052, g: .247999564, b: .247999564, a: 1}
-  endValueType: 0
-  endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
-  target: {fileID: 0}
+    rgba: 4144958
+  FinalNormalColor:
+    serializedVersion: 2
+    rgba: 983301
+  InitBrutalColor:
+    serializedVersion: 2
+    rgba: 328999
+  FinalBrutalColor:
+    serializedVersion: 2
+    rgba: 107
+  duration: 3
+  brutalDuration: 1
 --- !u!1 &1377879460
 GameObject:
   m_ObjectHideFlags: 0
@@ -15333,7 +15284,7 @@ GameObject:
   - 4: {fileID: 1377879463}
   - 33: {fileID: 1377879462}
   - 23: {fileID: 1377879461}
-  - 114: {fileID: 1377879464}
+  - 114: {fileID: 1377879465}
   m_Layer: 8
   m_Name: Pasillo 1
   m_TagString: Floor
@@ -15384,7 +15335,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1784985343}
   m_RootOrder: 0
---- !u!114 &1377879464
+--- !u!114 &1377879465
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -15392,38 +15343,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1377879460}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
+  m_Script: {fileID: 11500000, guid: fd349b1c31c4a604a971862e5adf12fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoRun: 1
-  tweenName: 
-  startDelay: 0
-  assignStartValueBeforeDelay: 1
-  loopType: 2
-  loopCount: 0
-  duration: 3
-  easingType: 0
-  animCurve:
+  InitNormalColor:
     serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 1
-      tangentMode: 0
-    - time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  playDirection: 0
-  startValueType: 0
-  startValue: {r: .242647052, g: .247999564, b: .247999564, a: 1}
-  endValueType: 0
-  endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
-  target: {fileID: 0}
+    rgba: 4144958
+  FinalNormalColor:
+    serializedVersion: 2
+    rgba: 983301
+  InitBrutalColor:
+    serializedVersion: 2
+    rgba: 328999
+  FinalBrutalColor:
+    serializedVersion: 2
+    rgba: 107
+  duration: 3
+  brutalDuration: 1
 --- !u!1 &1383774719
 GameObject:
   m_ObjectHideFlags: 0
@@ -15688,7 +15624,7 @@ GameObject:
   - 4: {fileID: 1427302120}
   - 33: {fileID: 1427302122}
   - 23: {fileID: 1427302121}
-  - 114: {fileID: 1427302123}
+  - 114: {fileID: 1427302124}
   m_Layer: 8
   m_Name: Pasillo 6
   m_TagString: Floor
@@ -15739,7 +15675,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1427302119}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1427302123
+--- !u!114 &1427302124
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -15747,38 +15683,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1427302119}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
+  m_Script: {fileID: 11500000, guid: fd349b1c31c4a604a971862e5adf12fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoRun: 1
-  tweenName: 
-  startDelay: 0
-  assignStartValueBeforeDelay: 1
-  loopType: 2
-  loopCount: 0
-  duration: 3
-  easingType: 0
-  animCurve:
+  InitNormalColor:
     serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 1
-      tangentMode: 0
-    - time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  playDirection: 0
-  startValueType: 0
-  startValue: {r: .242647052, g: .247999564, b: .247999564, a: 1}
-  endValueType: 0
-  endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
-  target: {fileID: 0}
+    rgba: 4144958
+  FinalNormalColor:
+    serializedVersion: 2
+    rgba: 983301
+  InitBrutalColor:
+    serializedVersion: 2
+    rgba: 328999
+  FinalBrutalColor:
+    serializedVersion: 2
+    rgba: 107
+  duration: 3
+  brutalDuration: 1
 --- !u!1 &1429237985
 GameObject:
   m_ObjectHideFlags: 0
@@ -18913,8 +18834,9 @@ GameObject:
   - 23: {fileID: 1690723427}
   - 114: {fileID: 1690723431}
   - 65: {fileID: 1690723428}
+  - 114: {fileID: 1690723432}
   m_Layer: 8
-  m_Name: Floor
+  m_Name: Layer
   m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18981,7 +18903,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1690723426}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
   m_Name: 
@@ -19015,6 +18937,31 @@ MonoBehaviour:
   endValueType: 0
   endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
   target: {fileID: 0}
+--- !u!114 &1690723432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1690723426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd349b1c31c4a604a971862e5adf12fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitNormalColor:
+    serializedVersion: 2
+    rgba: 4144958
+  FinalNormalColor:
+    serializedVersion: 2
+    rgba: 983301
+  InitBrutalColor:
+    serializedVersion: 2
+    rgba: 328999
+  FinalBrutalColor:
+    serializedVersion: 2
+    rgba: 107
+  duration: 3
+  brutalDuration: 1
 --- !u!4 &1708600837 stripped
 Transform:
   m_PrefabParentObject: {fileID: 438376, guid: 151253f2f17b26b41823e269312d1681, type: 2}
@@ -19029,7 +18976,7 @@ GameObject:
   - 4: {fileID: 1710862476}
   - 33: {fileID: 1710862478}
   - 23: {fileID: 1710862477}
-  - 114: {fileID: 1710862479}
+  - 114: {fileID: 1710862480}
   m_Layer: 8
   m_Name: Pasillo 4
   m_TagString: Floor
@@ -19080,7 +19027,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1710862475}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1710862479
+--- !u!114 &1710862480
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -19088,38 +19035,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1710862475}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
+  m_Script: {fileID: 11500000, guid: fd349b1c31c4a604a971862e5adf12fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoRun: 1
-  tweenName: 
-  startDelay: 0
-  assignStartValueBeforeDelay: 1
-  loopType: 2
-  loopCount: 0
-  duration: 3
-  easingType: 0
-  animCurve:
+  InitNormalColor:
     serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 1
-      tangentMode: 0
-    - time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  playDirection: 0
-  startValueType: 0
-  startValue: {r: .242647052, g: .247999564, b: .247999564, a: 1}
-  endValueType: 0
-  endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
-  target: {fileID: 0}
+    rgba: 4144958
+  FinalNormalColor:
+    serializedVersion: 2
+    rgba: 983301
+  InitBrutalColor:
+    serializedVersion: 2
+    rgba: 328999
+  FinalBrutalColor:
+    serializedVersion: 2
+    rgba: 107
+  duration: 3
+  brutalDuration: 1
 --- !u!1001 &1745976357
 Prefab:
   m_ObjectHideFlags: 0
@@ -19514,7 +19446,7 @@ GameObject:
   - 4: {fileID: 1783024442}
   - 33: {fileID: 1783024444}
   - 23: {fileID: 1783024443}
-  - 114: {fileID: 1783024445}
+  - 114: {fileID: 1783024446}
   m_Layer: 8
   m_Name: Pasillo 2
   m_TagString: Floor
@@ -19565,7 +19497,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1783024441}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1783024445
+--- !u!114 &1783024446
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -19573,38 +19505,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1783024441}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
+  m_Script: {fileID: 11500000, guid: fd349b1c31c4a604a971862e5adf12fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoRun: 1
-  tweenName: 
-  startDelay: 0
-  assignStartValueBeforeDelay: 1
-  loopType: 2
-  loopCount: 0
-  duration: 3
-  easingType: 0
-  animCurve:
+  InitNormalColor:
     serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 1
-      tangentMode: 0
-    - time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  playDirection: 0
-  startValueType: 0
-  startValue: {r: .242647052, g: .247999564, b: .247999564, a: 1}
-  endValueType: 0
-  endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
-  target: {fileID: 0}
+    rgba: 4144958
+  FinalNormalColor:
+    serializedVersion: 2
+    rgba: 983301
+  InitBrutalColor:
+    serializedVersion: 2
+    rgba: 328999
+  FinalBrutalColor:
+    serializedVersion: 2
+    rgba: 107
+  duration: 3
+  brutalDuration: 1
 --- !u!1 &1784985341
 GameObject:
   m_ObjectHideFlags: 0
@@ -19669,7 +19586,7 @@ GameObject:
   - 4: {fileID: 1786372886}
   - 33: {fileID: 1786372888}
   - 23: {fileID: 1786372887}
-  - 114: {fileID: 1786372889}
+  - 114: {fileID: 1786372890}
   m_Layer: 8
   m_Name: Pasillo 5
   m_TagString: Floor
@@ -19720,7 +19637,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1786372885}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1786372889
+--- !u!114 &1786372890
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -19728,38 +19645,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1786372885}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
+  m_Script: {fileID: 11500000, guid: fd349b1c31c4a604a971862e5adf12fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoRun: 1
-  tweenName: 
-  startDelay: 0
-  assignStartValueBeforeDelay: 1
-  loopType: 2
-  loopCount: 0
-  duration: 3
-  easingType: 0
-  animCurve:
+  InitNormalColor:
     serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 1
-      tangentMode: 0
-    - time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  playDirection: 0
-  startValueType: 0
-  startValue: {r: .242647052, g: .247999564, b: .247999564, a: 1}
-  endValueType: 0
-  endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
-  target: {fileID: 0}
+    rgba: 4144958
+  FinalNormalColor:
+    serializedVersion: 2
+    rgba: 983301
+  InitBrutalColor:
+    serializedVersion: 2
+    rgba: 328999
+  FinalBrutalColor:
+    serializedVersion: 2
+    rgba: 107
+  duration: 3
+  brutalDuration: 1
 --- !u!1 &1790442432
 GameObject:
   m_ObjectHideFlags: 0
@@ -22935,7 +22837,7 @@ GameObject:
   - 4: {fileID: 2044886539}
   - 33: {fileID: 2044886541}
   - 23: {fileID: 2044886540}
-  - 114: {fileID: 2044886542}
+  - 114: {fileID: 2044886543}
   m_Layer: 8
   m_Name: Pasillo 3
   m_TagString: Floor
@@ -22986,7 +22888,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2044886538}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &2044886542
+--- !u!114 &2044886543
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -22994,38 +22896,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 2044886538}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5de87dc9be9c1344b906b3d4f3e4c7e2, type: 3}
+  m_Script: {fileID: 11500000, guid: fd349b1c31c4a604a971862e5adf12fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoRun: 1
-  tweenName: 
-  startDelay: 0
-  assignStartValueBeforeDelay: 1
-  loopType: 2
-  loopCount: 0
-  duration: 3
-  easingType: 0
-  animCurve:
+  InitNormalColor:
     serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 1
-      tangentMode: 0
-    - time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  playDirection: 0
-  startValueType: 0
-  startValue: {r: .242647052, g: .247999564, b: .247999564, a: 1}
-  endValueType: 0
-  endValue: {r: .0178081337, g: .00475778617, b: .0588235259, a: 1}
-  target: {fileID: 0}
+    rgba: 4144958
+  FinalNormalColor:
+    serializedVersion: 2
+    rgba: 983301
+  InitBrutalColor:
+    serializedVersion: 2
+    rgba: 328999
+  FinalBrutalColor:
+    serializedVersion: 2
+    rgba: 107
+  duration: 3
+  brutalDuration: 1
 --- !u!1001 &2051818984
 Prefab:
   m_ObjectHideFlags: 0
@@ -24127,7 +24014,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2144967691}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1fd999d1b2cf94a45a5b0a47ce074bef, type: 3}
   m_Name: 

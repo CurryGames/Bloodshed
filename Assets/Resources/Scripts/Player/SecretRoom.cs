@@ -11,7 +11,7 @@ public class SecretRoom : MonoBehaviour {
     private Color color;
     private BoxCollider boxCol;
     private DataLogic dataLogic;
-    private TweenObjectColor tweenMaterial;
+    private BackgroundColor tweenMaterial;
 
 	// Use this for initialization
 	void Start () 
@@ -23,7 +23,7 @@ public class SecretRoom : MonoBehaviour {
         dataLogic = GameObject.FindGameObjectWithTag("DataLogic"). GetComponent<DataLogic>();
         boxCol = GetComponent<BoxCollider>();
 
-        tweenMaterial = plane.GetComponent<TweenObjectColor>();
+        tweenMaterial = plane.GetComponent<BackgroundColor>();
 	}
 	
 	// Update is called once per frame
