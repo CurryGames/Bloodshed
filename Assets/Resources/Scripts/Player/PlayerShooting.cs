@@ -4,8 +4,7 @@ using UnityStandardAssets.ImageEffects;
 
 public class PlayerShooting : MonoBehaviour
 {
-	             // The damage inflicted by each bullet.
-	public float timeBetweenBullets;        // The time between each shot.
+    public float timeBetweenBullets;        // The time between each shot.
 	public float range = 10f;                      // The distance the gun can fire.
 	public GameObject ShotgunBullet;
 	private BoxCollider colliderSaw;
@@ -21,6 +20,7 @@ public class PlayerShooting : MonoBehaviour
     //private ColorCorrectionCurves colorCorrection;
     public PlayerStats playerStats;
 	public PlayerMovement playerMov;
+    public GameObject ghost;
     private PauseLogic pauseLogic;
     private DataLogic dataLogic;
     private float clockGunTimer;
@@ -131,6 +131,8 @@ public class PlayerShooting : MonoBehaviour
 								}*/
 			break;
         case Weapon.CHAINSAW:
+
+            StartCoroutine(SpawnGhost());
             if (playerStats.currentHealth > 0)
             {
                 chainsaw.SetActive(true);
@@ -289,5 +291,13 @@ public class PlayerShooting : MonoBehaviour
 		camera.startShake = true;
 		
 	}
+
+    IEnumerator SpawnGhost()
+    {
+        GameObject gst = (GameObject)Instantiate(ghost, transform.position, transform.rotation);
+        Destroy(gst, 0.3f);
+        yield return new WaitForSeconds(0.2f);
+        
+    }
 
 }

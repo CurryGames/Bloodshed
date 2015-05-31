@@ -575,6 +575,7 @@ MonoBehaviour:
   grenade: {fileID: 188416, guid: dfc7858c3ae271246bb55ce1e78c2597, type: 2}
   playerStats: {fileID: 11400006}
   playerMov: {fileID: 11400002}
+  ghost: {fileID: 139488, guid: 28d0c5dcc70071d4ab5eff14c99f7862, type: 2}
   weapon: 0
 --- !u!114 &11400002
 MonoBehaviour:
