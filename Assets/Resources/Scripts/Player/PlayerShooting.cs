@@ -21,7 +21,6 @@ public class PlayerShooting : MonoBehaviour
     //private ColorCorrectionCurves colorCorrection;
     public PlayerStats playerStats;
 	public PlayerMovement playerMov;
-    public GameObject ghost;
     private PauseLogic pauseLogic;
     private DataLogic dataLogic;
     private float clockGunTimer;
@@ -132,8 +131,6 @@ public class PlayerShooting : MonoBehaviour
 								}*/
 			break;
         case Weapon.CHAINSAW:
-
-            StartCoroutine(SpawnGhost());
             if (playerStats.currentHealth > 0)
             {
                 chainsaw.SetActive(true);
@@ -292,13 +289,5 @@ public class PlayerShooting : MonoBehaviour
 		camera.startShake = true;
 		
 	}
-
-    IEnumerator SpawnGhost()
-    {
-        GameObject gst = (GameObject)Instantiate(ghost, transform.position, transform.rotation);
-        Destroy(gst, 0.3f);
-        yield return new WaitForSeconds(0.2f);
-        
-    }
 
 }
