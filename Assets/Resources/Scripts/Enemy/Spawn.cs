@@ -59,9 +59,11 @@ public class Spawn : MonoBehaviour {
             
                 }
 
-                if (emiesNumber == maxEnemies && SpawnDoor != null) SpawnDoor.SetActive(true);
-                else if ((emiesNumber < maxEnemies) && SpawnDoor != null) SpawnDoor.SetActive(false);
+                /*if (emiesNumber == maxEnemies && SpawnDoor != null) SpawnDoor.SetActive(true);
+                else if ((emiesNumber < maxEnemies) && SpawnDoor != null) SpawnDoor.SetActive(false);*/
                 
+                if (SpawnDoor != null) SpawnDoor.SetActive(false);
+
 			    if (deathCount >= maxDeath)
 			    {
                     AudioSource audiSor = gameObject.AddComponent<AudioSource>();
