@@ -827,7 +827,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 107
   duration: 3
-  brutalDuration: 1
+  brutalDuration: .200000003
 --- !u!1 &26689862 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 102086, guid: 7af09ca799c26b446a154763ea2cbaff, type: 2}
@@ -5260,7 +5260,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 107
   duration: 3
-  brutalDuration: 1
+  brutalDuration: .200000003
 --- !u!1 &282420314
 GameObject:
   m_ObjectHideFlags: 0
@@ -5923,7 +5923,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 107
   duration: 3
-  brutalDuration: 1
+  brutalDuration: .200000003
 --- !u!1 &297783843
 GameObject:
   m_ObjectHideFlags: 0
@@ -7226,7 +7226,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 107
   duration: 3
-  brutalDuration: 1
+  brutalDuration: .200000003
 --- !u!1001 &361025459
 Prefab:
   m_ObjectHideFlags: 0
@@ -9217,7 +9217,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 107
   duration: 3
-  brutalDuration: 1
+  brutalDuration: .200000003
 --- !u!4 &497530774 stripped
 Transform:
   m_PrefabParentObject: {fileID: 404520, guid: 28147d7451e10ad44b8d843766682567, type: 2}
@@ -10062,7 +10062,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 107
   duration: 3
-  brutalDuration: 1
+  brutalDuration: .200000003
 --- !u!1 &545340674
 GameObject:
   m_ObjectHideFlags: 0
@@ -11730,7 +11730,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 107
   duration: 3
-  brutalDuration: 1
+  brutalDuration: .200000003
 --- !u!65 &637040819
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14725,7 +14725,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 107
   duration: 3
-  brutalDuration: 1
+  brutalDuration: .200000003
 --- !u!4 &850798813 stripped
 Transform:
   m_PrefabParentObject: {fileID: 415808, guid: 9b6246b088a92e5448a3ec2398232f9c, type: 2}
@@ -19953,7 +19953,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 107
   duration: 3
-  brutalDuration: 1
+  brutalDuration: .200000003
 --- !u!1001 &1187309590
 Prefab:
   m_ObjectHideFlags: 0
@@ -20436,7 +20436,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 107
   duration: 3
-  brutalDuration: 1
+  brutalDuration: .200000003
 --- !u!1 &1212406383
 GameObject:
   m_ObjectHideFlags: 0
@@ -21841,7 +21841,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 107
   duration: 3
-  brutalDuration: 1
+  brutalDuration: .200000003
 --- !u!1 &1317156127
 GameObject:
   m_ObjectHideFlags: 0
@@ -22613,7 +22613,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 107
   duration: 3
-  brutalDuration: 1
+  brutalDuration: .200000003
 --- !u!1 &1393727254
 GameObject:
   m_ObjectHideFlags: 0
@@ -26096,7 +26096,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 107
   duration: 3
-  brutalDuration: 1
+  brutalDuration: .200000003
 --- !u!1 &1594652577
 GameObject:
   m_ObjectHideFlags: 0
@@ -26292,7 +26292,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1619139271
 Transform:
   m_ObjectHideFlags: 0
@@ -31277,7 +31277,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 107
   duration: 3
-  brutalDuration: 1
+  brutalDuration: .200000003
 --- !u!1001 &1963435959
 Prefab:
   m_ObjectHideFlags: 0
@@ -32370,7 +32370,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 107
   duration: 3
-  brutalDuration: 1
+  brutalDuration: .200000003
 --- !u!1001 &2001355344
 Prefab:
   m_ObjectHideFlags: 0
@@ -32971,7 +32971,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 107
   duration: 3
-  brutalDuration: 1
+  brutalDuration: .200000003
 --- !u!1001 &2031708498
 Prefab:
   m_ObjectHideFlags: 0
@@ -33548,7 +33548,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 107
   duration: 3
-  brutalDuration: 1
+  brutalDuration: .200000003
 --- !u!1 &2057738314
 GameObject:
   m_ObjectHideFlags: 0
