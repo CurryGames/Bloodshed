@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: blood_drag01
+  m_Name: BlackJack
   m_Shader: {fileID: 30, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -18,7 +18,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 9e5e2da148e29dd4887f274d2f2b12a9, type: 3}
+          m_Texture: {fileID: 2800000, guid: 9b9d5848d2d48024d8a2a7e5d1bb3962, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -96,10 +96,6 @@ Material:
         second: .0199999996
       data:
         first:
-          name: _InvFade
-        second: 1
-      data:
-        first:
           name: _ZWrite
         second: 1
       data:
@@ -142,11 +138,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .669117689, g: 0, b: 0, a: 1}
-      data:
-        first:
-          name: _TintColor
-        second: {r: .485294104, g: .0142733697, b: .0142733697, a: .501960814}
+        second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _EmissionColorUI

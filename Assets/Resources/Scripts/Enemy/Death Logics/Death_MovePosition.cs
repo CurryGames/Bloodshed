@@ -12,7 +12,6 @@ public class Death_MovePosition : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
 
         if (force > 0.1)
         {
