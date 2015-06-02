@@ -19,6 +19,7 @@ public class EnemyStats : MonoBehaviour
     public float speedOnChase;
     private PlayerStats playerStats;
     private PlayerShooting playerShooting;
+    private RangedEnemy ranged;
     public Death death;
     public GameObject aim;
     public GameObject enemySprite;
@@ -28,6 +29,7 @@ public class EnemyStats : MonoBehaviour
 	public GameObject puntuationText;
     public int doorCounter { get; set; }
     //public AudioClip death;
+    public float distanceModifier;
     private DataLogic dataLogic;
 	private int puntuation;
     public Color color;
@@ -48,12 +50,14 @@ public class EnemyStats : MonoBehaviour
         achievementManager = GameObject.FindGameObjectWithTag("DataLogic").
             GetComponent<AchievementManager>();
         enemyNav = GetComponent<EnemyNavMesh>();
+        ranged = GetComponent<RangedEnemy>();
 
         speedOnChase = agent.speed;
         speed = 4f;
         maxHealth = 300;
         //currentHealth = maxHealth;
         brutalPoints = 40;
+        distanceModifier = 1;
 
     }
 
@@ -154,11 +158,14 @@ public class EnemyStats : MonoBehaviour
 
 		if ((col.gameObject.tag == "BulletSHOTGUN"))
 		{
+            if (ranged.dist >= 10) distanceModifier = 1;
+            else if (ranged.dist <= 1) distanceModifier = 2;
+            else distanceModifier = 1 + ranged.dist*(0.1f);
 			Destroy(col.gameObject);
             AudioSource audiSor = dataLogic.gameObject.AddComponent<AudioSource>();
             death = Death.SHOOTEDSHOTGUN;
             dataLogic.Play(dataLogic.hit, audiSor, dataLogic.volumFx);
-			GetDamage(140);	
+			GetDamage((int)(140*distanceModifier));	
 		} 
 
 		if ((col.gameObject.tag == "BulletRIFLE"))

@@ -1136,7 +1136,7 @@ RectTransform:
   m_Children:
   - {fileID: 1102370354}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -5491,7 +5491,7 @@ Transform:
   - {fileID: 1689734245}
   - {fileID: 1689669968}
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 29
 --- !u!1 &474711340
 GameObject:
   m_ObjectHideFlags: 0
@@ -8141,7 +8141,7 @@ Transform:
   - {fileID: 1488712754}
   - {fileID: 609083631}
   m_Father: {fileID: 0}
-  m_RootOrder: 33
+  m_RootOrder: 34
 --- !u!1001 &789124867
 Prefab:
   m_ObjectHideFlags: 0
@@ -8941,7 +8941,7 @@ Transform:
   - {fileID: 1159878597}
   - {fileID: 2087515591}
   m_Father: {fileID: 0}
-  m_RootOrder: 35
+  m_RootOrder: 37
 --- !u!1 &891062688
 GameObject:
   m_ObjectHideFlags: 0
@@ -12629,6 +12629,7 @@ MonoBehaviour:
   - {fileID: 104030, guid: 5557ce6df2e59724eb8ce499ef8983a3, type: 2}
   deathExploited: {fileID: 178578, guid: 7f5ff377777cdfb45bcf02350dd4ea8a, type: 2}
   puntuationText: {fileID: 174928, guid: 1be67c8d0cf63ce4d9a7c2f6b169276c, type: 2}
+  distanceModifier: 0
   color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1162002500
 MonoBehaviour:
@@ -18188,7 +18189,7 @@ Transform:
   - {fileID: 170073162}
   - {fileID: 1292029477}
   m_Father: {fileID: 0}
-  m_RootOrder: 52
+  m_RootOrder: 53
 --- !u!1 &1619816359
 GameObject:
   m_ObjectHideFlags: 0
