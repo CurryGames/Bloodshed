@@ -152,6 +152,7 @@ public class EnemyStats : MonoBehaviour
             Destroy(col.gameObject);
             AudioSource audiSor = dataLogic.gameObject.AddComponent<AudioSource>();
             death = Death.SHOOTEDGUN;
+            GameObject bld = (GameObject)Instantiate(blood.gameObject, new Vector3(transform.position.x, 0.2f, transform.position.z), col.transform.rotation);
             dataLogic.Play(dataLogic.hit, audiSor, dataLogic.volumFx);
             GetDamage(100);			
         }
@@ -161,6 +162,7 @@ public class EnemyStats : MonoBehaviour
             if (ranged.dist >= 10) distanceModifier = 1;
             else if (ranged.dist <= 1) distanceModifier = 2;
             else distanceModifier = 1 + ranged.dist*(0.1f);
+            GameObject bld = (GameObject)Instantiate(blood.gameObject, new Vector3(transform.position.x, 0.2f, transform.position.z), col.transform.rotation);
 			Destroy(col.gameObject);
             AudioSource audiSor = dataLogic.gameObject.AddComponent<AudioSource>();
             death = Death.SHOOTEDSHOTGUN;
@@ -172,6 +174,7 @@ public class EnemyStats : MonoBehaviour
 		{
 			Destroy(col.gameObject);
             AudioSource audiSor = dataLogic.gameObject.AddComponent<AudioSource>();
+            GameObject bld = (GameObject)Instantiate(blood.gameObject, new Vector3(transform.position.x, 0.2f, transform.position.z), col.transform.rotation);
             death = Death.SHOOTEDGUN;
             dataLogic.Play(dataLogic.hit, audiSor, dataLogic.volumFx);
 			GetDamage(140);			
@@ -190,7 +193,6 @@ public class EnemyStats : MonoBehaviour
     public void GetDamage(int dmg)
     {
         currentHealth -= dmg;
-        GameObject bld= (GameObject)Instantiate(blood.gameObject, new Vector3(transform.position.x, 0.2f, transform.position.z),Quaternion.identity);
         if (hit == false) hit = true;
         //if (enemyNav.enemyType == EnemyNavMesh.EnemyType.PATROL) enemyNav.enemyType = EnemyNavMesh.EnemyType.CHASE;
         enemyNav.SetChasing();

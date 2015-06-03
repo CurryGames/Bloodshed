@@ -17,10 +17,12 @@ public class TutorialText : MonoBehaviour {
         // NO FUNCIONA EN UNITY5
         /*if ((Input.GetJoystickNames().Length > 1)) textTutorial.text = textJoystick;
         else textTutorial.text = textMouse;*/
-
-        if (string.IsNullOrEmpty(Input.GetJoystickNames()[0])) textTutorial.text = textMouse;
-        else textTutorial.text = textJoystick;
-
+        if ((Input.GetJoystickNames().Length >= 1))
+        {
+            if (string.IsNullOrEmpty(Input.GetJoystickNames()[0])) textTutorial.text = textMouse;
+            else textTutorial.text = textJoystick;
+        }
+        else textTutorial.text = textMouse;
         //Debug.Log(Input.GetJoystickNames().Length);
 	}
 	

@@ -18,7 +18,8 @@ public class InstantiateBlood : MonoBehaviour {
 
 	IEnumerator Blood ( float time) 
 	{
-		Instantiate (blood, transform.position, transform.rotation);
+		GameObject bl = (GameObject)Instantiate (blood, transform.position, transform.rotation);
+        bl.transform.parent = transform;
 		yield return new WaitForSeconds (time);
 		
 	}
