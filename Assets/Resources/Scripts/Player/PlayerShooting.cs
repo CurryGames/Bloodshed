@@ -14,7 +14,7 @@ public class PlayerShooting : MonoBehaviour
     public GameObject chainsaw;
     public GameObject fire;
     public GameObject fireShotgun;
-    private GameObject gunUI, shotgunUI, riffleUI;
+    private GameObject gunUI, shotgunUI, riffleUI, gatlingUI;
 	public Rigidbody grenade;
     private ShakeCamera camera;
     //private ColorCorrectionCurves colorCorrection;
@@ -24,7 +24,9 @@ public class PlayerShooting : MonoBehaviour
     private PauseLogic pauseLogic;
     private DataLogic dataLogic;
     private float clockGunTimer;
+    private float timmerGatling;
     private bool clockGun;
+    private bool loadGatling;
 	float timer;                                    // A timer to determine when to fire.				
 	Ray shootRay;                                   // A ray from the gun end forwards.
 	RaycastHit shootHit;                            // A raycast hit to get information about what was hit.
@@ -48,6 +50,7 @@ public class PlayerShooting : MonoBehaviour
 	{
 		colliderSaw = transform.FindChild ("colliderSaw").GetComponent<BoxCollider> ();
 		colliderSaw.enabled = false;
+        loadGatling = false;
 		playerStats = GetComponent <PlayerStats> ();
         dataLogic = GameObject.FindGameObjectWithTag("DataLogic").GetComponent<DataLogic>();
 		playerMov = GetComponent<PlayerMovement> ();
@@ -56,6 +59,7 @@ public class PlayerShooting : MonoBehaviour
         gunUI = GameObject.FindGameObjectWithTag("gunUI");
         shotgunUI = GameObject.FindGameObjectWithTag("shotgunUI");
         riffleUI = GameObject.FindGameObjectWithTag("riffleUI");
+        gatlingUI = GameObject.FindGameObjectWithTag("GatlingUI");
         //colorCorrection = Camera.main.GetComponent<ColorCorrectionCurves>();
         //colorCorrection.enabled = false;
         clockGun = false;
@@ -73,7 +77,7 @@ public class PlayerShooting : MonoBehaviour
             {
                 playerStats.audiSorMusic.Pause();
                 playerStats.audiSorBrutal.Play();
-                playerStats.audiSorChainsaw.Play();
+                //playerStats.audiSorChainsaw.Play();
             }
         }
 
@@ -83,6 +87,7 @@ public class PlayerShooting : MonoBehaviour
                 gunUI.SetActive(true);
                 shotgunUI.SetActive(false);
                 riffleUI.SetActive(false);
+                gatlingUI.SetActive(false);
                 playerStats.bullets.text = "Inf.";
                 timer += Time.deltaTime;
                 timeBetweenBullets = 0.45f;
@@ -110,6 +115,7 @@ public class PlayerShooting : MonoBehaviour
                 gunUI.SetActive(false);
                 shotgunUI.SetActive(false);
                 riffleUI.SetActive(true);
+                gatlingUI.SetActive(false);
             playerStats.bullets.text = playerStats.riffleBullets.ToString();
 			timer += Time.deltaTime;
 			timeBetweenBullets = 0.15f;
@@ -136,7 +142,7 @@ public class PlayerShooting : MonoBehaviour
             if (playerStats.currentHealth > 0)
             {
                 chainsaw.SetActive(true);
-                colliderSaw.enabled = true;
+                colliderSaw.enabled = false;
             }
             else
             {
@@ -146,13 +152,47 @@ public class PlayerShooting : MonoBehaviour
 			playerStats.currentBrutality -= 20 * Time.deltaTime;
 			playerStats.setChainsaw ();
 			playerStats.damage = 1;
-			playerStats.speed = 12;
-
+            playerStats.speed = 10;
+            gunUI.SetActive(false);
+            shotgunUI.SetActive(false);
+            riffleUI.SetActive(false);
+            gatlingUI.SetActive(true);
 			if (Input.GetButton ("Fire1"))
-			{
-				playerMov.onCharge = true;
-			}
-			else playerMov.onCharge = false;
+            {
+                timmerGatling += Time.deltaTime;
+                if (!loadGatling)
+                {
+                    AudioSource audiSor = gameObject.AddComponent<AudioSource>();
+                    dataLogic.Play(dataLogic.gatlingLoad, audiSor, dataLogic.volumFx);
+                    loadGatling = true;
+                }
+
+                if (timmerGatling >= dataLogic.gatlingLoad.length)
+                {
+                    timer += Time.deltaTime;
+                    //playerMov.onCharge = true;
+                    timeBetweenBullets = 0.15f;
+                    if (timer >= timeBetweenBullets)
+                    {
+                        // ... shoot the gun.
+                        AudioSource audiSor = gameObject.AddComponent<AudioSource>();
+                        dataLogic.Play(dataLogic.gatlingShoot, audiSor, dataLogic.volumFx);
+                        Shoot();
+                        ShakeShotgun();
+                    }
+                }
+            }
+            else if(Input.GetButtonUp ("Fire1"))
+            {
+                if (loadGatling)
+                {
+                    AudioSource audiSor = gameObject.AddComponent<AudioSource>();
+                    dataLogic.Play(dataLogic.gatlingUnload, audiSor, dataLogic.volumFx);
+                    timmerGatling = 0;
+                    loadGatling = false;
+                }
+            }
+			//else playerMov.onCharge = false;
 
 			if (playerStats.currentBrutality <= 0 || !playerStats.brutalMode)
 			{
@@ -160,7 +200,7 @@ public class PlayerShooting : MonoBehaviour
 				colliderSaw.enabled = false;
 				weapon = Weapon.GUN;
 				playerStats.damage = 12;
-				playerStats.speed = 6;
+				playerStats.speed = 8;
 				playerStats.brutalMode = false;
 				playerMov.onCharge = false;
                 //colorCorrection.enabled = false;
@@ -168,7 +208,7 @@ public class PlayerShooting : MonoBehaviour
                 {
                     playerStats.audiSorMusic.Play();
                     playerStats.audiSorBrutal.Pause();
-                    playerStats.audiSorChainsaw.Pause();
+                    //playerStats.audiSorChainsaw.Pause();
                 }
 			}
 
@@ -178,6 +218,7 @@ public class PlayerShooting : MonoBehaviour
             gunUI.SetActive(false);
             shotgunUI.SetActive(true);
             riffleUI.SetActive(false);
+            gatlingUI.SetActive(false);
             playerStats.bullets.text = playerStats.shotgunBullets.ToString();
 			timer += Time.deltaTime;
 			timeBetweenBullets = 0.85f;
@@ -254,6 +295,15 @@ public class PlayerShooting : MonoBehaviour
             //GameObject bullet = (GameObject) Instantiate(bulletPrefab.gameObject, transform.position, transform.rotation);
             Destroy(frRf, 0.1f);
 			break;
+        case Weapon.CHAINSAW:
+            GameObject GatlingBulletGo = (GameObject)Instantiate(rifleBullet, transform.position, transform.rotation);
+            //GameObject bullet = (GameObject) Instantiate(bulletPrefab.gameObject, transform.position, transform.rotation);
+            Destroy(GatlingBulletGo, 2);
+            GameObject frGt = (GameObject)Instantiate(fire, transform.position, transform.rotation);
+            frGt.transform.parent = transform;
+            //GameObject bullet = (GameObject) Instantiate(bulletPrefab.gameObject, transform.position, transform.rotation);
+            Destroy(frGt, 0.1f);
+            break;
 		case Weapon.SHOTGUN:
 			GameObject ShotgunBulletGO = (GameObject) Instantiate(ShotgunBullet, transform.position, transform.rotation);
 			Destroy (ShotgunBulletGO, 2);

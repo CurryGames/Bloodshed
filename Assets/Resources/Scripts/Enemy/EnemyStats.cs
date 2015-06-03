@@ -6,7 +6,7 @@ public class EnemyStats : MonoBehaviour
 
     private NavMeshAgent agent;
     private EnemyNavMesh enemyNav;
-    public enum Death { SHOOTEDGUN, EXPLOITED, SHOOTEDSHOTGUN, CARVED }
+    public enum Death { SHOOTEDGUN, EXPLOITED, SHOOTEDSHOTGUN, SHOOTEDSHOTGUNCLOSE, CARVED }
 
     public int maxHealth;
     //public Transform blood;
@@ -25,6 +25,9 @@ public class EnemyStats : MonoBehaviour
     public GameObject enemySprite;
     public GameObject blood;
     public GameObject[] deathshotedGun;
+    public GameObject[] deathshotedShotgunClose;
+    public GameObject[] deathshotedShotgunFar;
+    public GameObject[] deathshotedRiffle;
     public GameObject deathExploited;
 	public GameObject puntuationText;
     public int doorCounter { get; set; }
@@ -86,13 +89,15 @@ public class EnemyStats : MonoBehaviour
                     Instantiate(deathshotedGun[Random.Range(0, deathshotedGun.GetLength(0))], transform.position, aim.transform.rotation);
                     break;
                 case Death.SHOOTEDSHOTGUN:
-                    Instantiate(deathshotedGun[Random.Range(0, deathshotedGun.GetLength(0))], transform.position, aim.transform.rotation);
+                    Instantiate(deathshotedShotgunFar[Random.Range(0, deathshotedShotgunFar.GetLength(0))], transform.position, aim.transform.rotation);
+                    break;
+                case Death.SHOOTEDSHOTGUNCLOSE:
+                    Instantiate(deathshotedShotgunClose[Random.Range(0, deathshotedShotgunClose.GetLength(0))], transform.position, aim.transform.rotation);
                     break;
                 case Death.EXPLOITED:
                     Instantiate(deathExploited, transform.position, aim.transform.rotation);
                     dataLogic.strike++;
                     achievementManager.SetProgressToAchievement("Strike", (float)dataLogic.strike);
-                    
                     break;
                 case Death.CARVED:
                     Instantiate(deathshotedGun[Random.Range(0, deathshotedGun.GetLength(0))], transform.position, aim.transform.rotation);
@@ -159,13 +164,26 @@ public class EnemyStats : MonoBehaviour
 
 		if ((col.gameObject.tag == "BulletSHOTGUN"))
 		{
-            if (ranged.dist >= 10) distanceModifier = 1;
-            else if (ranged.dist <= 1) distanceModifier = 2;
-            else distanceModifier = 1 + ranged.dist*(0.1f);
+            if (ranged.dist >= 10)
+            {
+                distanceModifier = 1;
+                death = Death.SHOOTEDGUN;
+            }
+            else if (ranged.dist <= 1)
+            {
+                distanceModifier = 2;
+                death = Death.SHOOTEDSHOTGUNCLOSE;
+            }
+            else
+            {
+                distanceModifier = 1 + ranged.dist * (0.1f);
+                death = Death.SHOOTEDSHOTGUN;
+            }
             GameObject bld = (GameObject)Instantiate(blood.gameObject, new Vector3(transform.position.x, 0.2f, transform.position.z), col.transform.rotation);
 			Destroy(col.gameObject);
             AudioSource audiSor = dataLogic.gameObject.AddComponent<AudioSource>();
-            death = Death.SHOOTEDSHOTGUN;
+            //death = Death.SHOOTEDSHOTGUNCLOSE;
+
             dataLogic.Play(dataLogic.hit, audiSor, dataLogic.volumFx);
 			GetDamage((int)(140*distanceModifier));	
 		} 

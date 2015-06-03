@@ -61,7 +61,7 @@ public class PlayerStats : MonoBehaviour {
     private float brutalTimmer;
     public AudioSource audiSorMusic;
     public AudioSource audiSorBrutal;
-    public AudioSource audiSorChainsaw;
+    //public AudioSource audiSorChainsaw;
     public AudioSource audioSorTension;
     public MultiplySize multiplyAnim;
 
@@ -95,7 +95,7 @@ public class PlayerStats : MonoBehaviour {
         grayscale = Camera.main.GetComponent<Grayscale>();
         brutalityFire = GameObject.FindGameObjectWithTag("BrutalityFire");
         //enemyNav = GetComponent<EnemyNavMesh>();
-		speed = 6f;
+		speed = 7f;
 		maxHealth = 256;
         riffleBullets = dataLogic.iniRiffleAmmo;
         shotgunBullets = dataLogic.iniShotgunAmmo;
@@ -114,7 +114,7 @@ public class PlayerStats : MonoBehaviour {
 		//EndLevelScreen.SetActive (false);
         audiSorMusic = gameObject.AddComponent<AudioSource>();
         audiSorBrutal = gameObject.AddComponent<AudioSource>();
-        audiSorChainsaw = gameObject.AddComponent<AudioSource>();
+        //audiSorChainsaw = gameObject.AddComponent<AudioSource>();
         audioSorTension = gameObject.AddComponent<AudioSource>();
 
         foreach (Transform t in Camera.main.transform) if (t.name == "AudioListener") audioReberb = t.gameObject.GetComponent<AudioReverbFilter>();
@@ -126,9 +126,9 @@ public class PlayerStats : MonoBehaviour {
             dataLogic.PlayLoop(dataLogic.tension, audioSorTension, dataLogic.volumMusic);
         }
         dataLogic.PlayLoop(dataLogic.musicBrutal, audiSorBrutal, dataLogic.volumMusic);
-        dataLogic.PlayLoop(dataLogic.chainsaw, audiSorChainsaw, dataLogic.volumFx);
+        //dataLogic.PlayLoop(dataLogic.chainsaw, audiSorChainsaw, dataLogic.volumFx);
         audiSorBrutal.Pause();
-        audiSorChainsaw.Pause();
+        //audiSorChainsaw.Pause();
 	
 	}
 	

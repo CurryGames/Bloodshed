@@ -33,6 +33,7 @@ public class DataLogic : MonoBehaviour {
     public AudioClip music;
     public AudioClip musicBrutal;
     public AudioClip chainsaw;
+    public AudioClip gatlingLoad, gatlingUnload, gatlingShoot;
     public AudioClip health;
     public AudioClip ammo;
     public AudioClip can;

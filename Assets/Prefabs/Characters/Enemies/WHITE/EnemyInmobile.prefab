@@ -441,8 +441,8 @@ MonoBehaviour:
   - {fileID: 105726, guid: 5095c3a97632e4342a058d4940fa238c, type: 2}
   - {fileID: 104030, guid: 5557ce6df2e59724eb8ce499ef8983a3, type: 2}
   deathshotedShotgunClose:
-  - {fileID: 195230, guid: 4258059f30eb8a740a91139a211d9f37, type: 2}
   - {fileID: 148782, guid: 3e36c375383bd5d4fa23ae9e5e09ace8, type: 2}
+  - {fileID: 195230, guid: f39a42be32586814595be4ff8bcbf615, type: 2}
   deathshotedShotgunFar:
   - {fileID: 108810, guid: 84fb0a4053f198549a2fecb5534d84b4, type: 2}
   deathshotedRiffle: []

@@ -53,6 +53,7 @@ TagManager:
   - MedicineLil
   - SecretRoom
   - BrutalityFire
+  - GatlingUI
   layers:
   - Default
   - TransparentFX
