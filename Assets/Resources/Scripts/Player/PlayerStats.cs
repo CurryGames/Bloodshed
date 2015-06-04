@@ -68,8 +68,10 @@ public class PlayerStats : MonoBehaviour {
 	private Animator animation;
     private Animator animationLegs;
     private AchievementManager achievementManager;
+    private DamageAnimation damageAnimaion;
     private AudioReverbFilter audioReberb;
     private GameObject brutalityFire;
+    private GameObject keyUI;
 	public GameObject bossCamera;
 
 	// Use this for initialization
@@ -94,6 +96,8 @@ public class PlayerStats : MonoBehaviour {
         playerShoot = GetComponent<PlayerShooting>();
         grayscale = Camera.main.GetComponent<Grayscale>();
         brutalityFire = GameObject.FindGameObjectWithTag("BrutalityFire");
+        damageAnimaion = GameObject.FindGameObjectWithTag("Damage").GetComponent<DamageAnimation>();
+        keyUI = GameObject.FindGameObjectWithTag("KeyUI");
         //enemyNav = GetComponent<EnemyNavMesh>();
 		speed = 7f;
 		maxHealth = 256;
@@ -136,6 +140,12 @@ public class PlayerStats : MonoBehaviour {
 	void Update ()
     {
         if (scoreText != null)scoreText.text = score.ToString();
+
+        keyUI.SetActive(onKey);
+
+        audiSorMusic.volume = dataLogic.volumMusic;
+        audiSorBrutal.volume = dataLogic.volumMusic;
+        audioSorTension.volume = dataLogic.volumMusic;
 
         if (HealthBar != null)HealthBar.value = currentHealth / maxHealth;
         if (BrutalityBar != null) BrutalityBar.value = currentBrutality / 256;
@@ -440,7 +450,12 @@ public class PlayerStats : MonoBehaviour {
 	public void GetDamage(int dmg)
 	{
 		currentHealth -= dmg;
-        
+
+        if (damageAnimaion.animActive == true)
+        {
+            damageAnimaion.ResetAnim();
+        }
+        else damageAnimaion.animActive = true;
 	}
 
     void GetHealth(int hlth)

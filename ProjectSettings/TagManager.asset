@@ -54,6 +54,8 @@ TagManager:
   - SecretRoom
   - BrutalityFire
   - GatlingUI
+  - Damage
+  - KeyUI
   layers:
   - Default
   - TransparentFX

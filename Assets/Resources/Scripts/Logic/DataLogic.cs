@@ -19,6 +19,7 @@ public class DataLogic : MonoBehaviour {
     public int unlockRifle { get; set; }
     public int unlockFlamethrower { get; set; }
     public int strike { get; set; }
+    public int currentResolution { get; set; }
     public int currentWeapon { get; set; }
     public bool riffleActive { get; set; }
     public bool joystickActive { get; set; }
@@ -32,6 +33,7 @@ public class DataLogic : MonoBehaviour {
     public AudioClip enemyShootGun;
     public AudioClip music;
     public AudioClip musicBrutal;
+    public AudioClip emptyGun;
     public AudioClip chainsaw;
     public AudioClip gatlingLoad, gatlingUnload, gatlingShoot;
     public AudioClip health;

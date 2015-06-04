@@ -169,7 +169,7 @@ public class EnemyStats : MonoBehaviour
                 distanceModifier = 1;
                 death = Death.SHOOTEDGUN;
             }
-            else if (ranged.dist <= 1)
+            else if (ranged.dist <= 3.5f)
             {
                 distanceModifier = 2;
                 death = Death.SHOOTEDSHOTGUNCLOSE;

@@ -12,11 +12,11 @@ public class Ligthness : MonoBehaviour {
         ligth = GetComponent<Light>();
         dataLogic = GameObject.FindGameObjectWithTag("DataLogic").GetComponent<DataLogic>();
 
-        ligth.intensity = dataLogic.ligthnessIntensity;
+        
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+        ligth.intensity = dataLogic.ligthnessIntensity;
 	}
 }

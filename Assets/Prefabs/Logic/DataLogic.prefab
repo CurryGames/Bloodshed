@@ -24,7 +24,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -283.359985, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -49,7 +49,11 @@ MonoBehaviour:
   enemyShootGun: {fileID: 8300000, guid: 58f81a6dfc0b7ea45ba0955d6c5deccc, type: 3}
   music: {fileID: 8300000, guid: d704310fd3b78ae42b1f8217516d284a, type: 3}
   musicBrutal: {fileID: 8300000, guid: ccb578dbc67519048bcbe1e545033653, type: 3}
+  emptyGun: {fileID: 8300000, guid: 0c6a03fc6d4b0304e9afe4dfbe5343d8, type: 3}
   chainsaw: {fileID: 8300000, guid: 1bb64d76c0c9f3e4a8ba45b8ab8f7d31, type: 3}
+  gatlingLoad: {fileID: 8300000, guid: 91457357d1deddf43ad13813e6e27520, type: 3}
+  gatlingUnload: {fileID: 8300000, guid: c2c28273c4f956e4aa685097acd6d0f5, type: 3}
+  gatlingShoot: {fileID: 8300000, guid: 3d25a855c3d7f0f44b3c0bd9ac008ab1, type: 3}
   health: {fileID: 8300000, guid: 48885edad9fcd7549a31828f52a67a6d, type: 3}
   ammo: {fileID: 8300000, guid: 2298a838092ee7f4e9c5edf3dfc7982e, type: 3}
   can: {fileID: 8300000, guid: 200c0e1150cfba247b878199be17f209, type: 3}

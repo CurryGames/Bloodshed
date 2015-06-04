@@ -645,7 +645,6 @@ MonoBehaviour:
   levelCleared: 0
   audiSorMusic: {fileID: 0}
   audiSorBrutal: {fileID: 0}
-  audiSorChainsaw: {fileID: 0}
   audioSorTension: {fileID: 0}
   multiplyAnim: {fileID: 0}
   bossCamera: {fileID: 0}

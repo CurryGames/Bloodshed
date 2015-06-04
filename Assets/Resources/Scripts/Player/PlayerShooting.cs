@@ -103,6 +103,7 @@ public class PlayerShooting : MonoBehaviour
                 }
 
 
+
                 // If the timer has exceeded the proportion of timeBetweenBullets that the effects should be displayed for...
                 /*if(timer >= timeBetweenBullets * effectsDisplayTime)
             {
@@ -129,6 +130,11 @@ public class PlayerShooting : MonoBehaviour
 				Shoot ();
                 Shake();
 			}
+            else if ((Input.GetButton("Fire1") || Input.GetAxis("FireJoy") < 0) && timer >= timeBetweenBullets && playerStats.riffleBullets == 0 && (playerStats.currentHealth > 0) && pauseLogic.Pause == false)
+            {
+                AudioSource audiSor = gameObject.AddComponent<AudioSource>();
+                dataLogic.Play(dataLogic.emptyGun, audiSor, dataLogic.volumFx);
+            }
 									// If the timer has exceeded the proportion of timeBetweenBullets that the effects should be displayed for...
 									/*if(timer >= timeBetweenBullets * effectsDisplayTime)
 								{
@@ -233,6 +239,13 @@ public class PlayerShooting : MonoBehaviour
                 clockGun = true;
 				ShakeShotgun();
 			}
+            else if ((Input.GetButton("Fire1") || Input.GetAxis("FireJoy") < 0) && timer >= timeBetweenBullets && playerStats.shotgunBullets == 0 && (playerStats.currentHealth > 0) && pauseLogic.Pause == false)
+            {
+                AudioSource audiSor = gameObject.AddComponent<AudioSource>();
+                dataLogic.Play(dataLogic.emptyGun, audiSor, dataLogic.volumFx);
+                timer = 0;
+            }
+
             if (clockGun)
             {
                 clockGunTimer += Time.deltaTime;
