@@ -29,7 +29,7 @@ public class PauseLogic : MonoBehaviour {
         //destroy the already existing instance, if any
         if (instance)
         {
-            Destroy(gameObject);
+			Destroy(instance.gameObject);
             return;
         }
 
@@ -54,8 +54,8 @@ public class PauseLogic : MonoBehaviour {
         else if (dataLogic.currentResolution == 1) scrResolution = ScrResolution.UXGA;
         else if (dataLogic.currentResolution == 2) scrResolution = ScrResolution.FULLHD;
 
-        musicVolume.value = dataLogic.volumMusic;
-        fxVolume.value = dataLogic.volumFx;
+		if(musicVolume != null)musicVolume.value = dataLogic.volumMusic;
+		if(fxVolume != null)fxVolume.value = dataLogic.volumFx;
 	}
 	
 	// Update is called once per frame
@@ -67,6 +67,8 @@ public class PauseLogic : MonoBehaviour {
             state = State.MENU;
 
         }
+
+		if(dataLogic == null) dataLogic = GameObject.FindGameObjectWithTag("DataLogic").GetComponent<DataLogic>();
         
         if (Pause)
         {
@@ -118,8 +120,8 @@ public class PauseLogic : MonoBehaviour {
 
         if (Application.loadedLevel == 2 || Application.loadedLevel == 9) Destroy(this.gameObject);
 
-        dataLogic.volumMusic = musicVolume.value;
-        dataLogic.volumFx = fxVolume.value;
+        if(musicVolume != null)dataLogic.volumMusic = musicVolume.value;
+		if(fxVolume != null)dataLogic.volumFx = fxVolume.value;
 	}
 
     public void	ResumeButton()

@@ -28,7 +28,7 @@ public class EnemyStats : MonoBehaviour
     public GameObject[] deathshotedShotgunClose;
     public GameObject[] deathshotedShotgunFar;
     public GameObject[] deathshotedRiffle;
-    public GameObject deathExploited;
+    public GameObject[] deathExploited;
 	public GameObject puntuationText;
     public int doorCounter { get; set; }
     //public AudioClip death;
@@ -95,7 +95,7 @@ public class EnemyStats : MonoBehaviour
                     Instantiate(deathshotedShotgunClose[Random.Range(0, deathshotedShotgunClose.GetLength(0))], transform.position, aim.transform.rotation);
                     break;
                 case Death.EXPLOITED:
-                    Instantiate(deathExploited, transform.position, aim.transform.rotation);
+					Instantiate(deathExploited[Random.Range(0, deathExploited.GetLength(0))], transform.position, aim.transform.rotation);
                     dataLogic.strike++;
                     achievementManager.SetProgressToAchievement("Strike", (float)dataLogic.strike);
                     break;

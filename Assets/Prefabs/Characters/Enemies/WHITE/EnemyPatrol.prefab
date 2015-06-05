@@ -443,10 +443,17 @@ MonoBehaviour:
   deathshotedShotgunClose:
   - {fileID: 148782, guid: 3e36c375383bd5d4fa23ae9e5e09ace8, type: 2}
   - {fileID: 195230, guid: f39a42be32586814595be4ff8bcbf615, type: 2}
+  - {fileID: 129528, guid: b1f11455f9c340646a52c280282815ab, type: 2}
+  - {fileID: 154778, guid: 431c2dd4861a2c8419ed770d35e9e11c, type: 2}
   deathshotedShotgunFar:
   - {fileID: 108810, guid: 84fb0a4053f198549a2fecb5534d84b4, type: 2}
   deathshotedRiffle: []
-  deathExploited: {fileID: 178578, guid: 7f5ff377777cdfb45bcf02350dd4ea8a, type: 2}
+  deathExploited:
+  - {fileID: 139718, guid: f28d844ca0987164db79a6f8d19922d0, type: 2}
+  - {fileID: 139718, guid: 0b4a1d4962648d04498ce553db6ffc66, type: 2}
+  - {fileID: 128118, guid: d2e80f86904b44445ae4293a7526ca34, type: 2}
+  - {fileID: 139718, guid: 2ddb122fee75b2c4c9dcb6936c2de6d3, type: 2}
+  - {fileID: 178578, guid: 7f5ff377777cdfb45bcf02350dd4ea8a, type: 2}
   puntuationText: {fileID: 174928, guid: 1be67c8d0cf63ce4d9a7c2f6b169276c, type: 2}
   distanceModifier: 0
   color: {r: 0, g: 0, b: 0, a: 0}

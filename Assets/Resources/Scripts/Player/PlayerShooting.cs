@@ -68,6 +68,8 @@ public class PlayerShooting : MonoBehaviour
 	{
 		// Add the time since Update was last called to the timer.
 
+		if(pauseLogic == null) pauseLogic = GameObject.FindGameObjectWithTag("pause").GetComponent<PauseLogic>();
+
         if ((playerStats.currentBrutality >= 256) && (Input.GetKeyDown(KeyCode.Space) || Input.GetButton("BrutalJoystick")))
         {
             weapon = Weapon.CHAINSAW;
