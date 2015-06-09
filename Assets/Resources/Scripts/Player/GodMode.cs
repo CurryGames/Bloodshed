@@ -8,6 +8,7 @@ public class GodMode : MonoBehaviour {
     private PlayerStats playerStats;
 	public GameObject godSprite;
     private LevelLogic levelLogic;
+	private DataLogic datalogic;
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +17,8 @@ public class GodMode : MonoBehaviour {
         playerStats = GetComponent<PlayerStats>();
         levelLogic = GameObject.FindGameObjectWithTag("LevelLogic").
             GetComponent<LevelLogic>();
+		datalogic = GameObject.FindGameObjectWithTag("DataLogic").
+			GetComponent<DataLogic>();
 	}
 	
 	// Update is called once per frame
@@ -36,6 +39,7 @@ public class GodMode : MonoBehaviour {
 			godSprite.SetActive (true);
             playerStats.currentBrutality += 300;
             playerStats.currentGrenades += 3;
+			datalogic.riffleActive = true;
 		}
 
         if (Input.GetKeyUp(KeyCode.J)) playerCollider.enabled = !playerCollider.enabled;
