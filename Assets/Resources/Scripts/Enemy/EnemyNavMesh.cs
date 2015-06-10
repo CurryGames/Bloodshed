@@ -7,7 +7,7 @@ public class EnemyNavMesh : MonoBehaviour
 
     public GameObject target;
     public GameObject anim;
-    public GameObject enemyChasing;
+    public GameObject enemyChasing, enemyWithoutgun;
     private GameObject legs;
     private NavMeshAgent agent;
     private EnemyMoveBehaviour enemyMove;
@@ -43,6 +43,11 @@ public class EnemyNavMesh : MonoBehaviour
         behindWall = true;
         //Debug.Log(enemyType);
         //agent.speed = enemyStats.speed;	
+        if(enemyType == EnemyType.TUTORIAL)
+        {
+            if (enemyChasing != null) enemyChasing.SetActive(false);
+            if (enemyWithoutgun != null) enemyWithoutgun.SetActive(true);
+        }
 
     }
 
@@ -148,8 +153,7 @@ public class EnemyNavMesh : MonoBehaviour
                         }
                         else if (enemyRang.dist > agent.stoppingDistance && chasing == true)
                         {
-                            if (enemyChasing != null) Instantiate(enemyChasing.gameObject, new Vector3(transform.position.x, 0.2f, transform.position.z), this.transform.rotation);
-                            Destroy(this.gameObject);
+                            setRun();
                         }
 
                     } break;
@@ -198,8 +202,12 @@ public class EnemyNavMesh : MonoBehaviour
 
     public void changeSprite()
     {
-        if (enemyChasing != null) Instantiate(enemyChasing.gameObject, new Vector3(transform.position.x, 0.2f, transform.position.z), this.transform.rotation);
-        Destroy(this.gameObject);
+        /*if (enemyChasing != null) Instantiate(enemyChasing.gameObject, new Vector3(transform.position.x, 0.2f, transform.position.z), this.transform.rotation);
+        Destroy(this.gameObject);*/
+        if (enemyChasing != null) enemyChasing.SetActive(true);
+        if (enemyWithoutgun != null) enemyWithoutgun.SetActive(false);
+        enemyType = EnemyType.CHASE;
+        chasing = true;
     }
 
 	public bool OnSight()
