@@ -7,12 +7,13 @@ public class EnemyNavMesh : MonoBehaviour
 
     public GameObject target;
     public GameObject anim;
+    public GameObject enemyChasing;
     private GameObject legs;
     private NavMeshAgent agent;
     private EnemyMoveBehaviour enemyMove;
     private RangedEnemy enemyRang;
     private EnemyStats enemyStats;
-	public enum EnemyType { CHASE, IDDLE, PATROL, IMMOBILE}
+	public enum EnemyType { CHASE, IDDLE, PATROL, IMMOBILE, TUTORIAL}
 	public EnemyType enemyType;
 	private float rotationSpeed;
     public bool chasing;
@@ -103,6 +104,56 @@ public class EnemyNavMesh : MonoBehaviour
 
                     } break;
 
+                case EnemyType.TUTORIAL:
+                    {
+                        if (chasing)
+                        {
+                            if (isStop)
+                                isStop = false;
+                            if (target != null)
+                            {
+                                agent.SetDestination(target.transform.position);
+
+                                if (!resume)
+                                {
+                                    agent.Resume();
+                                    resume = true;
+                                }
+                            }
+
+                            if (!OnSight())
+                            {
+                                agent.stoppingDistance = 0.5f;
+
+                            }
+                            else
+                            {
+                                agent.stoppingDistance = 8;
+                                RotateTowards(target.transform);
+                            }
+                        }
+                        else
+                        {
+                            if (!isStop)
+                            {
+                                agent.Stop();
+                                isStop = true;
+                                resume = false;
+                            }
+                        }
+
+                        if (enemyRang.dist <= agent.stoppingDistance)
+                        {
+                            setIddle();
+                        }
+                        else if (enemyRang.dist > agent.stoppingDistance && chasing == true)
+                        {
+                            if (enemyChasing != null) Instantiate(enemyChasing.gameObject, new Vector3(transform.position.x, 0.2f, transform.position.z), this.transform.rotation);
+                            Destroy(this.gameObject);
+                        }
+
+                    } break;
+
                 case EnemyType.PATROL:
                     {          
                         RaycastHit hit;
@@ -143,6 +194,12 @@ public class EnemyNavMesh : MonoBehaviour
     public void setIddle()
     {
         animationLegs.Play("EnemyIdle");
+    }
+
+    public void changeSprite()
+    {
+        if (enemyChasing != null) Instantiate(enemyChasing.gameObject, new Vector3(transform.position.x, 0.2f, transform.position.z), this.transform.rotation);
+        Destroy(this.gameObject);
     }
 
 	public bool OnSight()

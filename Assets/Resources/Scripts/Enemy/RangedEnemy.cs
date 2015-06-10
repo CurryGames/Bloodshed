@@ -40,7 +40,10 @@ public class RangedEnemy : MonoBehaviour
         //Debug.Log (dist);
 
         if (dist <= detectDistance)
-            enemyMove.chasing = true;
+        {
+            if (enemyMove.enemyType == EnemyNavMesh.EnemyType.TUTORIAL) enemyMove.changeSprite();
+            else enemyMove.chasing = true;
+        }
 
         if ((dist <= shootRange) && (enemyMove.chasing) && enemyMove.OnSight())
         {
