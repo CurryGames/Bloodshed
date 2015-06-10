@@ -6,7 +6,7 @@ public class EnemyStats : MonoBehaviour
 
     private NavMeshAgent agent;
     private EnemyNavMesh enemyNav;
-    public enum Death { SHOOTEDGUN, EXPLOITED, SHOOTEDSHOTGUN, SHOOTEDSHOTGUNCLOSE, CARVED }
+    public enum Death { SHOOTEDGUN, EXPLOITED, SHOOTEDSHOTGUN, SHOOTEDSHOTGUNCLOSE, CARVED, BLOODEXPLOITED }
 
     public int maxHealth;
     //public Transform blood;
@@ -98,6 +98,9 @@ public class EnemyStats : MonoBehaviour
 					Instantiate(deathExploited[Random.Range(0, deathExploited.GetLength(0))], transform.position, aim.transform.rotation);
                     dataLogic.strike++;
                     achievementManager.SetProgressToAchievement("Strike", (float)dataLogic.strike);
+                    break;
+                case Death.BLOODEXPLOITED:
+                    Instantiate(deathExploited[Random.Range(0, deathExploited.GetLength(0))], transform.position, aim.transform.rotation);
                     break;
                 case Death.CARVED:
                     Instantiate(deathshotedGun[Random.Range(0, deathshotedGun.GetLength(0))], transform.position, aim.transform.rotation);
@@ -197,6 +200,16 @@ public class EnemyStats : MonoBehaviour
             dataLogic.Play(dataLogic.hit, audiSor, dataLogic.volumFx);
 			GetDamage(140);			
 		}
+
+        if ((col.gameObject.tag == "GatlingBullet"))
+        {
+            Destroy(col.gameObject);
+            AudioSource audiSor = dataLogic.gameObject.AddComponent<AudioSource>();
+            GameObject bld = (GameObject)Instantiate(blood.gameObject, new Vector3(transform.position.x, 0.2f, transform.position.z), col.transform.rotation);
+            death = Death.EXPLOITED;
+            dataLogic.Play(dataLogic.hit, audiSor, dataLogic.volumFx);
+            GetDamage(200);
+        }
 
         if (col.gameObject.tag == "Chainsaw")
         {

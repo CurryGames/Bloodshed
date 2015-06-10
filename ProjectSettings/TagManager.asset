@@ -56,6 +56,7 @@ TagManager:
   - GatlingUI
   - Damage
   - KeyUI
+  - GatlingBullet
   layers:
   - Default
   - TransparentFX

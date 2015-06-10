@@ -568,10 +568,12 @@ MonoBehaviour:
   ShotgunBullet: {fileID: 100002, guid: c13cd15de5a0ce14782e124e4e597311, type: 2}
   bullet: {fileID: 100000, guid: 76cdafb5afc228f49916512773489995, type: 2}
   rifleBullet: {fileID: 100000, guid: eaf8ae1da5776ba4290cf1130b9844fd, type: 2}
+  gatlingBullet: {fileID: 103174, guid: 29320b68cc537b843a5f0f2938a96bb9, type: 2}
   pipe: {fileID: 0}
   chainsaw: {fileID: 0}
   fire: {fileID: 103950, guid: 97f630f0553bd554fb80fb114454ea00, type: 2}
   fireShotgun: {fileID: 103950, guid: d81464da9ae62e74185d89a185e95087, type: 2}
+  fireGatling: {fileID: 188658, guid: 7b00342f813713046901f7366e62efa7, type: 2}
   grenade: {fileID: 188416, guid: dfc7858c3ae271246bb55ce1e78c2597, type: 2}
   playerStats: {fileID: 11400006}
   playerMov: {fileID: 11400002}
@@ -709,7 +711,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f9deba1ee8d1b414d9b843a4eb759aa2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4244f62e1131e9c48a9d5d3f30809b49, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

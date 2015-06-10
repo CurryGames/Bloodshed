@@ -10,10 +10,12 @@ public class PlayerShooting : MonoBehaviour
 	private BoxCollider colliderSaw;
 	public GameObject bullet;
 	public GameObject rifleBullet;
+    public GameObject gatlingBullet;
 	public GameObject pipe;
     public GameObject chainsaw;
     public GameObject fire;
     public GameObject fireShotgun;
+    public GameObject fireGatling;
     private GameObject gunUI, shotgunUI, riffleUI, gatlingUI;
 	public Rigidbody grenade;
     private ShakeCamera camera;
@@ -311,10 +313,10 @@ public class PlayerShooting : MonoBehaviour
             Destroy(frRf, 0.1f);
 			break;
         case Weapon.CHAINSAW:
-            GameObject GatlingBulletGo = (GameObject)Instantiate(rifleBullet, transform.position, transform.rotation);
+            GameObject GatlingBulletGo = (GameObject)Instantiate(gatlingBullet, transform.position, transform.rotation);
             //GameObject bullet = (GameObject) Instantiate(bulletPrefab.gameObject, transform.position, transform.rotation);
             Destroy(GatlingBulletGo, 2);
-            GameObject frGt = (GameObject)Instantiate(fire, transform.position, transform.rotation);
+            GameObject frGt = (GameObject)Instantiate(fireGatling, transform.position, transform.rotation);
             frGt.transform.parent = transform;
             //GameObject bullet = (GameObject) Instantiate(bulletPrefab.gameObject, transform.position, transform.rotation);
             Destroy(frGt, 0.1f);
