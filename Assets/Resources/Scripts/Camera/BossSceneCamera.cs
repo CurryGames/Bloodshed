@@ -25,7 +25,6 @@ public class BossSceneCamera : MonoBehaviour {
 		interfaz.SetActive (false);
         playerMov = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         playerShoot = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerShooting>();
-
 		playerPos = GameObject.FindGameObjectWithTag ("Player").transform;
 		gameObject.transform.position = new Vector3 (playerPos.position.x, transform.position.y, playerPos.position.z);
 		targetPositionIn = new Vector3 (0, transform.position.y, 8);
@@ -59,10 +58,7 @@ public class BossSceneCamera : MonoBehaviour {
                 if (currentTime >= 1) SmoothCinematicOut();
                 if (currentTime >= 3.5f) EndOfAnimation();
             } break;
-        }
-       
-		
-
+        }	
 	}
 
 	public void SmoothCinematicIn()
@@ -83,6 +79,6 @@ public class BossSceneCamera : MonoBehaviour {
         playerMov.enabled = true;
         playerShoot.enabled = true;
         interfaz.SetActive(true);
-
+        bossMove.active = true;
 	}
 }

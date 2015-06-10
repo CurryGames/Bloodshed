@@ -29,6 +29,7 @@ public class BossMove : MonoBehaviour {
 	public bool throwingGrenade = false;
 	public bool onCharge = false;
 	public bool stunt = false;
+    public bool active;
 
 	// Use this for initialization
 	void Awake () {
@@ -40,7 +41,7 @@ public class BossMove : MonoBehaviour {
 		dataLogic = GameObject.FindGameObjectWithTag("DataLogic").GetComponent<DataLogic>();
 		bossRB = GetComponent<Rigidbody> ();
         hasWeapon = true;
-
+        active = false;
 		statesTimer = 0;
 
 	
@@ -56,7 +57,7 @@ public class BossMove : MonoBehaviour {
 			if (dist > 1) transform.rotation = Quaternion.LookRotation(player.transform.position - transform.position);
 		}
 
-		if (dist <= shootRange)
+		if (active)
 		{
 			switch (bossStats.stage)
 			{
@@ -160,6 +161,7 @@ public class BossMove : MonoBehaviour {
 			case BossStats.Stage.CRAWL:
                 SetDead();
 				transform.position = Vector3.MoveTowards(transform.position, destination, 1.4f * Time.deltaTime);
+                transform.rotation = Quaternion.LookRotation(destination - transform.position);
 				break;
 			case BossStats.Stage.DEAD:
 				break;
@@ -178,7 +180,7 @@ public class BossMove : MonoBehaviour {
 
 	void OnCollisionEnter(Collision col)
 	{
-		if (col.gameObject.name == "Player2.0" && bossStats.stage == BossStats.Stage.THREE)
+		if (col.gameObject.name == "Player2.0" && bossStats.stage == BossStats.Stage.THREE && onCharge)
 		{
 			PlayerStats playerStats = col.gameObject.GetComponent<PlayerStats>();
 			playerStats.GetDamage(120);

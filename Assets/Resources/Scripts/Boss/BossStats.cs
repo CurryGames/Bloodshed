@@ -67,22 +67,16 @@ public class BossStats : MonoBehaviour {
                 AudioSource audiSor = dataLogic.gameObject.AddComponent<AudioSource>();
             dataLogic.Play(dataLogic.death, audiSor, dataLogic.volumFx);
          Destroy(this.gameObject);
-		break;
-		
-
-		
+		break;	
 		default: break;
 		}
-		
-
 	}
 
 	void OnTriggerEnter(Collider col)
 	{
 		if ((col.gameObject.tag == "Bullet"))
 		{
-			Destroy(col.gameObject);
-            
+			Destroy(col.gameObject);        
 			//dataLogic.Play(death, audiSor, dataLogic.volumFx);
 			GetDamage(60);			
 		}
