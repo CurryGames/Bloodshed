@@ -44,7 +44,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 453062}
   - 212: {fileID: 21299978}
-  - 95: {fileID: 9508432}
   m_Layer: 0
   m_Name: laptop_sprite_0
   m_TagString: Untagged
@@ -133,23 +132,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.01999998, y: .819999993, z: .5}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!95 &9508432
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 198174}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bcb84f1884783b947b76a527527d7111, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11476098
 MonoBehaviour:
   m_ObjectHideFlags: 1
