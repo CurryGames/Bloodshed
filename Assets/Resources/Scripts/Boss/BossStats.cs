@@ -54,7 +54,12 @@ public class BossStats : MonoBehaviour {
 		 break;
 		 
 		case Stage.THREE:
-			if(currentHealth <= 0) stage = Stage.CRAWL;
+			if(currentHealth <= 0)
+            {
+                stage = Stage.CRAWL;
+                GetComponent<Collider>().enabled = false;
+            }
+                
 		 break;
 
 		case Stage.CRAWL:
