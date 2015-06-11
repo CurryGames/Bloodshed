@@ -24,7 +24,7 @@ public class DamageAnimation : MonoBehaviour {
         initAlpha = 0;
         finalValueAlpha = colorImage.a;
         timeDuration = 0.2f;
-        fadeOutDuration = 1.0f;
+        fadeOutDuration = 0.2f;
         
         timeCounter = 0f;
     }
