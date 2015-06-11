@@ -1,15 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class BossStats : MonoBehaviour {
 
 
-	public int maxHealthONE;
-	public int maxHealthTWO;
-	public int maxHealthTHREE;
-	public int currentHealth;
+	public float maxHealthONE;
+	public float maxHealthTWO;
+	public float maxHealthTHREE;
+	public float currentHealth;
     public GameObject blood;
     public GameObject death;
+	public GameObject bossHealthBar;
     private PlayerStats playerStats;
 	public bool speed;
 	private float crawlTimer = 0;
@@ -19,6 +21,7 @@ public class BossStats : MonoBehaviour {
 	public Color color;
     public GameObject bullseye;
     public GameObject headCol;
+	public Slider healthBar1, healthBar2, healthBar3;
 	
 	public enum Stage { ONE, TWO, THREE, CRAWL, DEAD}
 	public Stage stage;
@@ -29,16 +32,21 @@ public class BossStats : MonoBehaviour {
 		currentHealth = maxHealthONE;
 		dataLogic = GameObject.FindGameObjectWithTag("DataLogic").GetComponent<DataLogic>();
         playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
+		//bossHealthBar.SetActive (true);
 	
 	}
-	
+
 	// Update is called once per frame
 	void Update () 
 	{
+
+		//bossHealthBar.SetActive (true);
+
 		switch(stage)
 		{
 		case Stage.ONE:
 		
+			healthBar1.value = currentHealth/maxHealthONE;
 			if(currentHealth <= 0)
 			{
 				stage = Stage.TWO;
@@ -47,7 +55,7 @@ public class BossStats : MonoBehaviour {
 		 break;
 
 		case Stage.TWO:	
-
+			healthBar2.value = currentHealth/maxHealthTWO;
 			if(currentHealth <= 0)
 			{
 				stage = Stage.THREE;
@@ -56,6 +64,7 @@ public class BossStats : MonoBehaviour {
 		 break;
 		 
 		case Stage.THREE:
+			healthBar3.value = currentHealth/maxHealthTHREE;
 			if(currentHealth <= 0)
             {
                 stage = Stage.CRAWL;

@@ -12,6 +12,7 @@ public class BossSceneCamera : MonoBehaviour {
 	private Camera cinematicCamera;
 	private GameObject mainCam;
 	public GameObject interfaz;
+	public GameObject bossHealthbar;
 	public BossMove bossMove;
     private float currentTime = 0;
     private PlayerMovement playerMov;
@@ -79,6 +80,7 @@ public class BossSceneCamera : MonoBehaviour {
         playerMov.enabled = true;
         playerShoot.enabled = true;
         interfaz.SetActive(true);
+		bossHealthbar.SetActive (true);
         bossMove.active = true;
 	}
 }

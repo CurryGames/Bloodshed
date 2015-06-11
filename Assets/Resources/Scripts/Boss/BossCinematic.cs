@@ -16,6 +16,7 @@ public class BossCinematic : MonoBehaviour {
 	public GameObject bloodSplash;
 	public GameObject machinegun;
 	public GameObject bazooka;
+
     public Animator bossAnim;
 	private Collider bossCol;
     private PlayerStats playerStats;
@@ -29,6 +30,8 @@ public class BossCinematic : MonoBehaviour {
 		bossCol = GetComponent<BoxCollider> ();
         playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
         dataLogic = GameObject.FindGameObjectWithTag("DataLogic").GetComponent<DataLogic>();
+
+
 
         gunPos = new Vector3( -2.1f, transform.position.y, 12);
         bMove.enabled = false;
@@ -93,7 +96,7 @@ public class BossCinematic : MonoBehaviour {
 					if (counter >= 1 && counter < 1.5f)
 					{
 						//set shooting (grab weapon)
-				SetGetWeapon();
+						SetGetWeapon();
 					}
                     if (counter >= 1.5f)
                     {
@@ -113,10 +116,12 @@ public class BossCinematic : MonoBehaviour {
 				counter +=Time.deltaTime;
 				if (counter >= 1) 
 				{
+					
 					bMove.enabled = true;
 					bStats.enabled = true;
 					bCine.enabled = false;
 					bossCol.enabled = true;
+					//.SetActive(true);
 				}
 			} break;
 

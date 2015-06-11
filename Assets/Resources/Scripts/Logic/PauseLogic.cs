@@ -36,7 +36,7 @@ public class PauseLogic : MonoBehaviour {
         instance = this;
         DontDestroyOnLoad(this);
 
-        fullScr.isOn = Screen.fullScreen;
+		if(fullScr != null)fullScr.isOn = Screen.fullScreen;
     }
 
 	// Use this for initialization
