@@ -17,6 +17,8 @@ public class BossStats : MonoBehaviour {
 	bool hit = false;
 	private DataLogic dataLogic;
 	public Color color;
+    public GameObject bullseye;
+    public GameObject headCol;
 	
 	public enum Stage { ONE, TWO, THREE, CRAWL, DEAD}
 	public Stage stage;
@@ -64,12 +66,14 @@ public class BossStats : MonoBehaviour {
 
 		case Stage.CRAWL:
 			crawlTimer += Time.deltaTime;
+            bullseye.SetActive(true);
+            headCol.SetActive(true);
 			break;
 		case Stage.DEAD:
          playerStats.LevelEnd();
          GameObject dead = (GameObject)Instantiate(death.gameObject, transform.position, Quaternion.identity);
                 AudioSource audiSor = dataLogic.gameObject.AddComponent<AudioSource>();
-            dataLogic.Play(dataLogic.death, audiSor, dataLogic.volumFx);
+         dataLogic.Play(dataLogic.death, audiSor, dataLogic.volumFx);
          Destroy(this.gameObject);
 		break;	
 		default: break;
@@ -95,7 +99,13 @@ public class BossStats : MonoBehaviour {
 		{
 			Destroy(col.gameObject);
 			GetDamage(60);			
-		}		
+		}
+	
+	    if ((col.gameObject.tag == "GatlingBullet"))
+		{
+			Destroy(col.gameObject);
+			GetDamage(100);			
+		}	
 	}
 
 	void OnTriggerStay(Collider col)
