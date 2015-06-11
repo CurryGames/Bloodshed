@@ -59,7 +59,6 @@ public class BossStats : MonoBehaviour {
 
 		case Stage.CRAWL:
 			crawlTimer += Time.deltaTime;
-			if (crawlTimer >= 3.5f) stage = Stage.DEAD;
 			break;
 		case Stage.DEAD:
          playerStats.LevelEnd();

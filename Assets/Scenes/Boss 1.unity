@@ -571,6 +571,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 20
+--- !u!65 &56537871
+BoxCollider:
+  m_PrefabParentObject: {fileID: 6544754, guid: 30f621dca86cb8e4e869e196e4b42809,
+    type: 2}
+  m_PrefabInternal: {fileID: 1866668767}
 --- !u!1001 &61688406
 Prefab:
   m_ObjectHideFlags: 0
@@ -8411,6 +8416,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11444756, guid: 30f621dca86cb8e4e869e196e4b42809, type: 2}
+      propertyPath: bossCol
+      value: 
+      objectReference: {fileID: 56537871}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 30f621dca86cb8e4e869e196e4b42809, type: 2}
   m_IsPrefabParent: 0

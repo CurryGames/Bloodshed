@@ -162,6 +162,7 @@ public class BossMove : MonoBehaviour {
                 SetDead();
 				transform.position = Vector3.MoveTowards(transform.position, destination, 1.4f * Time.deltaTime);
                 transform.rotation = Quaternion.LookRotation(destination - transform.position);
+                if (!bossRB.isKinematic) bossRB.isKinematic = true;
 				break;
 			case BossStats.Stage.DEAD:
 				break;
