@@ -146,6 +146,7 @@ public class BossCinematic : MonoBehaviour {
 	private void DestroyMachinegun()
 	{
 		Destroy (machinegun, 0);
+        Destroy(bazooka, 0);
 	}
 
 	private void DestroyBazooka()

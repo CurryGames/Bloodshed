@@ -14,7 +14,6 @@ public class BossStats : MonoBehaviour {
 	public GameObject bossHealthBar;
     private PlayerStats playerStats;
 	public bool speed;
-	private float crawlTimer = 0;
 	bool down = true;
 	bool hit = false;
 	private DataLogic dataLogic;
@@ -22,6 +21,7 @@ public class BossStats : MonoBehaviour {
     public GameObject bullseye;
     public GameObject headCol;
 	public Slider healthBar1, healthBar2, healthBar3;
+    private float deadCounter = 0;
 	
 	public enum Stage { ONE, TWO, THREE, CRAWL, DEAD}
 	public Stage stage;
@@ -68,22 +68,26 @@ public class BossStats : MonoBehaviour {
 			if(currentHealth <= 0)
             {
                 stage = Stage.CRAWL;
+                GetComponentInChildren<Collider>().enabled = true;
                 GetComponent<Collider>().enabled = false;
             }
                 
 		 break;
 
 		case Stage.CRAWL:
-			crawlTimer += Time.deltaTime;
+			//crawlTimer += Time.deltaTime;
             bullseye.SetActive(true);
             headCol.SetActive(true);
 			break;
 		case Stage.DEAD:
-         playerStats.LevelEnd();
-         GameObject dead = (GameObject)Instantiate(death.gameObject, transform.position, Quaternion.identity);
-                AudioSource audiSor = dataLogic.gameObject.AddComponent<AudioSource>();
-         dataLogic.Play(dataLogic.death, audiSor, dataLogic.volumFx);
-         Destroy(this.gameObject);
+            //GetComponent<PlayerMovement>().enabled = false;
+            GameObject dead = (GameObject)Instantiate(death.gameObject, transform.position, transform.rotation);
+            AudioSource audiSor = dataLogic.gameObject.AddComponent<AudioSource>();
+            dataLogic.Play(dataLogic.death, audiSor, dataLogic.volumFx);
+            Destroy(this.gameObject);
+            //playerStats.LevelEnd();          
+
+   
 		break;	
 		default: break;
 		}
@@ -128,11 +132,18 @@ public class BossStats : MonoBehaviour {
 	
 	public void GetDamage(int dmg)
 	{
-		currentHealth -= dmg;
-        GameObject bld = (GameObject)Instantiate(blood.gameObject, new Vector3 (transform.position.x, 0.2f, transform.position.z) , Quaternion.identity);
-        AudioSource audiSor = dataLogic.gameObject.AddComponent<AudioSource>();
-        dataLogic.Play(dataLogic.hit, audiSor, dataLogic.volumFx);
-		if (hit == false) hit = true;
+        if (stage != BossStats.Stage.DEAD && stage != BossStats.Stage.CRAWL)
+        {
+            currentHealth -= dmg;
+            GameObject bld = (GameObject)Instantiate(blood.gameObject, new Vector3(transform.position.x, 0.2f, transform.position.z), Quaternion.identity);
+            AudioSource audiSor = dataLogic.gameObject.AddComponent<AudioSource>();
+            dataLogic.Play(dataLogic.hit, audiSor, dataLogic.volumFx);
+            if (hit == false) hit = true;
+        }
+        else if (stage == BossStats.Stage.CRAWL)
+        {
+            stage = BossStats.Stage.DEAD;
+        }
 	}
 
 	/*void HitAnim()
