@@ -24,7 +24,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 402186}
   m_Layer: 0
-  m_Name: BossWeaponMessage
+  m_Name: BossWeaponMessage 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -192,7 +192,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 158638}
-  m_Text: 
+  m_Text: YOU UNLOCKED THE ____
   m_OffsetZ: 0
   m_CharacterSize: .150000006
   m_LineSpacing: 1
