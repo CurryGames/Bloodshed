@@ -81,11 +81,11 @@ public class BossStats : MonoBehaviour {
 			break;
 		case Stage.DEAD:
             //GetComponent<PlayerMovement>().enabled = false;
-            GameObject dead = (GameObject)Instantiate(death.gameObject, transform.position, transform.rotation);
+            GameObject dead = (GameObject)Instantiate(death.gameObject, transform.position, Quaternion.Euler (new Vector3 (transform.rotation.x, -transform.rotation.y, transform.rotation.z)));
             AudioSource audiSor = dataLogic.gameObject.AddComponent<AudioSource>();
             dataLogic.Play(dataLogic.death, audiSor, dataLogic.volumFx);
             Destroy(this.gameObject);
-            //playerStats.LevelEnd();          
+            playerStats.LevelEnd();          
 
    
 		break;	
