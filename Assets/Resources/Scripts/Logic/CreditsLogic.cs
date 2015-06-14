@@ -6,6 +6,7 @@ public class CreditsLogic : MonoBehaviour {
     private DataLogic dataLogic;
     private LoadingScreen loadingScreen;
     private AudioSource audioSor;
+    private AchievementManager achievementManager;
 
     private float temp;
 
@@ -18,7 +19,10 @@ public class CreditsLogic : MonoBehaviour {
         loadingScreen = GameObject.FindGameObjectWithTag("LoadingScreen").
             GetComponent<LoadingScreen>();
         audioSor = GetComponent<AudioSource>();
+        achievementManager = GameObject.FindGameObjectWithTag("DataLogic").
+            GetComponent<AchievementManager>();
 
+        achievementManager.SetProgressToAchievement("Bloodshed!", 1.0f);
         audioSor.volume = dataLogic.volumFx;
 	}
 	

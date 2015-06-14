@@ -209,7 +209,7 @@ MonoBehaviour:
   assignStartValueBeforeDelay: 1
   loopType: 0
   loopCount: 0
-  duration: 1
+  duration: 3
   easingType: 9
   animCurve:
     serializedVersion: 2
