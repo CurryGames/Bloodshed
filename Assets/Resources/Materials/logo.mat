@@ -2,13 +2,14 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: logo
-  m_Shader: {fileID: 4800000, guid: 22cff654fe281eb41a37030a078914e7, type: 3}
-  m_ShaderKeywords: []
+  m_Shader: {fileID: 4800000, guid: 6b442defbaf63f341809827773f92060, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
   m_CustomRenderQueue: -1
   m_SavedProperties:
     serializedVersion: 2
@@ -17,10 +18,18 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: ecab26e7b6870844b813b04968863100, type: 3}
+          m_Texture: {fileID: 2800000, guid: 7ecf76254c5867d4da8cfe493104b6db, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
-    m_Floats: {}
+    m_Floats:
+      data:
+        first:
+          name: _PixelCountU
+        second: 40
+      data:
+        first:
+          name: _PixelCountV
+        second: 40
     m_Colors:
       data:
         first:
