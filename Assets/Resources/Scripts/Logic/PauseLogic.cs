@@ -29,7 +29,7 @@ public class PauseLogic : MonoBehaviour {
         //destroy the already existing instance, if any
         if (instance)
         {
-			Destroy(instance.gameObject);
+			Destroy(gameObject);
             return;
         }
 

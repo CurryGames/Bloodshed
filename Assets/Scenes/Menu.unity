@@ -1191,7 +1191,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11411726, guid: 448789f9b4f61c349a2948dce7bc292e, type: 2}
       propertyPath: m_MaxValue
-      value: 2
+      value: 1.20000005
       objectReference: {fileID: 0}
     - target: {fileID: 11461844, guid: 448789f9b4f61c349a2948dce7bc292e, type: 2}
       propertyPath: m_Colors.m_HighlightedColor.g
