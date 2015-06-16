@@ -40,7 +40,7 @@ public class BarrelExplosion : MonoBehaviour {
 
 	public void OnTriggerEnter(Collider other)
 	{
-		if (other.tag == "Bullet" || other.tag == "BulletSHOTGUN" || other.tag == "BulletRIFLE")
+        if (other.tag == "Bullet" || other.tag == "BulletSHOTGUN" || other.tag == "BulletRIFLE" || (other.tag == "GatlingBullet"))
 		{
             dataLogic.strike = 0;
 			Destroy (other.gameObject);

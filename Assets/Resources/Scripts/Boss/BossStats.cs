@@ -117,8 +117,8 @@ public class BossStats : MonoBehaviour {
             GameObject bld = (GameObject)Instantiate(blood.gameObject, new Vector3(transform.position.x, 0.2f, transform.position.z), col.transform.rotation);
 			GetDamage(60);			
 		}
-	
-	    if ((col.gameObject.tag == "GatlingBullet"))
+
+        if ((col.gameObject.tag == "GatlingBullet"))
 		{
 			Destroy(col.gameObject);
             GameObject bld = (GameObject)Instantiate(blood.gameObject, new Vector3(transform.position.x, 0.2f, transform.position.z), col.transform.rotation);
