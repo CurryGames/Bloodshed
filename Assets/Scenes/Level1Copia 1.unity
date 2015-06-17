@@ -14414,7 +14414,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 60
+  m_RootOrder: 59
 --- !u!4 &772454248 stripped
 Transform:
   m_PrefabParentObject: {fileID: 449196, guid: 92bb2061f68ebaf488d445c71c04f24c, type: 2}
@@ -16413,7 +16413,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: a29d5868a17e1a149b2e3841d30f7eed, type: 2}
       propertyPath: detectDistance
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: a29d5868a17e1a149b2e3841d30f7eed, type: 2}
       propertyPath: shootRange
@@ -22338,7 +22338,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 116c1b509e1d9dc459c606446cf07c10, type: 2}
       propertyPath: detectDistance
-      value: 12
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 116c1b509e1d9dc459c606446cf07c10, type: 2}
       propertyPath: m_LocalScale.x
@@ -22347,6 +22347,10 @@ Prefab:
     - target: {fileID: 400000, guid: 116c1b509e1d9dc459c606446cf07c10, type: 2}
       propertyPath: m_LocalScale.y
       value: 1.84843802
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 116c1b509e1d9dc459c606446cf07c10, type: 2}
+      propertyPath: shootRange
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 116c1b509e1d9dc459c606446cf07c10, type: 2}
@@ -32653,7 +32657,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: a29d5868a17e1a149b2e3841d30f7eed, type: 2}
       propertyPath: detectDistance
-      value: 12
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: a29d5868a17e1a149b2e3841d30f7eed, type: 2}
       propertyPath: shootRange
