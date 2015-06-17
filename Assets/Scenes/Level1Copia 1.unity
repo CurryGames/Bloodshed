@@ -32657,7 +32657,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: a29d5868a17e1a149b2e3841d30f7eed, type: 2}
       propertyPath: detectDistance
-      value: 14
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: a29d5868a17e1a149b2e3841d30f7eed, type: 2}
       propertyPath: shootRange

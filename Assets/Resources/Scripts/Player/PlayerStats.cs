@@ -384,7 +384,7 @@ public class PlayerStats : MonoBehaviour {
         {
             loadingScreen.loadNextScreen = true;
             brutalMode = false;
-			playerMov.enabled = false;
+			//playerMov.enabled = false;
             dataLogic.iniScore = score;
             dataLogic.iniHealth = currentHealth;
             dataLogic.iniBrutality = currentBrutality;
@@ -397,7 +397,7 @@ public class PlayerStats : MonoBehaviour {
         {
             loadingScreen.loadNextScreen = true;
             brutalMode = false;
-			playerMov.enabled = false;
+			//playerMov.enabled = false;
             dataLogic.iniScore = score;
             dataLogic.iniHealth = currentHealth;
             dataLogic.iniBrutality = currentBrutality;
