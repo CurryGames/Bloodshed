@@ -167,7 +167,7 @@ public class PlayerShooting : MonoBehaviour
             shotgunUI.SetActive(false);
             riffleUI.SetActive(false);
             gatlingUI.SetActive(true);
-			if (Input.GetButton ("Fire1"))
+            if (Input.GetButton("Fire1") || Input.GetAxis("FireJoy") < 0)
             {
                 timmerGatling += Time.deltaTime;
                 if (!loadGatling)
@@ -192,7 +192,7 @@ public class PlayerShooting : MonoBehaviour
                     }
                 }
             }
-            else if(Input.GetButtonUp ("Fire1"))
+            else if (Input.GetButtonUp("Fire1") || Input.GetAxis("FireJoy") == 0)
             {
                 if (loadGatling)
                 {

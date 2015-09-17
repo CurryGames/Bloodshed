@@ -3,10 +3,11 @@
 public class PlayerMovement : MonoBehaviour
 {
 	private PlayerStats playerStats;
-	public float speed;            // The speed that the player will move at.
+	private float speed;            // The speed that the player will move at.
     private float grenadesTime;
     private float timer;
     private bool mouse;
+    public GameObject cursor;
 	float throwForce;
 	private PlayerShooting playerShot;
     private LoadingScreen loadingScreen;
@@ -122,11 +123,16 @@ public class PlayerMovement : MonoBehaviour
             if (!mouse)
             {
                 RotateJoystick();
+                cursor.SetActive(true);
+                
+                Cursor.visible = false;
             }
             else
             {
                 // Turn the player to face the mouse cursor.
                 Turning();
+                cursor.SetActive(false);
+                Cursor.visible = true;
             }
 			
 		}
@@ -184,20 +190,19 @@ public class PlayerMovement : MonoBehaviour
 
     void RotateJoystick()
     {
-        float horizontalSpeed = 1.0F;
-        float verticalSpeed = 1.0F;
-   
-        float h = horizontalSpeed * Input.GetAxis("Joy X");
-        float v = verticalSpeed * Input.GetAxis("Joy Y");
+        float Speed = 20.0F;
+
+        float h = Speed * Input.GetAxis("Joy X");
+        float v = Speed * Input.GetAxis("Joy Y");
 
         if (h != 0 || v != 0)
         {
             Vector3 moveRotation = new Vector3(h, 0, v);
 
-            Quaternion newRotation = Quaternion.LookRotation(moveRotation);
-
-            playerRigidbody.MoveRotation(newRotation); ;
+            Quaternion lookRotation = Quaternion.LookRotation(moveRotation);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * Speed);
         }
+        
     }
     
         
