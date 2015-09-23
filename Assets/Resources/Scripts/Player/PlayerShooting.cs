@@ -18,7 +18,7 @@ public class PlayerShooting : MonoBehaviour
     public GameObject fireGatling;
     private GameObject gunUI, shotgunUI, riffleUI, gatlingUI;
 	public Rigidbody grenade;
-    private ShakeCamera camera;
+    private ShakeCamera scamera;
     //private ColorCorrectionCurves colorCorrection;
     public PlayerStats playerStats;
 	public PlayerMovement playerMov;
@@ -57,7 +57,7 @@ public class PlayerShooting : MonoBehaviour
         dataLogic = GameObject.FindGameObjectWithTag("DataLogic").GetComponent<DataLogic>();
 		playerMov = GetComponent<PlayerMovement> ();
         pauseLogic = GameObject.FindGameObjectWithTag("pause").GetComponent<PauseLogic>();
-        camera = Camera.main.GetComponent<ShakeCamera>();
+        scamera = Camera.main.GetComponent<ShakeCamera>();
         gunUI = GameObject.FindGameObjectWithTag("gunUI");
         shotgunUI = GameObject.FindGameObjectWithTag("shotgunUI");
         riffleUI = GameObject.FindGameObjectWithTag("riffleUI");
@@ -148,6 +148,7 @@ public class PlayerShooting : MonoBehaviour
 			break;
         case Weapon.CHAINSAW:
 
+            playerStats.bullets.text = "Inf.";
             StartCoroutine(SpawnGhost());
             if (playerStats.currentHealth > 0)
             {
@@ -344,18 +345,18 @@ public class PlayerShooting : MonoBehaviour
     public void Shake()
     {
 
-        camera.shakingForce = 0.1F;
-        camera.shakeDecay = 0.05F;
-        camera.startShake = true;
+        scamera.shakingForce = 0.1F;
+        scamera.shakeDecay = 0.05F;
+        scamera.startShake = true;
         
     }
 
 	public void ShakeShotgun()
 	{
 		
-		camera.shakingForce = 0.3F;
-		camera.shakeDecay = 0.05F;
-		camera.startShake = true;
+		scamera.shakingForce = 0.3F;
+		scamera.shakeDecay = 0.05F;
+		scamera.startShake = true;
 		
 	}
 

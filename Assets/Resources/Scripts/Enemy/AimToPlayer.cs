@@ -3,16 +3,16 @@ using System.Collections;
 
 public class AimToPlayer : MonoBehaviour {
 
-	private GameObject player;
-	private EnemyNavMesh enemyMove;
+	//private GameObject player;
+	//private EnemyNavMesh enemyMove;
 	Quaternion myRotation;
 	Quaternion targetRotation;
 
 	// Use this for initialization
 	void Awake () 
 	{
-		player = GameObject.FindWithTag ("Player");
-		enemyMove = GetComponentInParent<EnemyNavMesh> ();
+		//player = GameObject.FindWithTag ("Player");
+		//enemyMove = GetComponentInParent<EnemyNavMesh> ();
 	}
 	
 	// Update is called once per frame

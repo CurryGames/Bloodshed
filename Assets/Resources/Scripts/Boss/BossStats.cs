@@ -12,16 +12,16 @@ public class BossStats : MonoBehaviour {
     public GameObject blood;
     public GameObject death;
 	public GameObject bossHealthBar;
-    private PlayerStats playerStats;
+    //private PlayerStats playerStats;
 	public bool speed;
-	bool down = true;
+	//bool down = true;
 	bool hit = false;
 	private DataLogic dataLogic;
 	public Color color;
     public GameObject bullseye;
     public GameObject headCol;
 	public Slider healthBar1, healthBar2, healthBar3;
-    private float deadCounter = 0;
+    //private float deadCounter = 0;
 	
 	public enum Stage { ONE, TWO, THREE, CRAWL, DEAD}
 	public Stage stage;
@@ -31,7 +31,7 @@ public class BossStats : MonoBehaviour {
 		stage = Stage.ONE;
 		currentHealth = maxHealthONE;
 		dataLogic = GameObject.FindGameObjectWithTag("DataLogic").GetComponent<DataLogic>();
-        playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
+        //playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
 		//bossHealthBar.SetActive (true);
 	
 	}
@@ -81,7 +81,7 @@ public class BossStats : MonoBehaviour {
 			break;
 		case Stage.DEAD:
             //GetComponent<PlayerMovement>().enabled = false;
-            GameObject dead = (GameObject)Instantiate(death.gameObject, transform.position, Quaternion.Euler (new Vector3 (transform.rotation.x, transform.rotation.y, transform.rotation.z)));
+            Instantiate(death.gameObject, transform.position, Quaternion.Euler (new Vector3 (transform.rotation.x, transform.rotation.y, transform.rotation.z)));
             AudioSource audiSor = dataLogic.gameObject.AddComponent<AudioSource>();
             dataLogic.Play(dataLogic.death, audiSor, dataLogic.volumFx);
             Destroy(this.gameObject);
@@ -99,7 +99,7 @@ public class BossStats : MonoBehaviour {
 		if ((col.gameObject.tag == "Bullet"))
 		{
 			Destroy(col.gameObject);
-            GameObject bld = (GameObject)Instantiate(blood.gameObject, new Vector3(transform.position.x, 0.2f, transform.position.z), col.transform.rotation);
+            Instantiate(blood.gameObject, new Vector3(transform.position.x, 0.2f, transform.position.z), col.transform.rotation);
 			//dataLogic.Play(death, audiSor, dataLogic.volumFx);
 			GetDamage(60);			
 		}
@@ -107,21 +107,21 @@ public class BossStats : MonoBehaviour {
 		if ((col.gameObject.tag == "BulletSHOTGUN"))
 		{
 			Destroy(col.gameObject);
-            GameObject bld = (GameObject)Instantiate(blood.gameObject, new Vector3(transform.position.x, 0.2f, transform.position.z), col.transform.rotation);
+            Instantiate(blood.gameObject, new Vector3(transform.position.x, 0.2f, transform.position.z), col.transform.rotation);
 			GetDamage(100);	
 		} 
 		
 		if ((col.gameObject.tag == "BulletRIFLE"))
 		{
 			Destroy(col.gameObject);
-            GameObject bld = (GameObject)Instantiate(blood.gameObject, new Vector3(transform.position.x, 0.2f, transform.position.z), col.transform.rotation);
+            Instantiate(blood.gameObject, new Vector3(transform.position.x, 0.2f, transform.position.z), col.transform.rotation);
 			GetDamage(60);			
 		}
 
         if ((col.gameObject.tag == "GatlingBullet"))
 		{
 			Destroy(col.gameObject);
-            GameObject bld = (GameObject)Instantiate(blood.gameObject, new Vector3(transform.position.x, 0.2f, transform.position.z), col.transform.rotation);
+            Instantiate(blood.gameObject, new Vector3(transform.position.x, 0.2f, transform.position.z), col.transform.rotation);
 			GetDamage(100);			
 		}	
 	}

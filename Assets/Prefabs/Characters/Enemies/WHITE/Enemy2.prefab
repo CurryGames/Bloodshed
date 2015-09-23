@@ -368,6 +368,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   anim: {fileID: 100004}
+  enemyChasing: {fileID: 0}
+  enemyWithoutgun: {fileID: 0}
   enemyType: 0
   chasing: 0
   isStop: 1
@@ -452,7 +454,7 @@ MonoBehaviour:
   - {fileID: 139718, guid: f28d844ca0987164db79a6f8d19922d0, type: 2}
   - {fileID: 139718, guid: 0b4a1d4962648d04498ce553db6ffc66, type: 2}
   - {fileID: 128118, guid: d2e80f86904b44445ae4293a7526ca34, type: 2}
-  - {fileID: 139718, guid: 2ddb122fee75b2c4c9dcb6936c2de6d3, type: 2}
+  - {fileID: 161198, guid: f8d52c8437f26a94cbed3347cb1fc24f, type: 2}
   - {fileID: 178578, guid: 7f5ff377777cdfb45bcf02350dd4ea8a, type: 2}
   puntuationText: {fileID: 174928, guid: 1be67c8d0cf63ce4d9a7c2f6b169276c, type: 2}
   distanceModifier: 0

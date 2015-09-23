@@ -239,7 +239,7 @@ MonoBehaviour:
   startValueType: 1
   startValue: {x: 0, y: -12.1000004, z: 0}
   endValueType: 2
-  endValue: {x: 0, y: 0, z: 43}
+  endValue: {x: 0, y: 0, z: 44}
   useLocalPosition: 0
 --- !u!1 &123108797
 GameObject:

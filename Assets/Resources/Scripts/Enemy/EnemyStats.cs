@@ -160,7 +160,7 @@ public class EnemyStats : MonoBehaviour
             Destroy(col.gameObject);
             AudioSource audiSor = dataLogic.gameObject.AddComponent<AudioSource>();
             death = Death.SHOOTEDGUN;
-            GameObject bld = (GameObject)Instantiate(blood.gameObject, new Vector3(transform.position.x, 0.2f, transform.position.z), col.transform.rotation);
+            Instantiate(blood.gameObject, new Vector3(transform.position.x, 0.2f, transform.position.z), col.transform.rotation);
             dataLogic.Play(dataLogic.hit, audiSor, dataLogic.volumFx);
             GetDamage(100);			
         }
@@ -182,7 +182,7 @@ public class EnemyStats : MonoBehaviour
                 distanceModifier = 1 + ranged.dist * (0.1f);
                 death = Death.SHOOTEDSHOTGUN;
             }
-            GameObject bld = (GameObject)Instantiate(blood.gameObject, new Vector3(transform.position.x, 0.2f, transform.position.z), col.transform.rotation);
+            Instantiate(blood.gameObject, new Vector3(transform.position.x, 0.2f, transform.position.z), col.transform.rotation);
 			Destroy(col.gameObject);
             AudioSource audiSor = dataLogic.gameObject.AddComponent<AudioSource>();
             //death = Death.SHOOTEDSHOTGUNCLOSE;
@@ -195,7 +195,7 @@ public class EnemyStats : MonoBehaviour
 		{
 			Destroy(col.gameObject);
             AudioSource audiSor = dataLogic.gameObject.AddComponent<AudioSource>();
-            GameObject bld = (GameObject)Instantiate(blood.gameObject, new Vector3(transform.position.x, 0.2f, transform.position.z), col.transform.rotation);
+            Instantiate(blood.gameObject, new Vector3(transform.position.x, 0.2f, transform.position.z), col.transform.rotation);
             death = Death.SHOOTEDGUN;
             dataLogic.Play(dataLogic.hit, audiSor, dataLogic.volumFx);
 			GetDamage(140);			
@@ -205,7 +205,7 @@ public class EnemyStats : MonoBehaviour
         {
             Destroy(col.gameObject);
             AudioSource audiSor = dataLogic.gameObject.AddComponent<AudioSource>();
-            GameObject bld = (GameObject)Instantiate(blood.gameObject, new Vector3(transform.position.x, 0.2f, transform.position.z), col.transform.rotation);
+            Instantiate(blood.gameObject, new Vector3(transform.position.x, 0.2f, transform.position.z), col.transform.rotation);
             death = Death.EXPLOITED;
             dataLogic.Play(dataLogic.hit, audiSor, dataLogic.volumFx);
             GetDamage(200);

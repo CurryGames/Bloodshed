@@ -7,7 +7,7 @@ public class EnemyMoveBehaviour : MonoBehaviour
     public enum EnemyMoveStates { RIGHT, LEFT, UP, DOWN }
 
     public EnemyMoveStates state;
-    private CharacterController controller;
+    //private CharacterController controller;
     private EnemyStats enemyStats;
     private Vector3 moveDirection;
 
@@ -21,7 +21,7 @@ public class EnemyMoveBehaviour : MonoBehaviour
     {
         enemyStats = GetComponent<EnemyStats>();
         speedMove = enemyStats.speed;
-        controller = transform.GetComponent<CharacterController>();
+        //controller = transform.GetComponent<CharacterController>();
         chasing = false;
 
     }

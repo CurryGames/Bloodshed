@@ -10,7 +10,7 @@ public class EnemyNavMesh : MonoBehaviour
     public GameObject enemyChasing, enemyWithoutgun;
     private GameObject legs;
     private NavMeshAgent agent;
-    private EnemyMoveBehaviour enemyMove;
+    //private EnemyMoveBehaviour enemyMove;
     private RangedEnemy enemyRang;
     private EnemyStats enemyStats;
 	public enum EnemyType { CHASE, IDDLE, PATROL, IMMOBILE, TUTORIAL}
@@ -25,7 +25,7 @@ public class EnemyNavMesh : MonoBehaviour
 	public bool patroling = false;
     //private bool onPatrol;
     private float patrolCounter;
-    private bool behindWall;
+    //private bool behindWall;
 	NavMeshHit hit;
 
 
@@ -33,14 +33,14 @@ public class EnemyNavMesh : MonoBehaviour
     {
 		rotationSpeed = 10;
         agent = GetComponent<NavMeshAgent>();
-        enemyMove = GetComponent<EnemyMoveBehaviour>();
+        //enemyMove = GetComponent<EnemyMoveBehaviour>();
         foreach (Transform t in anim.transform) if (t.name == "Legs") legs = t.gameObject;
         animationLegs = legs.GetComponent<Animator>();
         enemyRang = GetComponent<RangedEnemy>();
         target = GameObject.FindGameObjectWithTag ("Player");
         setIddle();
         //if (enemyType == EnemyType.PATROL) onPatrol = true;
-        behindWall = true;
+        //behindWall = true;
         //Debug.Log(enemyType);
         //agent.speed = enemyStats.speed;	
         if(enemyType == EnemyType.TUTORIAL)

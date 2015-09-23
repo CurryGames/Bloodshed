@@ -10,7 +10,7 @@ public class RangedEnemy : MonoBehaviour
     public GameObject bullet;
     private GameObject player;
     private EnemyNavMesh enemyMove;
-    private PlayerStats playerStats;
+    //private PlayerStats playerStats;
     private DataLogic dataLogic;
     public enum Weapon { RIFLE, SHOTGUN }
     public Weapon weapon;
@@ -26,7 +26,7 @@ public class RangedEnemy : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         //weapon = Weapon.RIFLE;
         enemyMove = GetComponent<EnemyNavMesh>();
-        playerStats = player.GetComponent<PlayerStats>();
+        //playerStats = player.GetComponent<PlayerStats>();
         dataLogic = GameObject.FindGameObjectWithTag("DataLogic").
         GetComponent<DataLogic>();
 		//Physics.IgnoreLayerCollision(9, 9, true);

@@ -42,7 +42,7 @@ public class GodMode : MonoBehaviour {
 			datalogic.riffleActive = true;
 		}
 
-        if (Input.GetKeyUp(KeyCode.J)) playerCollider.enabled = !playerCollider.enabled;
+        if (Input.GetKeyUp(KeyCode.J) && Input.GetKey(KeyCode.AltGr)) playerCollider.enabled = !playerCollider.enabled;
         
 	
 	}

@@ -4,13 +4,14 @@ using System.Collections;
 
 public class MenuLogic : MonoBehaviour {
 
-	public enum State {START, MENU, OPTIONS, ACHIEVEMENTS}
+	public enum State {START, MENU, LEVELS, OPTIONS, ACHIEVEMENTS}
 	public enum ScrResolution { HD, UXGA, FULLHD }
 
 	public State screen;
 	public ScrResolution scrResolution;
 	public GameObject start; 
 	public GameObject menu;
+    public GameObject levelMenu;
     public GameObject backButon;
     public AudioClip shoot;
     public AudioClip music;
@@ -90,6 +91,7 @@ public class MenuLogic : MonoBehaviour {
 
 			menu.SetActive(false);
 			options.SetActive(false);
+            levelMenu.SetActive(false);
             backButon.SetActive(false);
             if (Input.GetKeyDown(KeyCode.Return) || Input.GetButtonDown("Start"))
 			{
@@ -102,14 +104,25 @@ public class MenuLogic : MonoBehaviour {
 		case State.MENU:
 			start.SetActive(false);
 			menu.SetActive(true);
+            levelMenu.SetActive(false);
 			options.SetActive(false);
             backButon.SetActive(false);
             achManager.onMenu = false;
                 
 			break;
+        case State.LEVELS:
+            start.SetActive(false);
+            menu.SetActive(false);
+            levelMenu.SetActive(true);
+            options.SetActive(false);
+            backButon.SetActive(false);
+            achManager.onMenu = false;
+
+            break;
 		case State.OPTIONS:
 			start.SetActive(false);
 			menu.SetActive(false);
+            levelMenu.SetActive(false);
 			options.SetActive(true);
             switch (scrResolution)
             {
@@ -132,6 +145,7 @@ public class MenuLogic : MonoBehaviour {
             start.SetActive(false);
 			menu.SetActive(false);
 			options.SetActive(false);
+            levelMenu.SetActive(false);
             backButon.SetActive(true);
             achManager.onMenu = true;
             break;
@@ -161,10 +175,47 @@ public class MenuLogic : MonoBehaviour {
 
 	}
 
+    public void TutorialButton()
+    {
+        AudioSource audiSor = gameObject.AddComponent<AudioSource>();
+        loadingScreen.loadTutorial = true;
+        dataLogic.Play(shoot, audiSor, scrollFx.value);
+
+    }
+
+    public void Level1Button()
+    {
+        AudioSource audiSor = gameObject.AddComponent<AudioSource>();
+        loadingScreen.loadLevel1 = true;
+        dataLogic.Play(shoot, audiSor, scrollFx.value);
+
+    }
+    public void Level2Button()
+    {
+        AudioSource audiSor = gameObject.AddComponent<AudioSource>();
+        loadingScreen.loadLevel2 = true;
+        dataLogic.Play(shoot, audiSor, scrollFx.value);
+
+    }
+    public void BossButton()
+    {
+        AudioSource audiSor = gameObject.AddComponent<AudioSource>();
+        loadingScreen.loadBoss = true;
+        dataLogic.Play(shoot, audiSor, scrollFx.value);
+
+    }
+
     public void OptoinsButton()
     {
         AudioSource audiSor = gameObject.AddComponent<AudioSource>();
         screen = State.OPTIONS;
+        dataLogic.Play(shoot, audiSor, scrollFx.value);
+    }
+
+    public void LevelsButton()
+    {
+        AudioSource audiSor = gameObject.AddComponent<AudioSource>();
+        screen = State.LEVELS;
         dataLogic.Play(shoot, audiSor, scrollFx.value);
     }
 

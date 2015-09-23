@@ -4,7 +4,7 @@ using System.Collections;
 public class rocketBehaviour : MonoBehaviour {
 
 	public GameObject explosionFX;
-	public ShakeCamera camera;
+	public ShakeCamera m_camera;
 	public float speed;
 	public float speedMod;
 	public float radius = 5.0F;
@@ -19,7 +19,7 @@ public class rocketBehaviour : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		dataLogic = GameObject.FindGameObjectWithTag("DataLogic").GetComponent<DataLogic>();
-		camera = Camera.main.GetComponent <ShakeCamera>();
+		m_camera = Camera.main.GetComponent <ShakeCamera>();
 		audiSor = dataLogic.gameObject.AddComponent<AudioSource>();
 	}
 	
@@ -37,7 +37,7 @@ public class rocketBehaviour : MonoBehaviour {
 		// Any case, Destroy bullet if collides with Wall
 		if (other.tag == "Wall" || other.tag == "Player") 
 		{	
-			GameObject explosion = (GameObject) Instantiate(explosionFX, transform.position, transform.rotation); 
+			Instantiate(explosionFX, transform.position, transform.rotation); 
 			dataLogic.Play(explosionSound, audiSor, dataLogic.volumFx);
 			Explode();
 			Shake ();
@@ -105,11 +105,11 @@ public class rocketBehaviour : MonoBehaviour {
 
 	public void Shake()
 	{
-		if(!camera.isShaking)
+		if(!m_camera.isShaking)
 		{
-			camera.shakingForce = 0.5F;
-			camera.shakeDecay = 0.013F;
-			camera.startShake = true;
+			m_camera.shakingForce = 0.5F;
+			m_camera.shakeDecay = 0.013F;
+			m_camera.startShake = true;
 		}
 	}
 

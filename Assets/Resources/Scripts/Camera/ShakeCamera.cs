@@ -5,8 +5,8 @@ public class ShakeCamera : MonoBehaviour
 {	
 	private bool shake;
     public bool startShake;	
-	private Vector3 originPosition;
-	private Quaternion originRotation;
+	//private Vector3 originPosition;
+	//private Quaternion originRotation;
     
    
     public bool endShake; // Check if shake is end.
@@ -21,8 +21,8 @@ public class ShakeCamera : MonoBehaviour
 		if(startShake)
 		{
 			isShaking = true;
-			originPosition = transform.position;
-			originRotation = transform.rotation;
+			//originPosition = transform.position;
+			//originRotation = transform.rotation;
 			startShake = false;
 			shake = true;
 		}

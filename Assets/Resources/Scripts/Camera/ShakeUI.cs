@@ -5,8 +5,8 @@ public class ShakeUI : MonoBehaviour
 {	
 	private bool shake;
     public bool startShake;	
-	private Vector3 originPosition;
-	private Quaternion originRotation;
+	//private Vector3 originPosition;
+	//private Quaternion originRotation;
     private RectTransform recTransform;
     
    
@@ -27,8 +27,8 @@ public class ShakeUI : MonoBehaviour
 		if(startShake)
 		{
 			isShaking = true;
-			originPosition = recTransform.position;
-            originRotation = recTransform.rotation;
+			//originPosition = recTransform.position;
+            //originRotation = recTransform.rotation;
 			startShake = false;
 			shake = true;
 		}

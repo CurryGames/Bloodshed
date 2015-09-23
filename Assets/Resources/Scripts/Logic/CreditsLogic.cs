@@ -34,7 +34,7 @@ public class CreditsLogic : MonoBehaviour {
         if (temp >= 35f)
         {
             audioSor.volume -= 0.1f;
-            loadingScreen.loadNextScreen = true;
+            loadingScreen.loadMenu = true;
         }
 	}
 }

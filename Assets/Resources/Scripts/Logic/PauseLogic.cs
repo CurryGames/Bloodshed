@@ -22,19 +22,9 @@ public class PauseLogic : MonoBehaviour {
     private LoadingScreen loadingScreen;
     private DataLogic dataLogic;
     //public bool fullScr;
-    static PauseLogic instance;
 
     void Awake()
     {
-        //destroy the already existing instance, if any
-        if (instance)
-        {
-			Destroy(gameObject);
-            return;
-        }
-
-        instance = this;
-        DontDestroyOnLoad(this);
 
 		if(fullScr != null)fullScr.isOn = Screen.fullScreen;
     }

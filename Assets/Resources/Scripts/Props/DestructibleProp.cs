@@ -7,6 +7,10 @@ public class DestructibleProp : MonoBehaviour {
 	
 	public GameObject piece1;
     public GameObject puntuationText;
+    private GameObject pieceGo;
+    private GameObject pText;
+    private TextMesh punText;
+    private AudioSource audiSor;
     private DataLogic dataLogic;
     private int puntuation;
     private PlayerStats playerStats;
@@ -16,14 +20,21 @@ public class DestructibleProp : MonoBehaviour {
     {
         dataLogic = GameObject.FindGameObjectWithTag("DataLogic").GetComponent<DataLogic>();
         playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
+        pieceGo = (GameObject)Instantiate(piece1, transform.position, transform.rotation);
+        audiSor = pieceGo.AddComponent<AudioSource>();
+        pText = (GameObject)Instantiate(puntuationText, new Vector3(transform.position.x, transform.position.y + 10, transform.position.z), Quaternion.Euler(new Vector3(90, 0, 0)));
+        punText = pText.GetComponent<TextMesh>();
+        pText.SetActive(false);
+        pieceGo.SetActive(false);
 
     }
 
 	public void GetDestroyed()
 	{
-        GameObject piece1GO = (GameObject)Instantiate(piece1, transform.position, transform.rotation);
-        AudioSource audiSor = piece1GO.AddComponent<AudioSource>();
 
+        pText.SetActive(true);
+
+        pieceGo.SetActive(true);
         switch (propType)
         {
 
@@ -41,8 +52,7 @@ public class DestructibleProp : MonoBehaviour {
 
         puntuation = 15 * playerStats.multiply;
         playerStats.score += puntuation;
-        GameObject pText = (GameObject)Instantiate(puntuationText, new Vector3(transform.position.x, transform.position.y + 10, transform.position.z), Quaternion.Euler(new Vector3(90, 0, 0)));
-        TextMesh punText = pText.GetComponent<TextMesh>();
+        
         punText.text = puntuation.ToString();
 		Destroy (this.gameObject);
 	}

@@ -129,7 +129,7 @@ public class AchievementManager : MonoBehaviour
     private int potentialRewardPoints = 0;
     private float finalPosX = 0.0f;
     private float initialPosX = -250.0f;
-    private bool showArchievementMenu = false;
+    //private bool showArchievementMenu = false;
     private Vector2 achievementScrollviewLocation = Vector2.zero;
 
 	void Start()
@@ -172,9 +172,7 @@ public class AchievementManager : MonoBehaviour
                 {
                     Achievements[i].currentTime2 ++;
                     if (Achievements[i].currentTime2 <= 1*60) Achievements[i].posX = (float)Easing.CubicEaseIn(Achievements[i].currentTime2, finalPosX, (initialPosX - finalPosX), 1.0f*60);
-                }
-
-                
+                }               
             }
         }
     }

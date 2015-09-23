@@ -24,7 +24,8 @@ public class PlayerMovement : MonoBehaviour
 	{
 		throwForce = 15;
 		// Create a layer mask for the floor layer.
-		floorMask = LayerMask.GetMask ("Floor");		
+		floorMask = LayerMask.GetMask ("Floor");
+        cursor.SetActive(false);
 		// Set up references.
 		//anim = GetComponent <Animator> ();
 		playerStats = GetComponent<PlayerStats> ();

@@ -55,7 +55,7 @@ public class PlayerStats : MonoBehaviour {
     public bool brutalMode;
 	public bool levelCleared;
     private bool keyShowMessage;
-    private bool go;
+    //private bool go;
 
     private float keyCounter;
     private float brutalTimmer;
@@ -65,7 +65,7 @@ public class PlayerStats : MonoBehaviour {
     public AudioSource audioSorTension;
     public MultiplySize multiplyAnim;
 
-	private Animator animation;
+	private Animator m_animation;
     private Animator animationLegs;
     private AchievementManager achievementManager;
     private DamageAnimation damageAnimaion;
@@ -78,7 +78,7 @@ public class PlayerStats : MonoBehaviour {
 	void Start () 
 	{
 		godMode = GetComponent<GodMode> (); 
-		animation = GetComponentInChildren<Animator> ();
+		m_animation = GetComponentInChildren<Animator> ();
         animationLegs = GameObject.FindGameObjectWithTag("Legs").GetComponent<Animator>();
 		pauseLogic = GameObject.FindGameObjectWithTag ("pause").GetComponent<PauseLogic> ();
         dataLogic = GameObject.FindGameObjectWithTag("DataLogic").
@@ -106,7 +106,7 @@ public class PlayerStats : MonoBehaviour {
 		currentGrenades = dataLogic.iniGrenades;
 		levelCleared = false;
         brutalMode = false;
-        go = true;
+        //go = true;
         brutalMsm = false;
         damage = 6;
         multiply = 1;
@@ -250,7 +250,7 @@ public class PlayerStats : MonoBehaviour {
 
         if (levelCleared == true)
         {
-            go = false;
+            //go = false;
             keyCounter += Time.deltaTime;
             if (scoreMessage != null)
             {
@@ -359,7 +359,7 @@ public class PlayerStats : MonoBehaviour {
 
         if (col.gameObject.tag == "grenadesBoxInfinite")
         {
-            currentGrenades++;
+            currentGrenades += 3;
             AudioSource audiSor = gameObject.AddComponent<AudioSource>();
             dataLogic.Play(dataLogic.ammo, audiSor, dataLogic.volumFx);
         }
@@ -485,25 +485,25 @@ public class PlayerStats : MonoBehaviour {
 	
 	public void setRiffle(){
 	// REPRODUCIR LA ANIMACION DE Riffle
-		animation.Play ("Riffle");
+		m_animation.Play ("Riffle");
 	}
 	
 	// ANIMACION DE CORRER HACIA LA DERECHA
 	public void setShootgun(){
 		// REPRODUCIMOS LA ANIMACION DE Shotgun
-		animation.Play ("Shootgun");
+		m_animation.Play ("Shootgun");
 		
 	}
 	
 	public void setChainsaw(){
 		// REPRODUCIMOS LA ANIMACION DE Chainsaw
-		animation.Play ("Chainsaw");
+		m_animation.Play ("Chainsaw");
 	}
 
     public void setGun()
     {
         // REPRODUCIMOS LA ANIMACION DE Chainsaw
-        animation.Play("Gun");
+        m_animation.Play("Gun");
     }
 
     public void setRun()
@@ -535,10 +535,10 @@ public class PlayerStats : MonoBehaviour {
 		//EndLevelScreen.SetActive (true);
         brutalMode = false;
         playerMov.enabled = false;
-        GameObject gOS = (GameObject)Instantiate(EndLevelScreen, Camera.main.transform.position, Quaternion.Euler(new Vector3(90, 0, 0)));
+        Instantiate(EndLevelScreen, Camera.main.transform.position, Quaternion.Euler(new Vector3(90, 0, 0)));
         levelCleared = true;
         setIddle();
-        go = false;
+        //go = false;
         if (scoreMessage != null)
         {
             scrMsm = (GameObject)Instantiate(scoreMessage, new Vector3(Camera.main.transform.position.x, 55, Camera.main.transform.position.z), Quaternion.Euler(new Vector3(90, 0, 0)));

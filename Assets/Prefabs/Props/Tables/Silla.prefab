@@ -12,7 +12,6 @@ GameObject:
   - 23: {fileID: 2328046}
   - 65: {fileID: 6529108}
   - 54: {fileID: 5429108}
-  - 114: {fileID: 11457998}
   m_Layer: 0
   m_Name: Silla
   m_TagString: Untagged
@@ -90,20 +89,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: .819999993, y: .819999993, z: .300000012}
   m_Center: {x: 0, y: 0, z: .200000003}
---- !u!114 &11457998
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 128046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 684bf96d7a163dc4b81da4a8f80c7767, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  piece1: {fileID: 132224, guid: 921f40ea619cbd241bd66384302626ef, type: 2}
-  puntuationText: {fileID: 0}
-  rubish: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

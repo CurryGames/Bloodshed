@@ -12,6 +12,7 @@ public class Spawn : MonoBehaviour {
 	public GameObject[] wave1;
 	private PlayerStats playerStats;
     private DataLogic dataLogic;
+    private Transform myTransform;
 
 	public int deathCount;
 	public int emiesNumber;
@@ -28,7 +29,7 @@ public class Spawn : MonoBehaviour {
 		deathCount = 0;
 		playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
         dataLogic = GameObject.FindGameObjectWithTag("DataLogic").GetComponent<DataLogic>();
-
+        myTransform = transform;
         if (SpawnDoor != null) SpawnDoor.SetActive(true);
 
 	}
@@ -53,10 +54,9 @@ public class Spawn : MonoBehaviour {
 
 			    if ((currentTime <= 0)  && (emiesNumber < maxEnemies))
                 {
-                    Instantiate(wave1[Random.Range(0, wave1.GetLength(0))], transform.position, Quaternion.identity);
+                    Instantiate(wave1[Random.Range(0, wave1.GetLength(0))], myTransform.position, Quaternion.identity);
                     currentTime = currentTime2;
 				    emiesNumber++;
-            
                 }
 
                 /*if (emiesNumber == maxEnemies && SpawnDoor != null) SpawnDoor.SetActive(true);
