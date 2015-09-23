@@ -191,7 +191,7 @@ public class PlayerMovement : MonoBehaviour
 
     void RotateJoystick()
     {
-        float Speed = 20.0F;
+        float Speed = 2.0F;
 
         float h = Speed * Input.GetAxis("Joy X");
         float v = Speed * Input.GetAxis("Joy Y");
