@@ -103,7 +103,7 @@ public class EnemyStats : MonoBehaviour
                     Instantiate(deathExploited[Random.Range(0, deathExploited.GetLength(0))], transform.position, aim.transform.rotation);
                     break;
                 case Death.CARVED:
-                    Instantiate(deathshotedGun[Random.Range(0, deathshotedGun.GetLength(0))], transform.position, aim.transform.rotation);
+                    Instantiate(deathExploited[Random.Range(0, deathExploited.GetLength(0))], transform.position, aim.transform.rotation);
                     break;
             }
             if (playerShooting.weapon != PlayerShooting.Weapon.CHAINSAW) playerStats.currentBrutality += brutalPoints;
@@ -206,7 +206,7 @@ public class EnemyStats : MonoBehaviour
             Destroy(col.gameObject);
             AudioSource audiSor = dataLogic.gameObject.AddComponent<AudioSource>();
             Instantiate(blood.gameObject, new Vector3(transform.position.x, 0.2f, transform.position.z), col.transform.rotation);
-            death = Death.EXPLOITED;
+            death = Death.CARVED;
             dataLogic.Play(dataLogic.hit, audiSor, dataLogic.volumFx);
             GetDamage(200);
         }

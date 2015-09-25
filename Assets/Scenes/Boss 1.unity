@@ -193,7 +193,6 @@ GameObject:
   - 124: {fileID: 30527918}
   - 92: {fileID: 30527917}
   - 114: {fileID: 30527916}
-  - 114: {fileID: 30527915}
   - 114: {fileID: 30527914}
   - 114: {fileID: 30527921}
   - 114: {fileID: 30527922}
@@ -237,18 +236,6 @@ MonoBehaviour:
   key: {fileID: 2800000, guid: 4790a03b6b0f295479e95c677eb8a503, type: 3}
   playerEnergy: 0
   playerBrutality: 1
---- !u!114 &30527915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400002, guid: a7145b3dfcf15734ba00ab8cf6ce96a6,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 30527912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d6c796289e1c4bc5b8b7af1faeb67e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &30527916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2851,7 +2838,6 @@ GameObject:
   - 4: {fileID: 397700831}
   - 33: {fileID: 397700830}
   - 23: {fileID: 397700829}
-  - 114: {fileID: 397700828}
   - 114: {fileID: 397700832}
   m_Layer: 0
   m_Name: Glow
@@ -2860,18 +2846,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &397700828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11438376, guid: 151253f2f17b26b41823e269312d1681,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 397700827}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &397700829
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5812,7 +5786,6 @@ GameObject:
   - 4: {fileID: 842836829}
   - 33: {fileID: 842836828}
   - 23: {fileID: 842836827}
-  - 114: {fileID: 842836826}
   - 114: {fileID: 842836830}
   m_Layer: 0
   m_Name: Glow
@@ -5821,18 +5794,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &842836826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11438376, guid: 151253f2f17b26b41823e269312d1681,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 842836825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &842836827
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6912,7 +6873,6 @@ GameObject:
   - 4: {fileID: 1093707069}
   - 33: {fileID: 1093707068}
   - 23: {fileID: 1093707067}
-  - 114: {fileID: 1093707066}
   - 114: {fileID: 1093707070}
   m_Layer: 0
   m_Name: Glow
@@ -6921,18 +6881,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1093707066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11438376, guid: 151253f2f17b26b41823e269312d1681,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1093707065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &1093707067
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7017,7 +6965,6 @@ GameObject:
   - 4: {fileID: 1108845551}
   - 33: {fileID: 1108845550}
   - 23: {fileID: 1108845549}
-  - 114: {fileID: 1108845548}
   - 114: {fileID: 1108845552}
   m_Layer: 0
   m_Name: Glow
@@ -7026,18 +6973,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1108845548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11438376, guid: 151253f2f17b26b41823e269312d1681,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1108845547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &1108845549
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12432,7 +12367,6 @@ GameObject:
   - 4: {fileID: 1925944182}
   - 33: {fileID: 1925944181}
   - 23: {fileID: 1925944180}
-  - 114: {fileID: 1925944179}
   - 114: {fileID: 1925944183}
   m_Layer: 0
   m_Name: Glow
@@ -12441,18 +12375,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1925944179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11438376, guid: 151253f2f17b26b41823e269312d1681,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1925944178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &1925944180
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12667,7 +12589,6 @@ GameObject:
   - 4: {fileID: 1986120014}
   - 33: {fileID: 1986120013}
   - 23: {fileID: 1986120012}
-  - 114: {fileID: 1986120011}
   - 114: {fileID: 1986120015}
   m_Layer: 0
   m_Name: Glow
@@ -12676,18 +12597,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1986120011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11438376, guid: 151253f2f17b26b41823e269312d1681,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1986120010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &1986120012
 MeshRenderer:
   m_ObjectHideFlags: 0

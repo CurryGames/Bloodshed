@@ -3,8 +3,8 @@ using System.Collections;
 
 public class BarrelExplosion : MonoBehaviour {
 	
-	public float radius = 7.5f;
-	public float power = 10.0F;
+	public float radius = 2.5f;
+	public float power = 7.0F;
 	public float upwardModifier = 0.0f;
 	public ForceMode forceMode;
 	private float distanceModifier = 0;

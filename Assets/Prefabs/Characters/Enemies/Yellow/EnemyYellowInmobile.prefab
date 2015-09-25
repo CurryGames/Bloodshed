@@ -67,7 +67,6 @@ GameObject:
   - 4: {fileID: 423786}
   - 33: {fileID: 3323786}
   - 23: {fileID: 2323786}
-  - 114: {fileID: 11423786}
   m_Layer: 0
   m_Name: Glow
   m_TagString: Untagged
@@ -85,7 +84,6 @@ GameObject:
   - 4: {fileID: 430998}
   - 33: {fileID: 3330998}
   - 23: {fileID: 2330998}
-  - 114: {fileID: 11430998}
   m_Layer: 0
   m_Name: Glow
   m_TagString: Untagged
@@ -368,6 +366,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   anim: {fileID: 100004}
+  enemyChasing: {fileID: 0}
+  enemyWithoutgun: {fileID: 0}
   enemyType: 3
   chasing: 0
   isStop: 1
@@ -454,28 +454,6 @@ MonoBehaviour:
   puntuationText: {fileID: 174928, guid: 1be67c8d0cf63ce4d9a7c2f6b169276c, type: 2}
   distanceModifier: 0
   color: {r: 0, g: 0, b: 0, a: 0}
---- !u!114 &11423786
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 123786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11430998
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 130998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!195 &19500000
 NavMeshAgent:
   m_ObjectHideFlags: 1

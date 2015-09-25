@@ -138,6 +138,7 @@ public class PlayerShooting : MonoBehaviour
             {
                 AudioSource audiSor = gameObject.AddComponent<AudioSource>();
                 dataLogic.Play(dataLogic.emptyGun, audiSor, dataLogic.volumFx);
+                timer = -0.5f;
             }
 									// If the timer has exceeded the proportion of timeBetweenBullets that the effects should be displayed for...
 									/*if(timer >= timeBetweenBullets * effectsDisplayTime)
@@ -171,6 +172,7 @@ public class PlayerShooting : MonoBehaviour
             if (Input.GetButton("Fire1") || Input.GetAxis("FireJoy") < 0)
             {
                 timmerGatling += Time.deltaTime;
+                XInputDotNetPure.GamePad.SetVibration(0, 0.2f, 0.2f);
                 if (!loadGatling)
                 {
                     AudioSource audiSor = gameObject.AddComponent<AudioSource>();
@@ -202,12 +204,15 @@ public class PlayerShooting : MonoBehaviour
                     timmerGatling = 0;
                     loadGatling = false;
                 }
+
+                XInputDotNetPure.GamePad.SetVibration(0, 0.0f, 0.0f);
             }
 			//else playerMov.onCharge = false;
 
 			if (playerStats.currentBrutality <= 0 || !playerStats.brutalMode)
 			{
 				chainsaw.SetActive(false);
+                XInputDotNetPure.GamePad.SetVibration(0, 0.0f, 0.0f);
 				colliderSaw.enabled = false;
 				weapon = Weapon.GUN;
 				playerStats.damage = 12;
@@ -248,7 +253,7 @@ public class PlayerShooting : MonoBehaviour
             {
                 AudioSource audiSor = gameObject.AddComponent<AudioSource>();
                 dataLogic.Play(dataLogic.emptyGun, audiSor, dataLogic.volumFx);
-                timer = 0;
+                timer = -0.5f;
             }
 
             if (clockGun)

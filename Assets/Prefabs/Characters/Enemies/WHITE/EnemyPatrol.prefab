@@ -67,7 +67,6 @@ GameObject:
   - 4: {fileID: 423784}
   - 33: {fileID: 3323784}
   - 23: {fileID: 2323784}
-  - 114: {fileID: 11423784}
   m_Layer: 0
   m_Name: Glow
   m_TagString: Untagged
@@ -85,7 +84,6 @@ GameObject:
   - 4: {fileID: 423786}
   - 33: {fileID: 3323786}
   - 23: {fileID: 2323786}
-  - 114: {fileID: 11423786}
   m_Layer: 0
   m_Name: Glow
   m_TagString: Untagged
@@ -117,7 +115,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 21.7794151, y: -.250000268, z: 8.16435242}
   m_LocalScale: {x: .75, y: 1.84843838, z: 1}
   m_Children:
   - {fileID: 400004}
@@ -459,28 +457,6 @@ MonoBehaviour:
   puntuationText: {fileID: 174928, guid: 1be67c8d0cf63ce4d9a7c2f6b169276c, type: 2}
   distanceModifier: 0
   color: {r: 0, g: 0, b: 0, a: 0}
---- !u!114 &11423784
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 123784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11423786
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 123786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!195 &19500000
 NavMeshAgent:
   m_ObjectHideFlags: 1
