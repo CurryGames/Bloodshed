@@ -209,7 +209,7 @@ public class PlayerShooting : MonoBehaviour
             }
 			//else playerMov.onCharge = false;
 
-			if (playerStats.currentBrutality <= 0 || !playerStats.brutalMode)
+			if (playerStats.currentBrutality <= 0 || !playerStats.brutalMode || !playerStats.alive)
 			{
 				chainsaw.SetActive(false);
                 XInputDotNetPure.GamePad.SetVibration(0, 0.0f, 0.0f);

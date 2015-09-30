@@ -48,7 +48,7 @@ public class PlayerStats : MonoBehaviour {
     private Text multiplyText;
     private Grayscale grayscale;
 
-	private bool alive = true;
+	public bool alive = true;
     private bool brutalMsm;
     public bool onBoss;
     public bool onKey;
@@ -239,10 +239,10 @@ public class PlayerStats : MonoBehaviour {
 		if (!alive)
 		{
             keyCounter += Time.deltaTime;
+            pauseLogic.enabled = false;
             if (Input.anyKeyDown && keyCounter >= 2f)
             {
                 loadingScreen.loadCurrentScreen = true;
-                pauseLogic.enabled = true;
             }
             
 
@@ -251,6 +251,7 @@ public class PlayerStats : MonoBehaviour {
         if (levelCleared == true)
         {
             //go = false;
+            pauseLogic.enabled = false;
             keyCounter += Time.deltaTime;
             if (scoreMessage != null)
             {
@@ -269,7 +270,7 @@ public class PlayerStats : MonoBehaviour {
                 {
                     loadingScreen.loadNextScreen = true;
                     dataLogic.iniScore = 0;
-                    pauseLogic.enabled = true;
+                    pauseLogic.enabled = false;
                     //dataLogic.currentWeapon++;
                 }
                 //else calculateScore = score;
@@ -289,7 +290,7 @@ public class PlayerStats : MonoBehaviour {
                 {
                     loadingScreen.loadNextScreen = true;
                     dataLogic.iniScore = 0;
-                    pauseLogic.enabled = true;
+                    
                 }
             }
         }
@@ -524,7 +525,7 @@ public class PlayerStats : MonoBehaviour {
         alive = false;
         playerMov.enabled = false;
 		//playerMov.enabled = false;
-		//pauseLogic.enabled = false;
+		pauseLogic.enabled = false;
         GameObject gOS = (GameObject)Instantiate(gameOverScreen, new Vector3(Camera.main.transform.position.x, 55, Camera.main.transform.position.z), Quaternion.Euler(new Vector3(90, 0, 0)));
         gOS.transform.parent = Camera.main.transform;
         //gOS.transform.position = new Vector3(0, 0, 0);

@@ -74,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
                 grenadesTime = 0;
 			}
 
-            if (Input.GetAxis("Mouse ScrollWheel") > 0 || (Input.GetButton("RB"))&& timer > 1.0f) // forward
+            if ((Input.GetButton("RB") || Input.GetAxis("Mouse ScrollWheel") > 0) && timer > 0.3f) // forward
              {
                  if (playerShot.weapon == PlayerShooting.Weapon.GUN)
                  {
@@ -91,7 +91,7 @@ public class PlayerMovement : MonoBehaviour
 
                  timer = 0;
              }
-            else if (Input.GetAxis("Mouse ScrollWheel") < 0 || (Input.GetButton("LB")) && timer > 1.0f) // back
+            else if ( (Input.GetButton ("LB") || Input.GetAxis("Mouse ScrollWheel") < 0) && timer > 0.3f) // back
              {
                  if (playerShot.weapon == PlayerShooting.Weapon.SHOTGUN)
                  {
@@ -191,7 +191,7 @@ public class PlayerMovement : MonoBehaviour
 
     void RotateJoystick()
     {
-        float Speed = 2.0F;
+        float Speed = 3.0F;
 
         float h = Speed * Input.GetAxis("Joy X");
         float v = Speed * Input.GetAxis("Joy Y");

@@ -543,7 +543,6 @@ GameObject:
   - 20: {fileID: 389770769}
   - 92: {fileID: 389770768}
   - 124: {fileID: 389770767}
-  - 114: {fileID: 389770771}
   - 81: {fileID: 389770766}
   - 82: {fileID: 389770772}
   m_Layer: 0
@@ -620,17 +619,6 @@ Transform:
   - {fileID: 72198431}
   m_Father: {fileID: 0}
   m_RootOrder: 2
---- !u!114 &389770771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 389770765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d6c796289e1c4bc5b8b7af1faeb67e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &389770772
 AudioSource:
   m_ObjectHideFlags: 0
